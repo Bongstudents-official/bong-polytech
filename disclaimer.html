@@ -4,29 +4,26 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>BONG POLYTECHNIC</title>
-        <link rel="stylesheet" href="dis.css" />
-        <script src="dis.js"></script>
+        <link rel="stylesheet" href="styles.css" />
+        <script src="script.js"></script>
     </head>
-    <body id="body">
-        <div class="top">
-            <nav class="navbar">
-                <h1 style="color: darkturquoise">BONG POLYTECHNIC</h1>
-                <ul>
-                    <li><a href="index.html" class="bt">Home</a></li>
-                    <li><a href="index.html#pyqs" class="bt">PYQs</a></li>
-                    <li><a href="#" class="bt">Notes</a></li>
-                    <li><a href="about.html" class="bt">About</a></li>
-                    <li><a href="contact.html" class="bt">Contact</a></li>
-                </ul>
-                <button class="btn" onclick="darkmode()">Darkmode</button>
-                <button class="btn" onclick="brightmode()">Brightmode</button>
-            </nav>
-        </div>
-        <hr />
-        <section class="hero">
+     <body id="body">
+        <header class="navbar">
+            <div class="top">
+                <h1 style="color: darkturquoise" class="logo">BONG POLYTECHNIC</h1>
+                <nav id="navMenu">
+                    <a href="index.html" class="bt">Home</a>
+                    <a href="index.html#pyqs" class="bt">PYQs</a>
+                    <a href="notes.html" class="bt">Notes</a>
+                    <a href="about.html" class="bt">About</a>
+                    <a href="contact.html" class="bt">Contact</a>
+                </nav>
+            </div>
+            <div class="hamburger" onclick="toggleMenu()">☰</div>
+        </header>
+        <section class="her">
             <h3 class="h3">GET PREVIOUS YEAR QUESTIONS AND STUDY RESOURCES FOR FREE !!!</h3>
         </section>
-        <hr />
         <div class="marquee">
             <p class="p1">
                 Free PYQs, Notes, Syllabus And Tips For Students.
@@ -34,13 +31,20 @@
                 Currently Only First Year Is Available.
             </p>
         </div>
-        <section class="base">
-            <h2>Disclaimer for Bong Polytechnic</h2>
+        <br />
+        <br />
+         <br />
+        <br />
+        <section class="categories">
+            <h2 style="text-align: center">Disclaimer for Bong Polytechnic</h2>
             <br>
+            <br />
+        <br />
             <p>
                 The information provided on Bong Polytechnic is for general educational and informational purposes only.
             </p>
-            <br />
+            <br /><br><br />
+        <br />
             <h4>1. No Official Affiliation</h4>
             <br />
             <p>
@@ -94,15 +98,20 @@
             <br />
             <p>If you have any questions about this Disclaimer, you can contact us through our website.</p>
             <br />
-            <h4>Last updated: 2026</h4>
+            <br>
+            <h4 style="text-align: center">Last updated: 2026</h4>
         </section>
+         <br>
+         <br>
+         <br>
+         <br>
        <div class="footer">
             <a href="#"><h3>Bong Polytechnic</h3></a>
             <p>Your Study Partner For PYQs, Notes & Resources</p>
             <div class="fl">
                 <a href="index.html">Home</a>
-                <a href="#pyqs">PYQs</a>
-                <a href="#">Notes</a>
+                <a href="index.html#pyqs">PYQs</a>
+                <a href="notes.html">Notes</a>
                 <a href="about.html">About Us</a>
                 <a href="contact.html">Contact</a>
                 <a href="privacy.html">Privacy Policy</a></div>
