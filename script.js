@@ -1,13 +1,4 @@
-
-// changing css
-function darkmode(){
-    document.getElementById("body").style.background = "black";
-    document.getElementById("body").style.color = "white";
-}
-function brightmode(){
-    document.getElementById("body").style.background = "white";
-    document.getElementById("body").style.color = "black";
-}
+//quotes
 const quotes = [
     '"Remember why you started"',
     '"Small progress everyday adds up."',
@@ -20,20 +11,46 @@ const quotes = [
 ];
 let index = 0;
 
-function changeQuotes(){
-    const q = 
-    document.getElementById("lines");
-    if(q == null){
+function changeQuotes() {
+    const q = document.getElementById("lines");
+    if (q == null) {
         console.log("Element not found");
     }
-    
-    q.style.opacity = 0; 
-    
+
+    q.style.opacity = 0;
+
     setTimeout(() => {
         q.innerText = quotes[index];
         q.style.opacity = 1;
         index = (index + 1) % quotes.length;
     }, 500);
-    
 }
 setInterval(changeQuotes, 4000);
+
+//navmenu
+
+function toggleMenu() {
+    document.getElementById("navMenu").classList.toggle("active");
+}
+
+//searchbar
+
+function goSearch(event) {
+    if (event.key !== "Enter") {
+        return;
+    }
+    const serach = document.getElementById("siteSearch").value.toLowerCase().trim();
+    if (serach.includes("first year")) {
+        window.location = "first-year-all-branches.html";
+    } else if (serach.includes("first semester")) {
+        window.location = "1-sem.html";
+    } else if (serach.includes("1 semester")) {
+        window.location = "1-sem.html";
+    } else if (serach.includes("second semester")) {
+        window.location = "2-second.html";
+    } else if (serach.includes("2 semester")) {
+        window.location = "2-second.html";
+    }
+}
+
+//
