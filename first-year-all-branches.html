@@ -4,38 +4,56 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>BONG POLYTECHNIC</title>
-        <link rel="stylesheet" href="f.css" />
+        <link rel="stylesheet" href="styles.css" />
     </head>
     <body id="body">
-        <div class="top">
-            <nav class="navbar">
-                <h1 style="color: darkturquoise">BONG POLYTECHNIC</h1>
-                <ul>
-                    <li><a href="index.html" class="bt">Home</a></li>
-                    <li><a href="index.html#pyqs" class="bt">PYQs</a></li>
-                    <li><a href="#" class="bt">Notes</a></li>
-                    <li><a href="about.html" class="bt">About</a></li>
-                    <li><a href="contact.html" class="bt">Contact</a></li>
-                </ul>
-                <button class="btn" onclick="darkmode()">Darkmode</button>
-                <button class="btn" onclick="brightmode()">Brightmode</button>
-            </nav>
-        </div>
-        <hr />
-        <section class="hero">
+        <header class="navbar">
+            <div class="top">
+                <h1 style="color: darkturquoise" class="logo">BONG POLYTECHNIC</h1>
+                <nav id="navMenu">
+                    <a href="index.html" class="bt">Home</a>
+                    <a href="index.html#pyqs" class="bt">PYQs</a>
+                    <a href="notes.html" class="bt">Notes</a>
+                    <a href="about.html" class="bt">About</a>
+                    <a href="contact.html" class="bt">Contact</a>
+                </nav>
+            </div>
+            <div class="hamburger" onclick="toggleMenu()">☰</div>
+        </header>
+        <section class="her">
             <h3 class="h3">GET PREVIOUS YEAR QUESTIONS AND STUDY RESOURCES FOR FREE !!!</h3>
-            <hr />
         </section>
+        <div class="marquee">
+            <p class="p1">
+                Free PYQs, Notes, Syllabus And Tips For Students.
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Note:
+                Currently Only First Year Is Available.
+            </p>
+        </div>
+        <br />
+        <br />
+        <br /><br /><br />
+        <br />
+        <h1 style="text-align: center">WB Polytechnic Papers & Notes</h1>
+        <br />
+        <br />
+        <br />
         
-        <section class="base">
-            <h3>FIRST YEAR ALL BRANCHES</h3>
-            <a href="1-sem.html"><div class="card">
+        <section class="categories">
+            <h3 style="text-align: center">FIRST YEAR ALL BRANCHES PYQs</h3>
+            <br />
+        <br /><br />
+        <br />
+            <a href="1-sem.html"><div class="tool-card">
             <h5>1 SEMESTER</h5></div></a>
-                <a href="2-second.html"><div class="card">
+            <br /><br />
+                <a href="2-second.html"><div class="tool-card">
                     <h5>2 SEMESTER</h5></div></a>
-            <a href="index.html"><div class="cardn">
+            <br /><br />
+            <a href="index.html"><div class="tool-card">
             <h5>Back</h5></div></a>
         </section>
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
          <div class="footer">
             <a href="#"><h3>Bong Polytechnic</h3></a>
             <p>Your Study Partner For PYQs, Notes & Resources</p>
