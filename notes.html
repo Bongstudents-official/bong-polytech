@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="google-site-verification" content="FjPsLQ4X3E4-60DdJH0uty3uz1Lo7hHnqCPdcrH46bQ" />
-        <title>Bong Polytech | West Bengal Polytechnic PYQ, Diploma Notes & WBSCTVESD Resources</title>
+        <title>Bong Polytechnic | West Bengal Polytechnic PYQ, Diploma Notes & WBSCTVESD Resources</title>
        <meta name="description" content="Bong Polytech provides West Bengal Polytechnic PYQ, WBSCTVESD question papers, diploma notes, branch-wise study materials, syllabus and semester resources for diploma students.">
   <meta name="keywords" content="polytechnic pyq, diploma notes, previous year question papers, west bengal polytechnic">
   <meta name="author" content="Bong Polytech">
@@ -12,28 +12,25 @@
   <meta property="og:description" content="Previous year questions, notes and study resources for diploma students.">
         <link rel="canonical"
             href="https://bong-polytech.vercel.app/">
-        <link rel="stylesheet" href="notes.css" />
+        <link rel="stylesheet" href="styles.css" />
     </head>
-    <body id="body">
-        <div class="top">
-            <nav class="navbar">
-                <h1 style="color: darkturquoise">BONG POLYTECHNIC</h1>
-                <ul>
-                    <li><a href="index.html" class="bt">Home</a></li>
-                    <li><a href="#pyqs" class="bt">PYQs</a></li>
-                    <li><a href="#" class="bt">Notes</a></li>
-                    <li><a href="about.html" class="bt">About</a></li>
-                    <li><a href="contact.html" class="bt">Contact</a></li>
-                </ul>
-                <button class="btn" onclick="darkmode()">Darkmode</button>
-                <button class="btn" onclick="brightmode()">Brightmode</button>
-            </nav>
-        </div>
-        <hr />
-        <section class="hero">
+     <body id="body">
+        <header class="navbar">
+            <div class="top">
+                <h1 style="color: darkturquoise" class="logo">BONG POLYTECHNIC</h1>
+                <nav id="navMenu">
+                    <a href="index.html" class="bt">Home</a>
+                    <a href="index.html#pyqs" class="bt">PYQs</a>
+                    <a href="notes.html" class="bt">Notes</a>
+                    <a href="about.html" class="bt">About</a>
+                    <a href="contact.html" class="bt">Contact</a>
+                </nav>
+            </div>
+            <div class="hamburger" onclick="toggleMenu()">☰</div>
+        </header>
+        <section class="her">
             <h3 class="h3">GET PREVIOUS YEAR QUESTIONS AND STUDY RESOURCES FOR FREE !!!</h3>
         </section>
-        <hr />
         <div class="marquee">
             <p class="p1">
                 Free PYQs, Notes, Syllabus And Tips For Students.
@@ -41,30 +38,25 @@
                 Currently Only First Year Is Available.
             </p>
         </div>
-        <div class="categories" id="pyqs">
-            <h1>West Bengal Polytechnic PYQ, Diploma Notes & Semester Study Materials</h1>
-            <br>
+        <br />
+        <br />
+        <br /><br /><br />
+        <br />
+        <div class="categories">
+            <h1 style="text-align: center;">West Bengal Polytechnic PYQ, Diploma Notes & Semester Study Materials</h1>
+            <br> <br /><br /><br />
             <a href="#"><div class="card">NOTES FOR FIRST YEAR ALL BRANCHES
                 <P></P></div></a>
-            <br>
+            <br><br><br>
             <a href="#"><div class="card">NOTES FOR MECHANICAL ENGINEERING</div></a>
-            <br />
+            <br /><br><br>
             <a href="#"><div class="card">NOTES FOR CIVIL ENGINEERING</div></a>
-            <br />
-            <a href="#"><div class="card">NOTES FOR ELECTRICAL ENGINEERING</div></a>
-            <BR>
+            <br /><br><br>
             <a href="#"><div class="card">NOTES FOR COMPUTER SCIENCE & TECHNOLOGY</div></a>
-            <br />
-            <a href="#"><div class="card">NOTES FOR ELECTRONICS & TELECOMMUNICATION</div></a>
-            <br />
+            <br /><br><br>
             <a href="#"><div class="card">NOTES FOR CHEMICAL ENGINEERING</div></a>
-            <br />
-            <a href="#"><div class="card">NOTES FOR AUTOMOBILE ENGINEERING</div></a>
-            <br />
-            <a href="#"><div class="card">NOTES FOR METALLURGY</div></a>
-            <br />
-            <a href="#"><div class="card">NOTES FOR FOOD PROCESSING TECHNOLOGY</div></a>
-        </div>
+            <br /><br><br>
+        </div><br><br><br>
         <div class="footer">
             <a href="#"><h3>Bong Polytechnic</h3></a>
             <p>Your Study Partner For PYQs, Notes & Resources</p>
@@ -82,6 +74,6 @@
             <p>&copy;2026 Bong Polytechnic. All Rights Reserved.</p>
         </div>
         <div></div>
-        <script src="notes.js"></script>
+        <script src="script.js"></script>
     </body>
 </html>
