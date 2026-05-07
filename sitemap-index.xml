@@ -1,46 +1,9 @@
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>BONG POLYTECHNIC</title>
-        <link rel="stylesheet" href="styleS.css" />
-    </head>
-    <body id="body">
-        <header class="navbar">
-            <div class="top">
-                <h1 style="color: darkturquoise" class="logo">BONG POLYTECHNIC</h1>
-                <nav id="navMenu">
-                    <a href="index.html" class="bt">Home</a>
-                    <a href="#pyqs" class="bt">PYQs</a>
-                    <a href="#" class="bt">Notes</a>
-                    <a href="about.html" class="bt">About</a>
-                    <a href="contact.html" class="bt">Contact</a>
-                </nav>
-            </div>
-            <div class="hamburger" onclick="toggleMenu()">☰</div>
-        </header>
-        <section class="her">
-            <h3 class="h3">GET PREVIOUS YEAR QUESTIONS AND STUDY RESOURCES FOR FREE !!!</h3>
-        </section>
-        <section class="searchsection">
-        <div class="searchbox">
-            <input type="text" id="siteSearch" placeholder="Search Subjects...🔍" onkeydown="goSearch(event)" />
-        </div></section>
-        <br />
-        <div class="marquee">
-            <p class="p1">
-                Free PYQs, Notes, Syllabus And Tips For Students.
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Note:
-                Currently Only First Year Is Available.
-            </p>
-        </div>
 <?xml version="1.0" encoding="UTF-8"?>
 
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
    <url>
-      <loc>https://bong-polytech.vercel.app/</loc>
+      <loc>https://bong-polytech.vercel.app/index.html</loc>
    </url>
 
    <url>
@@ -57,6 +20,10 @@
 
    <url>
       <loc>https://bong-polytech.vercel.app/about.html</loc>
+   </url>
+    
+    <url>
+      <loc>https://bong-polytech.vercel.app/notes.html</loc>
    </url>
 
    <url>
@@ -76,25 +43,3 @@
    </url>
 
 </urlset>
-<br /><br /><br />
-        <div class="footer">
-            <a href="#"><h3>Bong Polytechnic</h3></a>
-            <p>Your Study Partner For PYQs, Notes & Resources</p>
-            <div class="fl">
-                <a href="index.html">Home</a>
-                <a href="#pyqs">PYQs</a>
-                <a href="#">Notes</a>
-                <a href="about.html">About Us</a>
-                <a href="contact.html">Contact</a>
-                <a href="privacy.html">Privacy Policy</a>
-            </div>
-            <div class="fl">
-                <a href="disclaimer.html">Disclaimer</a>
-                <a href="terms.html">Terms & Conditions</a>
-            </div>
-            <p>&copy;2026 Bong Polytechnic. All Rights Reserved.</p>
-        </div>
-        <div></div>
-        <script src="script.js"></script>
-    </body>
-</html>
