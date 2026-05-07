@@ -3,7 +3,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
    <url>
-      <loc>https://bong-polytech.vercel.app/index.html</loc>
+      <loc>https://bong-polytech.vercel.app/</loc>
    </url>
 
    <url>
@@ -20,10 +20,6 @@
 
    <url>
       <loc>https://bong-polytech.vercel.app/about.html</loc>
-   </url>
-    
-    <url>
-      <loc>https://bong-polytech.vercel.app/notes.html</loc>
    </url>
 
    <url>
