@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>BONG POLYTECHNIC</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body id="body">
+        <header class="navbar">
+            <div class="top">
+                <h1 style="color: darkturquoise" class="logo">BONG POLYTECHNIC</h1>
+                <nav id="navMenu">
+                    <a href="index.html" class="bt">Home</a>
+                    <a href="index.html#pyqs" class="bt">PYQs</a>
+                    <a href="notes.html" class="bt">Notes</a>
+                    <a href="about.html" class="bt">About</a>
+                    <a href="contact.html" class="bt">Contact</a>
+                </nav>
+            </div>
+            <div class="hamburger" onclick="toggleMenu()">☰</div>
+        </header>
+        <section class="her">
+            <h3 class="h3">GET PREVIOUS YEAR QUESTIONS AND STUDY RESOURCES FOR FREE !!!</h3>
+        </section>
+        <div class="marquee">
+            <p class="p1">
+                Free PYQs, Notes, Syllabus And Tips For Students.
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Note:
+                Currently Only First Year Is Available.
+            </p>
+        </div>
+        <br />
+        <br />
+        <section class="sgpa-section reveal">
+            <h2>Free SGPA Calculator</h2>
+<br><br>
+            <div id="subjects">
+                <div class="subject-row">
+                    <input type="number" placeholder="Credits" class="credit" />
+
+                    <input type="number" placeholder="Grade Point" class="grade" />
+                </div>
+            </div>
+<br>
+            <button onclick="addSubject()" class="btn">+ Add Subject</button>
+
+            <button onclick="calculateSGPA()" class="btns">Calculate SGPA</button>
+<br><br><br>
+            <h3 id="result" style="color: dimgrey">Your SGPA: 0.00</h3>
+        </section>
+        <br />
+        <br />
+        <section class="categories reveal">
+            <br />
+            <br />
+            <a href="first-year-all-branches.html"
+                ><div class="tool-card">
+                    <h5>Back</h5>
+                </div></a
+            >
+            <br />
+            <br />
+        </section>
+        <br /><br /><br />
+        <div class="footer">
+            <a href="#"><h3>Bong Polytechnic</h3></a>
+            <p>Your Study Partner For PYQs, Notes & Resources</p>
+            <div class="fl">
+                <a href="index.html">Home</a>
+                <a href="index.html#pyqs">PYQs</a>
+                <a href="notes.html">Notes</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+                <a href="privacy.html">Privacy Policy</a>
+            </div>
+            <div class="fl">
+                <a href="disclaimer.html">Disclaimer</a>
+                <a href="terms.html">Terms & Conditions</a>
+            </div>
+            <p>&copy;2026 Bong Polytechnic. All Rights Reserved.</p>
+        </div>
+        <div></div>
+        <script src="script.js"></script>
+    </body>
+</html>
