@@ -82,8 +82,8 @@ counters.forEach((counter) => {
     let count = 0;
 
     const update = () => {
-        if (count < 1000) {
-            count += 25;
+        if (count < 100) {
+            count += 2;
 
             counter.innerText = count + "+";
 
