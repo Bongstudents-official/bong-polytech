@@ -95,7 +95,12 @@ nav a {
     display: none;
     font-size: 28px;
     cursor: pointer;
+    border-radius: 9px 9px;
 }
+.hamburger:hover {
+   background-color: rgb(223, 217, 217);
+}
+
 @media (max-width: 768px) {
     nav {
         position: fixed;
