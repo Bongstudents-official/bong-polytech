@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applied Physics MCQ Quiz | WB Polytechnic PYQ Practice | Bong Polytechnic</title>
+<meta name="description"
+content="Practice Applied Physics MCQ quiz for WB Polytechnic with previous year questions, important repeated concepts, optics, semiconductors, laser, magnetism, and exam preparation.">
+<meta name="robots"
+content="index, follow">
+<link rel="canonical"
+href="https://bong-polytech.vercel.app/physics-quiz.html">
+<meta property="og:title"
+content="Applied Physics MCQ Quiz | Bong Polytechnic">
+<meta property="og:description"
+content="Practice real WB Polytechnic Applied Physics MCQ based on previous year questions and exam analysis.">
+<meta property="og:type"
+content="website">
+<meta property="og:url"
+content="https://bong-polytech.vercel.app/physics-quiz.html">
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        :root {
+            --primary-color: #2e7d32;
+            --secondary-color: #1565c0;
+            --bg-color: #f4f7f6;
+            --text-color: #333;
+            --white: #ffffff;
+        }
+
+        .body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            margin: 0;
+            min-height: 100vh;
+        }
+
+        .quiz-container {
+            background-color: var(--white);
+            width: 95%;
+            max-width: 700px;
+            border-radius: 12px;
+            box-shadow: 0 11px 14px rgba(0,0,0,0.1);
+            padding: 30px;
+            text-align: center;
+        }
+
+        #progress-container {
+            width: 100%;
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            height: 10px;
+        }
+
+        #progress-bar {
+            width: 0%;
+            height: 100%;
+            background-color: var(--primary-color);
+            border-radius: 10px;
+            transition: width 0.3s ease;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+
+        .option-btn {
+            background-color: #fff;
+            border: 2px solid #ddd;
+            padding: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: left;
+            font-size: 1rem;
+        }
+
+        .option-btn.correct { background-color: #c8e6c9; border-color: #4caf50; }
+        .option-btn.wrong { background-color: #ffcdd2; border-color: #f44336; }
+
+        #next-btn, #restart-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        #next-btn { display: none; margin-left: auto; }
+        #result-screen { display: none; }
+    </style>
+</head>
+<body id="body">
+        <header class="navbar">
+            <div class="top">
+                <h1 style="color: darkturquoise" class="logo">BONG POLYTECHNIC</h1>
+                <nav id="navMenu">
+                    <a href="index.html" class="bt">Home</a>
+                    <a href="index.html#pyqs" class="bt">PYQs</a>
+                    <a href="notes.html" class="bt">Notes</a>
+                    <a href="about.html" class="bt">About</a>
+                    <a href="contact.html" class="bt">Contact</a>
+                </nav>
+            </div>
+            <div class="hamburger" onclick="toggleMenu()">☰</div>
+        </header>
+    <br><br><br><br><br><br><section class="categories" style="align-content: center; justify-content: center;display: flex">
+<div class="quiz-container">
+    <div id="quiz-screen">
+        <h1 style="color: var(--primary-color);">Applied Physics II Quiz🔥</h1>
+        <p  style="color: rgba(0, 0, 0, 0.32)"><i>Questions are shuffled for every new attempt.</i></p>
+        <br>
+        <div id="progress-container"><div id="progress-bar"></div></div>
+        
+        <div id="question-text" style="font-size: 1.2rem; font-weight: bold; margin-bottom: 20px;"></div>
+        <div class="options-grid" id="options-container"></div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px;">
+            <span id="question-count" style="color: rgba(0, 0, 0, 0.32)"></span>
+            <button id="next-btn">Next Question</button>
+        </div>
+    </div>
+
+    <div id="result-screen">
+        <h1>Quiz Complete!</h1>
+        <div style="font-size: 2rem; color: var(--secondary-color);" id="final-score"></div>
+        <button id="restart-btn">Try Again (Reshuffle)</button>
+    </div>
+    </div></section>
+  <br /><br /><br />
+        <div class="footer">
+            <a href="#"><h3>Bong Polytechnic</h3></a>
+            <p>Your Study Partner For PYQs, Notes & Resources</p>
+            <div class="fl">
+                <a href="index.html">Home</a>
+                <a href="index.html#pyqs">PYQs</a>
+                <a href="notes.html">Notes</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+                <a href="privacy.html">Privacy Policy</a>
+            </div>
+            <div class="fl">
+                <a href="disclaimer.html">Disclaimer</a>
+                <a href="terms.html">Terms & Conditions</a>
+            </div>
+            <p>&copy;2026 Bong Polytechnic. All Rights Reserved.</p>
+        </div>
+        <div></div>
+<script>
+    const originalData = [
+        // Content extracted from Chapter 1 to 7 of the source
+        { q: "What happens to the wavelength of a sound wave in air if its frequency increases?", options: ["The wavelength decreases", "The wavelength increases", "The wavelength remains constant", "The wavelength becomes zero"], correct: 0 },
+        { q: "What is the beat frequency if two waves of 400 Hz and 405 Hz interfere?", options: ["5 Hz", "400 Hz", "405 Hz", "805 Hz"], correct: 0 },
+        { q: "If y1 = 6 sin 250πt and y2 = 3 sin 256πt superpose, the number of beats per second is:", options: ["3", "5", "6", "8"], correct: 0 },
+        { q: "For the particle executing SHM y = 5 sin (2π/5)(10t + x), the frequency and amplitude are:", options: ["10, 5", "5, 2", "2, 5", "5/π, 5"], correct: 2 },
+        { q: "What is the total phase of a particle in SHM y = A sin(ωt + φ)?", options: ["ωt + φ", "ωt", "φ", "ω"], correct: 0 },
+        { q: "The working of an optical fibre is based on:", options: ["total internal reflection", "refraction", "interference", "diffraction"], correct: 0 },
+        { q: "Nature of image formed by convex lens when object is at twice the focal length?", options: ["Real and inverted", "Virtual and erect", "Real and erect", "Virtual and inverted"], correct: 0 },
+        { q: "Focal length of two contact lenses with power +5D and -2.5D?", options: ["+40cm", "-40cm", "+40m", "none of these"], correct: 0 },
+        { q: "Focal length of a convex lens is maximum for which color?", options: ["blue", "yellow", "green", "red"], correct: 3 },
+        { q: "Relationship between focal lengths of convex lens for blue (fb) and yellow (fy) light?", options: ["fb = fy", "fb > fy", "fb < fy", "fb << fy"], correct: 2 },
+        { q: "Maximum magnifying power of a convex lens with f = 5 cm?", options: ["6", "10", "25", "1"], correct: 0 },
+        { q: "If a lens is surrounded by a medium denser than air, focal length:", options: ["decreases", "increases", "remains same", "cannot be determined"], correct: 1 },
+        { q: "In interference, if dark band width is β1 and bright band is β2 then:", options: ["2β1 = β2", "2β2 = β1", "β1 = β2", "β1 + 3β2 = 1"], correct: 2 },
+        { q: "Speed of light in diamond (refractive index 2.4)? (c = 3x10^8 m/s)", options: ["3 x 10^8 m/s", "7.2 x 10^8 m/s", "1.25 x 10^8 m/s", "none of these"], correct: 2 },
+        { q: "Velocity of light in glass of refractive index 1.5?", options: ["3 x 10^8 m/s", "4.5 x 10^8 m/s", "2 x 10^8 m/s", "2 x 10^7 m/s"], correct: 2 },
+        { q: "The electric field inside a hollow conducting sphere is:", options: ["Increases towards centre", "Decreases towards centre", "Is finite and constant", "Is zero"], correct: 3 },
+        { q: "Which factor does capacitance depend on?", options: ["Voltage", "Current", "Area of plates", "Resistance"], correct: 2 },
+        { q: "The SI unit of resistivity is:", options: ["Ohm. m^-1", "Vm^-1", "Vm", "Ohm. m"], correct: 3 },
+        { q: "Currents 1A, 2A, 3A enter a junction. Current leaving is:", options: ["6A", "5A", "3A", "0A"], correct: 0 },
+        { q: "Charge flowing for 0.5A in 5 minutes?", options: ["216C", "300C", "150C", "25C"], correct: 2 },
+        { q: "Energy used by 2V source sending 0.2A for 5s?", options: ["0.2 J", "0.4 J", "4.0 J", "2.0 J"], correct: 3 },
+        { q: "Wire length (radius 0.25mm, resistivity 45x10^-8) for 8 Ohm resistance?", options: ["5m", "4.5m", "3.5m", "2.5m"], correct: 2 },
+        { q: "Specific resistance of wire (L=170cm, D=0.3mm, R=4 Ohm)?", options: ["1.66 x 10^-4 Ohm.m", "1.66 x 10^-3 Ohm.m", "1.66 x 10^-5 Ohm.m", "none"], correct: 0 },
+        { q: "Wire length halved and area doubled, resistance becomes:", options: ["four times", "two times", "halved", "one-fourth"], correct: 3 },
+        { q: "Wire length halved and area doubled, specific resistance:", options: ["unchanged", "halved", "doubled", "quadrupled"], correct: 0 },
+        { q: "Value of carbon resistor with Red-Red-Red-Gold bands?", options: ["200 +/- 5% Ohm", "2000 +/- 5% Ohm", "2200 +/- 5% Ohm", "2220 +/- 5% Ohm"], correct: 2 },
+        { q: "Specific resistance of copper depends on:", options: ["length", "area", "temperature", "all of these"], correct: 2 },
+        { q: "6 Ohm and 3 Ohm parallel, in series with 4 Ohm, 6V battery current?", options: ["1A", ">1A", "<1A", "none"], correct: 0 },
+        { q: "Current through 60W-240V bulb on 160V main?", options: ["1/2 A", "1/3 A", "1/6 A", "1/12 A"], correct: 2 },
+        { q: "Power for 6 Ohm and 8 Ohm parallel across 24V battery?", options: ["48W", "84W", "168W", "36W"], correct: 2 },
+        { q: "Resistance of lamp marked 100W, 220V?", options: ["22 Ohm", "484 Ohm", "576 Ohm", "2.2 Ohm"], correct: 1 },
+        { q: "Ratio of resistances 40W (110V) and 60W (220V) bulbs?", options: ["3 : 8", "3 : 4", "3 : 2", "3 : 1"], correct: 0 },
+        { q: "Heat evolved/absorbed at junction of dissimilar metals?", options: ["Seebeck", "Joule", "Peltier", "Thomson"], correct: 2 },
+        { q: "Dimensional formula of electric field (E = F/q)?", options: ["M1 L1 T-3 I-1", "M1 L1 T-3 C-1", "M1 L1 T-2 I-1", "M1 L1 T-2 C-1"], correct: 0 },
+        { q: "Magnetic field inside long solenoid of N turns, length L?", options: ["u0NI/2", "u0NI/2L", "u0NI/L", "none"], correct: 2 },
+        { q: "Lenz's law is a form of the law of:", options: ["conservation of energy", "conservation of charge", "conservation of mass", "none"], correct: 0 },
+        { q: "A moving charge produces:", options: ["electric only", "magnetic only", "both electric and magnetic", "none"], correct: 2 },
+        { q: "Which of the following does NOT exist?", options: ["static charge", "moving charge", "magnetic dipole", "magnetic monopole"], correct: 3 },
+        { q: "SI unit of magnetic flux is:", options: ["Weber", "Gauss", "Oersted", "Tesla"], correct: 0 },
+        { q: "Weber/m^2 (Tesla) is the unit of:", options: ["magnetic field", "magnetic flux density", "magnetic flux", "none"], correct: 1 },
+        { q: "SI unit of magnetic flux density is:", options: ["Weber", "Gauss", "Oersted", "Tesla"], correct: 3 },
+        { q: "Henry can also be expressed as:", options: ["Volt. s. Amp", "Volt. s. Amp^-1", "Volt. s^-1. Amp^-1", "Volt. s. Amp^-2"], correct: 1 },
+        { q: "Induced emf (1mH inductor, 5A to 3A in 10^-3s)?", options: ["2 x 10^-6 V", "8 x 10^-6 V", "2 V", "8 V"], correct: 2 },
+        { q: "Direction of induced emf in conductor moving across magnetic field?", options: ["Laplace", "Fleming Left", "Fleming Right", "none"], correct: 2 },
+        { q: "SI unit of magnetic pole strength is:", options: ["Am", "Am^-1", "Am^-2", "Am^2"], correct: 0 },
+        { q: "In germanium crystal, energy band gap is:", options: ["0.068 eV", "6.8 eV", "68 eV", "0.68 eV"], correct: 3 },
+        { q: "In a junction diode the holes are due to:", options: ["protons", "extra electrons", "neutrons", "missing electrons"], correct: 3 },
+        { q: "In a transistor the base is doped:", options: ["heavily", "moderately", "lightly", "randomly"], correct: 2 },
+        { q: "In unbiased p-n junction, Idiff and Idrift relationship?", options: ["Idiff = Idrift", "Idiff > Idrift", "Idiff < Idrift", "Idiff >> Idrift"], correct: 0 },
+        { q: "Forward bias voltage increased, width of depletion region:", options: ["decrease", "increase", "remain same", "increase proportional"], correct: 0 },
+        { q: "Which transistor doping statement is correct?", options: ["Emitter highly doped", "Base moderately doped", "Collector lightly doped", "none"], correct: 0 },
+        { q: "Depletion region of p-n junction has a shortage of:", options: ["Acceptor ions", "Holes and electrons", "Donor ions", "none"], correct: 1 },
+        { q: "Temp. coefficient of resistance of semiconductor is:", options: ["positive", "zero", "constant", "negative"], correct: 3 },
+        { q: "The output of a full wave rectifier is:", options: ["AC voltage", "constant DC", "zero", "pulsating unidirectional"], correct: 3 },
+        { q: "Impurity material to obtain p-type semiconductor?", options: ["tetravalent", "pentavalent", "trivalent", "none"], correct: 2 },
+        { q: "Energy of first excited state of hydrogen atom?", options: ["-13.6 eV", "-3.4 eV", "-1.51 eV", "none"], correct: 1 },
+        { q: "Staying time of atoms in metastable states (seconds)?", options: ["10^-2", "10^-3", "10^-4", "10^-6"], correct: 1 },
+        { q: "X-rays are deflected by:", options: ["electric", "magnetic", "both", "neither"], correct: 3 },
+        { q: "X-ray penetrating power can be increased by:", options: ["inc. filament current", "inc. tube voltage", "dec. filament current", "dec. tube voltage"], correct: 1 },
+        { q: "In X-ray experiment, Ka and Kb denote:", options: ["Char. lines", "Cont. wavelength", "alpha, beta emissions", "none"], correct: 2 },
+        { q: "X-ray intensity can be increased by:", options: ["inc. tube voltage", "dec. tube voltage", "dec. filament current", "inc. filament current"], correct: 3 },
+        { q: "Characteristic X-ray depends on:", options: ["nature of target", "electron velocity", "striking number", "none"], correct: 0 },
+        { q: "Pumping method used in He-Ne laser is:", options: ["optical", "gas dynamic", "chemical", "electrical"], correct: 3 },
+        { q: "Lasing action is based on:", options: ["stimulated emission", "spontaneous emission", "absorption", "none"], correct: 0 },
+        { q: "Freq. relationship: X-rays(a), Gamma(b), Visible(c)?", options: ["a < b, b > c", "a < b, b < c", "a > b > c", "a > b, b < c"], correct: 0 }
+    ];
+
+    let quizData = [];
+    let currentQuestionIndex = 0;
+    let score = 0;
+
+    // Shuffle Function (Fisher-Yates)
+    function shuffle(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+    }
+
+    function initQuiz() {
+        quizData = JSON.parse(JSON.stringify(originalData)); // Deep copy
+        shuffle(quizData); // Shuffle the question order
+        currentQuestionIndex = 0;
+        score = 0;
+        document.getElementById("quiz-screen").style.display = "block";
+        document.getElementById("result-screen").style.display = "none";
+        loadQuestion();
+    }
+
+    function loadQuestion() {
+        const data = quizData[currentQuestionIndex];
+        document.getElementById("question-text").innerText = data.q;
+        const container = document.getElementById("options-container");
+        container.innerHTML = "";
+        document.getElementById("next-btn").style.display = "none";
+
+        data.options.forEach((opt, i) => {
+            const btn = document.createElement("button");
+            btn.innerText = opt;
+            btn.classList.add("option-btn");
+            btn.onclick = () => {
+                const btns = container.getElementsByClassName("option-btn");
+                if (i === data.correct) {
+                    btn.classList.add("correct");
+                    score++;
+                } else {
+                    btn.classList.add("wrong");
+                    btns[data.correct].classList.add("correct");
+                }
+                Array.from(btns).forEach(b => b.disabled = true);
+                document.getElementById("next-btn").style.display = "block";
+            };
+            container.appendChild(btn);
+        });
+
+        document.getElementById("question-count").innerText = `Question ${currentQuestionIndex + 1} of ${quizData.length}`;
+        document.getElementById("progress-bar").style.width = `${(currentQuestionIndex / quizData.length) * 100}%`;
+    }
+
+    document.getElementById("next-btn").onclick = () => {
+        currentQuestionIndex++;
+        if (currentQuestionIndex < quizData.length) loadQuestion();
+        else {
+            document.getElementById("quiz-screen").style.display = "none";
+            document.getElementById("result-screen").style.display = "block";
+            document.getElementById("final-score").innerText = `${score} / ${quizData.length}`;
+        }
+    };
+
+    document.getElementById("restart-btn").onclick = initQuiz;
+
+    initQuiz(); // Initial Start
+</script>
+<script src="script.js"></script>
+    </body>
+</html>
