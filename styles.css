@@ -586,3 +586,9 @@ font-size:16px;
 }
 
 }
+/* Safety fallback: Forces the categories section to be visible */
+.categories.reveal {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+}
