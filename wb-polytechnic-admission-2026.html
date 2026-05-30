@@ -80,6 +80,99 @@
 .subject-card li {
   margin-bottom: 6px;
 }
+            
+            
+            
+            
+            
+           
+
+.header{
+text-align:center;
+margin-bottom:30px;
+}
+
+.header h1{
+font-size:2.2rem;
+margin-bottom:10px;
+}
+
+.header p{
+color:#cbd5e1;
+}
+
+.search-box{
+max-width:700px;
+margin:20px auto;
+}
+
+.search-box input{
+width:100%;
+padding:15px;
+border:none;
+border-radius:12px;
+font-size:1rem;
+}
+
+.section-title{
+margin:40px 0 20px;
+font-size:1.6rem;
+color:#38bdf8;
+}
+
+.college-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:20px;
+padding: 15px;
+}
+
+.card{
+background:#12161e;
+padding:20px;
+border-radius:18px;
+transition:.3s;
+border:1px solid rgba(255,255,255,.08);
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+.rank{
+display:inline-block;
+background:#fcfcfc;
+color:#000000;
+padding:5px 12px;
+border-radius:20px;
+font-weight:bold;
+margin-bottom:10px;
+}
+
+.card h3{
+margin-bottom:10px;
+color: #ffffff;
+}
+
+.district{
+color:#94a3b8;
+margin-bottom:10px;
+}
+
+.course{
+font-size:.9rem;
+color:#e2e8f0;
+margin-bottom:8px;
+}
+
+.badge{
+display:inline-block;
+background:#22c55e;
+padding:4px 10px;
+border-radius:20px;
+font-size:.8rem;
+margin-top:10px;
+}
 </style>
     </head>
 
@@ -159,6 +252,645 @@
                 prepare smarter.
             </p>
         </section>
+        <div class="header">
+<h1>🏛 West Bengal Polytechnic Colleges</h1>
+<p>Government & Private Polytechnic Colleges in West Bengal</p>
+</div>
+
+<div class="search-box">
+<input type="text" id="searchInput" placeholder="Search college or district...">
+</div>
+
+<h2 class="section-title">🏆 Top Government Polytechnic Colleges</h2>
+
+<div class="college-grid" id="collegeContainer">
+
+<div class="card">
+  <span class="rank">#1</span>
+  <h3>Acharya Jagadish Chandra Bose Polytechnic</h3>
+  <p class="district">📍 North 24 Parganas</p>
+  <p class="course">CE, EE, ETCE, ME</p>
+  <span class="badge">Government</span>
+</div>
+
+<div class="card">
+  <span class="rank">#2</span>
+  <h3>Acharyya Prafulla Chandra Roy Polytechnic</h3>
+  <p class="district">📍 South 24 Parganas</p>
+  <p class="course">CE, CST, EE, EIE, FPT, ME</p>
+  <span class="badge">Government</span>
+</div>
+
+<div class="card">
+  <span class="rank">#3</span>
+  <h3>Alipurduar Damanpur Government Polytechnic</h3>
+  <p class="district">📍 Alipurduar</p>
+  <p class="course">CST, ECE, EE</p>
+  <span class="badge">Government</span>
+</div>
+
+<div class="card">
+  <span class="rank">#4</span>
+  <h3>Arambagh Government Polytechnic</h3>
+  <p class="district">📍 Hooghly</p>
+  <p class="course">CE, EE, ME</p>
+  <span class="badge">Government</span>
+</div>
+
+<div class="card">
+  <span class="rank">#5</span>
+  <h3>Gaighata Government Polytechnic</h3>
+  <p class="district">📍 North 24 Parganas</p>
+  <p class="course">ME, EE, CE</p>
+  <span class="badge">Government</span>
+</div>
+
+<div class="card">
+  <span class="rank">#6</span>
+  <h3>Medinipur Sadar Government Polytechnic</h3>
+  <p class="district">📍 Paschim Medinipur</p>
+  <p class="course">ME, EE, CE</p>
+  <span class="badge">Government</span>
+</div>
+
+<div class="card">
+  <span class="rank">#7</span>
+  <h3>M.B.C. Institute of Engineering & Technology</h3>
+  <p class="district">📍 Purba Bardhaman</p>
+  <p class="course">CE, ME, EE, CST</p>
+  <span class="badge">Government</span>
+</div>
+
+<div class="card">
+  <span class="rank">#8</span>
+  <h3>Nazrul Centenary Polytechnic</h3>
+  <p class="district">📍 Paschim Bardhaman</p>
+  <p class="course">CE, ME Production, EIE</p>
+  <span class="badge">Government</span>
+</div>
+
+<div class="card">
+  <span class="rank">#9</span>
+  <h3>Bundwan Polytechnic</h3>
+  <p class="district">📍 Purulia</p>
+  <p class="course">EE, ME</p>
+  <span class="badge">Government</span>
+</div>
+
+<div class="card">
+  <span class="rank">#10</span>
+  <h3>Women's Polytechnic Chandannagar</h3>
+  <p class="district">📍 Hooghly</p>
+  <p class="course">CST, ETCE, IT</p>
+  <span class="badge">Government</span>
+</div>
+
+<div class="card">
+  <span class="rank">#11</span>
+  <h3>Asansol Polytechnic</h3>
+  <p class="district">📍 Paschim Bardhaman</p>
+  <p class="course">CE, EE, ME, MetE, MineE</p>
+  <span class="badge">Government</span>
+</div>
+
+<div class="card">
+  <span class="rank">#12</span>
+  <h3>Central Calcutta Polytechnic</h3>
+  <p class="district">📍 Kolkata</p>
+  <p class="course">EE, ME, CST, ETCE</p>
+  <span class="badge">Government</span>
+</div>
+
+<div class="card">
+  <span class="rank">#13</span>
+  <h3>North Calcutta Polytechnic</h3>
+  <p class="district">📍 Kolkata</p>
+  <p class="course">CE, EE, ME, ETCE</p>
+  <span class="badge">Government</span>
+</div>
+
+<div class="card">
+  <span class="rank">#14</span>
+  <h3>The Calcutta Technical School</h3>
+  <p class="district">📍 Kolkata</p>
+  <p class="course">EE, ME, CST, ETCE</p>
+  <span class="badge">Government</span>
+</div>
+
+<div class="card">
+  <span class="rank">#15</span>
+  <h3>Hooghly Institute of Technology</h3>
+  <p class="district">📍 Hooghly</p>
+  <p class="course">CE, EE, ME, ChE</p>
+  <span class="badge">Government</span>
+</div>
+
+<div class="card">
+  <span class="rank">#16</span>
+  <h3>Jalpaiguri Polytechnic Institute</h3>
+  <p class="district">📍 Jalpaiguri</p>
+  <p class="course">CE, EE, ME, ETCE</p>
+  <span class="badge">Government</span>
+</div>
+
+<div class="card">
+  <span class="rank">#17</span>
+  <h3>Kanyapur Polytechnic</h3>
+  <p class="district">📍 Paschim Bardhaman</p>
+  <p class="course">EE, ME, CST, ETCE</p>
+  <span class="badge">Government</span>
+</div>
+
+<div class="card">
+  <span class="rank">#18</span>
+  <h3>Malda Polytechnic</h3>
+  <p class="district">📍 Malda</p>
+  <p class="course">CE, EE, ME, CST, Automobile</p>
+  <span class="badge">Government</span>
+</div>
+
+<div class="card">
+  <span class="rank">#19</span>
+  <h3>Murshidabad Institute of Technology</h3>
+  <p class="district">📍 Murshidabad</p>
+  <p class="course">CE, EE, ME, Agricultural Engg</p>
+  <span class="badge">Government</span>
+</div>
+
+<div class="card">
+  <span class="rank">#20</span>
+  <h3>Purulia Polytechnic</h3>
+  <p class="district">📍 Purulia</p>
+  <p class="course">CE, EE, ME, ETCE, MetE</p>
+  <span class="badge">Government</span>
+</div>
+
+<div class="card">
+  <span class="rank">#21</span>
+  <h3>Siliguri Government Polytechnic</h3>
+  <p class="district">📍 Darjeeling</p>
+  <p class="course">CE, EE, ME, CST, ETCE</p>
+  <span class="badge">Government</span>
+</div>
+
+<div class="card">
+  <span class="rank">#22</span>
+  <h3>K.G. Engineering Institute</h3>
+  <p class="district">📍 Bankura</p>
+  <p class="course">CE, EE, ME, CST, ETCE</p>
+  <span class="badge">Government</span>
+</div>
+
+<div class="card">
+  <span class="rank">#23</span>
+  <h3>Contai Polytechnic</h3>
+  <p class="district">📍 Purba Medinipur</p>
+  <p class="course">CE, EE, ME, CST, Chemical</p>
+  <span class="badge">Government</span>
+</div>
+
+<div class="card">
+  <span class="rank">#24</span>
+  <h3>Cooch Behar Polytechnic</h3>
+  <p class="district">📍 Cooch Behar</p>
+  <p class="course">CE, EE, ME, Automobile</p>
+  <span class="badge">Government</span>
+</div>
+
+<div class="card">
+  <span class="rank">#25</span>
+  <h3>Dr. Meghnad Saha Institute of Technology</h3>
+  <p class="district">📍 Purba Medinipur</p>
+  <p class="course">CE, EE, ME, CST, Chemical</p>
+  <span class="badge">Government</span>
+</div>
+
+<div class="card">
+  <span class="rank">#26</span>
+  <h3>Iswar Chandra Vidyasagar Polytechnic</h3>
+  <p class="district">📍 Jhargram</p>
+  <p class="course">CE, EE, ME, MetE</p>
+  <span class="badge">Government</span>
+</div>
+
+<div class="card">
+  <span class="rank">#27</span>
+  <h3>B.P.C. Institute of Technology</h3>
+  <p class="district">📍 Nadia</p>
+  <p class="course">CE, EE, ME</p>
+  <span class="badge">Government</span>
+</div>
+
+<div class="card">
+  <span class="rank">#28</span>
+  <h3>Sree Ramkrishna Silpa Vidyapith</h3>
+  <p class="district">📍 Birbhum</p>
+  <p class="course">CE, EE, ME</p>
+  <span class="badge">Government</span>
+</div>
+
+<div class="card">
+  <span class="rank">#29</span>
+  <h3>Baruipur Government Polytechnic</h3>
+  <p class="district">📍 South 24 Parganas</p>
+  <p class="course">CE, EE, ME</p>
+  <span class="badge">Government</span>
+</div>
+
+<div class="card">
+  <span class="rank">#30</span>
+  <h3>Behala Government Polytechnic</h3>
+  <p class="district">📍 Kolkata</p>
+  <p class="course">CST, ETCE, Cyber Security</p>
+  <span class="badge">Government</span>
+</div>
+
+<div class="card">
+  <span class="rank">#31</span>
+  <h3>Bankura Government Polytechnic</h3>
+  <p class="district">📍 Bankura</p>
+  <p class="course">CE, EE, ME</p>
+  <span class="badge">Government</span>
+</div>
+
+<div class="card">
+  <span class="rank">#32</span>
+  <h3>Gangarampur Government Polytechnic</h3>
+  <p class="district">📍 Dakshin Dinajpur</p>
+  <p class="course">CE, EE, ME</p>
+  <span class="badge">Government</span>
+</div>
+
+<div class="card">
+  <span class="rank">#33</span>
+  <h3>Raiganj Polytechnic</h3>
+  <p class="district">📍 Uttar Dinajpur</p>
+  <p class="course">CE, EE, ME</p>
+  <span class="badge">Government</span>
+</div>
+
+<div class="card">
+  <span class="rank">#34</span>
+  <h3>Kolaghat Government Polytechnic</h3>
+  <p class="district">📍 Purba Medinipur</p>
+  <p class="course">EE, ME</p>
+  <span class="badge">Government</span>
+</div>
+
+<div class="card">
+  <span class="rank">#35</span>
+  <h3>Raghunathpur Government Polytechnic</h3>
+  <p class="district">📍 Purulia</p>
+  <p class="course">EE, ME, CE</p>
+  <span class="badge">Government</span>
+</div>
+
+<div class="card">
+  <span class="rank">#36</span>
+  <h3>Jangipur Government Polytechnic</h3>
+  <p class="district">📍 Murshidabad</p>
+  <p class="course">CE, EE, ME</p>
+  <span class="badge">Government</span>
+</div>
+
+<div class="card">
+  <span class="rank">#37</span>
+  <h3>Gayeshpur Government Polytechnic</h3>
+  <p class="district">📍 Nadia</p>
+  <p class="course">CE, EE, ME</p>
+  <span class="badge">Government</span>
+</div>
+
+<div class="card">
+  <span class="rank">#38</span>
+  <h3>Sheikh Para Abdur Rahaman Vaccine Polytechnic</h3>
+  <p class="district">📍 Murshidabad</p>
+  <p class="course">DMLT, FPT, CST</p>
+  <span class="badge">Government</span>
+</div>
+
+<div class="card">
+  <span class="rank">#39</span>
+  <h3>Mathabhanga Government Polytechnic</h3>
+  <p class="district">📍 Cooch Behar</p>
+  <p class="course">CE, EE, ME</p>
+  <span class="badge">Government</span>
+</div>
+
+<div class="card">
+  <span class="rank">#40</span>
+  <h3>Uluberia Government Polytechnic</h3>
+  <p class="district">📍 Howrah</p>
+  <p class="course">CE, ME, EE</p>
+  <span class="badge">Government</span>
+</div>
+
+<div class="card">
+  <span class="rank">#41</span>
+  <h3>Memari Government Polytechnic</h3>
+  <p class="district">📍 Purba Bardhaman</p>
+  <p class="course">CE, EE, ME</p>
+  <span class="badge">Government</span>
+</div>
+
+<div class="card">
+  <span class="rank">#42</span>
+  <h3>Kalna Polytechnic</h3>
+  <p class="district">📍 Purba Bardhaman</p>
+  <p class="course">CE, EE, ME</p>
+  <span class="badge">Government</span>
+</div>
+
+<div class="card">
+  <span class="rank">#43</span>
+  <h3>Tufanganj Government Polytechnic</h3>
+  <p class="district">📍 Cooch Behar</p>
+  <p class="course">CE, EE, ME</p>
+  <span class="badge">Government</span>
+</div>
+
+<div class="card">
+  <span class="rank">#44</span>
+  <h3>Baghmundi Government Polytechnic</h3>
+  <p class="district">📍 Purulia</p>
+  <p class="course">CE, EE, ME</p>
+  <span class="badge">Government</span>
+</div>
+
+<div class="card">
+  <span class="rank">#45</span>
+  <h3>Khatra Government Polytechnic</h3>
+  <p class="district">📍 Bankura</p>
+  <p class="course">CE, EE, ME</p>
+  <span class="badge">Government</span>
+</div>
+
+<div class="card">
+  <span class="rank">#46</span>
+  <h3>Maynaguri Government Polytechnic</h3>
+  <p class="district">📍 Jalpaiguri</p>
+  <p class="course">CE, EE, ME</p>
+  <span class="badge">Government</span>
+</div>
+
+<div class="card">
+  <span class="rank">#47</span>
+  <h3>Rajganj Government Polytechnic</h3>
+  <p class="district">📍 Jalpaiguri</p>
+  <p class="course">CE, EE, ME</p>
+  <span class="badge">Government</span>
+</div>
+
+<div class="card">
+  <span class="rank">#48</span>
+  <h3>Hilli Government Polytechnic</h3>
+  <p class="district">📍 Dakshin Dinajpur</p>
+  <p class="course">CE, EE, ME</p>
+  <span class="badge">Government</span>
+</div>
+
+<div class="card">
+  <span class="rank">#49</span>
+  <h3>Itahar Government Polytechnic</h3>
+  <p class="district">📍 Uttar Dinajpur</p>
+  <p class="course">CE, EE, ME</p>
+  <span class="badge">Government</span>
+</div>
+
+<div class="card">
+  <span class="rank">#50</span>
+  <h3>Islampur Government Polytechnic</h3>
+  <p class="district">📍 Uttar Dinajpur</p>
+  <p class="course">CE, EE, ME</p>
+  <span class="badge">Government</span>
+</div>
+
+
+</div>
+
+<h2 class="section-title">🏢 Top Private Polytechnic Colleges</h2>
+
+<div class="college-grid">
+
+<div class="card">
+  <span class="rank">#1</span>
+  <h3>Technique Polytechnic Institute</h3>
+  <p class="district">📍 Hooghly</p>
+  <p class="course">CE, CST, EE, ECE, ME</p>
+  <span class="badge">Private</span>
+</div>
+
+<div class="card">
+  <span class="rank">#2</span>
+  <h3>JIS School of Polytechnic</h3>
+  <p class="district">📍 Nadia</p>
+  <p class="course">CE, CST, EE, ETCE, ME</p>
+  <span class="badge">Private</span>
+</div>
+
+<div class="card">
+  <span class="rank">#3</span>
+  <h3>Kingston Polytechnic College</h3>
+  <p class="district">📍 North 24 Parganas</p>
+  <p class="course">CE, CST, EE, ECE, ME, Automobile</p>
+  <span class="badge">Private</span>
+</div>
+
+<div class="card">
+  <span class="rank">#4</span>
+  <h3>Techno India Polytechnic</h3>
+  <p class="district">📍 Kolkata</p>
+  <p class="course">CE, CST, EE, ETCE, ME</p>
+  <span class="badge">Private</span>
+</div>
+
+<div class="card">
+  <span class="rank">#5</span>
+  <h3>Shree Ramkrishna Institute of Science and Technology</h3>
+  <p class="district">📍 South 24 Parganas</p>
+  <p class="course">CE, CST, EE, ETCE, ME</p>
+  <span class="badge">Private</span>
+</div>
+
+<div class="card">
+  <span class="rank">#6</span>
+  <h3>Narula Institute of Technology (Diploma Div.)</h3>
+  <p class="district">📍 North 24 Parganas</p>
+  <p class="course">EE, ETCE</p>
+  <span class="badge">Private</span>
+</div>
+
+<div class="card">
+  <span class="rank">#7</span>
+  <h3>Swami Vivekananda Institute of Science & Technology</h3>
+  <p class="district">📍 South 24 Parganas</p>
+  <p class="course">CE, CST, EE, ETCE, ME</p>
+  <span class="badge">Private</span>
+</div>
+
+<div class="card">
+  <span class="rank">#8</span>
+  <h3>ABS Academy of Polytechnic</h3>
+  <p class="district">📍 Paschim Bardhaman</p>
+  <p class="course">CE, CST, EE, ME, Mining Engg</p>
+  <span class="badge">Private</span>
+</div>
+
+<div class="card">
+  <span class="rank">#9</span>
+  <h3>Abacus Institute of Engineering and Management</h3>
+  <p class="district">📍 Hooghly</p>
+  <p class="course">CE, CST, EE, ME</p>
+  <span class="badge">Private</span>
+</div>
+
+<div class="card">
+  <span class="rank">#10</span>
+  <h3>Budged Budge Institute of Technology</h3>
+  <p class="district">📍 South 24 Parganas</p>
+  <p class="course">CE, CST, EE, ETCE, ME</p>
+  <span class="badge">Private</span>
+</div>
+
+<!-- 11 to 20 -->
+<div class="card">
+  <span class="rank">#11</span>
+  <h3>Siliguri Institute of Technology</h3>
+  <p class="district">📍 Darjeeling</p>
+  <p class="course">CST, EE, ETCE</p>
+  <span class="badge">Private</span>
+</div>
+
+<div class="card">
+  <span class="rank">#12</span>
+  <h3>Luthfaa Polytechnic Institute</h3>
+  <p class="district">📍 Paschim Bardhaman</p>
+  <p class="course">CE, CST, EE, ETCE, ME, Mining Engg</p>
+  <span class="badge">Private</span>
+</div>
+
+<div class="card">
+  <span class="rank">#13</span>
+  <h3>Dr. Sudhir Chandra Sur Institute of Technology</h3>
+  <p class="district">📍 Kolkata</p>
+  <p class="course">CE, EE, ME, Automobile</p>
+  <span class="badge">Private</span>
+</div>
+
+<div class="card">
+  <span class="rank">#14</span>
+  <h3>Aryabhatta Institute of Engineering & Management</h3>
+  <p class="district">📍 Paschim Bardhaman</p>
+  <p class="course">CE, CST, EE, ME</p>
+  <span class="badge">Private</span>
+</div>
+
+<div class="card">
+  <span class="rank">#15</span>
+  <h3>Rajendranath College of Polytechnic</h3>
+  <p class="district">📍 Paschim Bardhaman</p>
+  <p class="course">CE, CST, EE, ME, Automobile</p>
+  <span class="badge">Private</span>
+</div>
+
+<div class="card">
+  <span class="rank">#16</span>
+  <h3>The New Horizons Institute of Technology</h3>
+  <p class="district">📍 Paschim Bardhaman</p>
+  <p class="course">CE, EE, ME, Automobile</p>
+  <span class="badge">Private</span>
+</div>
+
+<div class="card">
+  <span class="rank">#17</span>
+  <h3>Bengal Institute of Technology</h3>
+  <p class="district">📍 Purba Bardhaman</p>
+  <p class="course">CST, IT, ETCE, Automobile</p>
+  <span class="badge">Private</span>
+</div>
+
+<div class="card">
+  <span class="rank">#18</span>
+  <h3>N S Polytechnic College</h3>
+  <p class="district">📍 Purulia</p>
+  <p class="course">CE, EE, ME</p>
+  <span class="badge">Private</span>
+</div>
+
+<div class="card">
+  <span class="rank">#19</span>
+  <h3>Saroj Mohan Institute of Technology</h3>
+  <p class="district">📍 Hooghly</p>
+  <p class="course">CE, CST, EE, ETCE, ME</p>
+  <span class="badge">Private</span>
+</div>
+
+<div class="card">
+  <span class="rank">#20</span>
+  <h3>Greater Kolkata College of Engineering and Management</h3>
+  <p class="district">📍 South 24 Parganas</p>
+  <p class="course">EE, ETCE, ME</p>
+  <span class="badge">Private</span>
+</div>
+
+<!-- 21 to 25 -->
+<div class="card">
+  <span class="rank">#21</span>
+  <h3>Santiniketan Polytechnic</h3>
+  <p class="district">📍 Birbhum</p>
+  <p class="course">CE, EE, ME, ETCE</p>
+  <span class="badge">Private</span>
+</div>
+
+<div class="card">
+  <span class="rank">#22</span>
+  <h3>Pailan Technical Campus</h3>
+  <p class="district">📍 South 24 Parganas</p>
+  <p class="course">CE, CST, EE, ME</p>
+  <span class="badge">Private</span>
+</div>
+
+<div class="card">
+  <span class="rank">#23</span>
+  <h3>Gobindapur Sephali Memorial Polytechnic</h3>
+  <p class="district">📍 Purba Bardhaman</p>
+  <p class="course">CE, EE, ME, ETCE</p>
+  <span class="badge">Private</span>
+</div>
+
+<div class="card">
+  <span class="rank">#24</span>
+  <h3>Gani Khan Choudhury Institute of Engineering & Technology</h3>
+  <p class="district">📍 Malda</p>
+  <p class="course">CE, EE, ME</p>
+  <span class="badge">Private</span>
+</div>
+
+<div class="card">
+  <span class="rank">#25</span>
+  <h3>Gopsai Avinandan Sangha Polytechnic</h3>
+  <p class="district">📍 Paschim Medinipur</p>
+  <p class="course">CE, EE, ME</p>
+  <span class="badge">Private</span>
+</div>
+
+
+</div>
+
+<script>
+const searchInput=document.getElementById("searchInput");
+
+searchInput.addEventListener("keyup",function(){
+let filter=searchInput.value.toLowerCase();
+let cards=document.querySelectorAll(".card");
+
+cards.forEach(card=>{
+let text=card.innerText.toLowerCase();
+card.style.display=text.includes(filter)?"block":"none";
+});
+});
+</script>
+
         <section class="semester-section">
   <h2>📚 1st Semester Subjects & Key Topics</h2>
 
