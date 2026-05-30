@@ -394,11 +394,82 @@ nav a:hover {
 }
 
 /* --- Core Copy & SEO Blocks --- */
-.seo-section, .faq-section, .seo-article, .seo-admission, .sgpa-section {
+/* --- High-End Typography & Section Structural Layout --- */
+.seo-section, 
+.faq-section, 
+.seo-article, 
+.seo-admission, 
+.sgpa-section {
     max-width: 860px;
-    margin: auto;
-    padding: 80px 8%;
+    margin: 0 auto;
+    /* Optimized vertical spacing to prevent giant empty voids between sections */
+    padding: 60px 24px; 
     line-height: 1.85;
+}
+
+/* --- Premium Left-Accent Border Styling for Section Headings --- */
+.seo-article h1, 
+.seo-admission h1,
+.seo-section h1,
+.faq-section h2,
+.sgpa-section h2 {
+    font-size: 38px;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    line-height: 1.2;
+    color: var(--text-main);
+    margin-bottom: 28px;
+    position: relative;
+}
+
+.seo-article h2, 
+.seo-admission h2,
+.seo-section h2,
+.sgpa-section h3 {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-top: 44px;
+    margin-bottom: 18px;
+    padding-left: 18px;
+    color: var(--text-main);
+    
+    /* Luxury vertical accent line that roots the text visually */
+    border-left: 4px solid var(--accent);
+    will-change: padding-left, border-color;
+    transition: 
+        padding-left 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+        border-color 0.4s ease,
+        color 0.4s ease;
+}
+
+/* Subtle interactive slide effect when reading/hovering over subheadings */
+.seo-article h2:hover, 
+.seo-admission h2:hover,
+.seo-section h2:hover,
+.sgpa-section h3:hover {
+    padding-left: 24px;
+    color: var(--accent);
+    border-color: var(--text-main);
+}
+
+/* --- Clean, Readable Body Copy Styling --- */
+.seo-section p, 
+.seo-article p, 
+.seo-admission p,
+.sgpa-section p {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+/* Smooth color highlight when a user highlights your SEO copy */
+.seo-section p::selection,
+.seo-article p::selection,
+.seo-admission p::selection {
+    background: rgba(37, 99, 235, 0.1);
+    color: var(--accent);
 }
 
 .seo-article h1, .seo-admission h1 {
