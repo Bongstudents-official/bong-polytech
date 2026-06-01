@@ -145,14 +145,14 @@ nav a:hover {
 /* --- Premium Interactive Hero Section --- */
 .hero {
     text-align: center;
-    padding: 148px 21px 97px;
+    padding: 125px 50px 100px;
     position: relative;
 }
 
 .hero h1 {
-    font-size: 71px;
-    font-weight: 800;
-    letter-spacing: 1.6px;
+    font-size: 3rem;
+    font-weight: 960;
+    letter-spacing: 2.5px;
     line-height: 1.05;
     margin-bottom: -50px;
     color: var(--text-main);
@@ -186,13 +186,13 @@ nav a:hover {
 .tools {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-    gap: 36px;
-    padding: 60px 8%;
+    gap: 38px;
+    padding: 60px 15%;
 }
 
 .tool-card {
-    padding: 55px 40px;
-    border-radius: 24px;
+    padding: 33px 21px;
+    border-radius: 32px;
     text-align: center;
     position: relative;
     z-index: 1;
@@ -200,7 +200,7 @@ nav a:hover {
     
     /* --- Base State --- */
     /* Clean, high-contrast crisp white background */
-    background-color: #ffffff; 
+    background: linear-gradient(135deg, #01def8, #ffffff); 
     border: 1px solid rgba(15, 23, 42, 0.06);
     
     /* Feather-light, deep-dispersion layout shadow */
@@ -223,7 +223,7 @@ nav a:hover {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, #498d87 0%, #415384 100%);
+    background: linear-gradient(135deg, #2dbeb1 0%, #0c142b 100%);
     opacity: 0;
     z-index: -1;
     will-change: opacity;
@@ -626,28 +626,152 @@ nav a:hover {
 
 /* --- Mobile System --- */
 @media (max-width: 768px) {
+    /* --- Premium Fluid Mobile Side Drawer --- */
     nav {
         position: fixed;
         top: 70px;
-        right: -240px;
+        /* Completely hides the drawer off-screen safely using a flexible percentage */
+        right: -100%; 
         height: calc(100vh - 70px);
-        width: 240px;
-        background: rgba(255, 255, 255, 0.85);
-        backdrop-filter: blur(30px);
-        -webkit-backdrop-filter: blur(30px);
+        /* Uses 85% of viewport width up to a clean mobile limit */
+        width: 85%;
+        max-width: 320px;
+        
+        /* Glassmorphism blend tweaked for absolute high-contrast text rendering */
+        background: rgba(255, 255, 255, 0.94);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        
         display: flex;
         flex-direction: column;
-        gap: 28px;
-        padding: 40px 28px;
+        gap: 24px;
+        padding: 36px 24px;
         align-items: flex-start;
-        border-left: 1px solid rgba(255, 255, 255, 0.4);
+        border-left: 1px solid rgba(15, 23, 42, 0.06);
+        
+        /* Ultra-smooth hardware-accelerated drawer transition */
+        will-change: right;
         transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        z-index: 999;
     }
     
-    nav.active { right: 0; }
-    .hamburger { display: block; }
-    .hero h1 { font-size: 46px; }
-    .hero p { font-size: 18px; }
+    /* Activates side navigation menu smoothly */
+    nav.active { 
+        right: 0; 
+        box-shadow: -10px 0 40px rgba(11, 19, 41, 0.12);
+    }
+
+    /* Modern tap comfortable padding for menu list links inside drawer */
+    nav a {
+        width: 100%;
+        padding: 12px 16px;
+        border-radius: 10px;
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--text-main);
+        display: block;
+        transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    /* Gives a soft highlight trace to drawer links on tap/hover */
+    nav a:hover, nav a:active {
+        background-color: var(--accent-light);
+        color: var(--accent);
+    }
+    
+    /* --- Accessible Touch Targets --- */
+    .hamburger { 
+        display: block; 
+        cursor: pointer;
+        padding: 12px; /* Amplifies the touch trigger area for easier tapping on smaller screens */
+    }
+    
+    /* --- Anti-Clipping Typography Controls --- */
+    .hero h1 { 
+        /* Drops down to a fluid size so long titles fit without breaking text across boxes */
+        font-size: 34px; 
+        letter-spacing: -1px;
+        line-height: 1.2;
+    }
+    
+    .hero p { 
+        font-size: 15.5px; 
+        line-height: 1.5;
+        padding: 0 4px;
+    }
+}
+
+/* --- Added Extra Ultra-Small Phone Target Layer --- */
+@media (max-width: 400px) {
+    .hero h1 {
+        font-size: 28px; /* Safe size boundary for compact entry-level screens */
+    }
+    .hero p {
+        font-size: 14px;
+    }
+}
+@media (max-width: 768px) {
+    /* --- Your existing nav, hamburger, and hero mobile styles go here --- */
+
+    /* --- High-Comfort Mobile Tool Cards --- */
+    .tool-card {
+        /* Drops down massive paddings so text has maximum room to breathe horizontally */
+        padding: 32px 20px;
+        /* Slightly tighter corners looks much better on smaller viewports */
+        border-radius: 18px;
+    }
+
+    .tool-card h3 {
+        font-size: 20px; /* Slightly scaled down from 24px to prevent words from breaking */
+        margin-bottom: 10px;
+    }
+
+    .tool-card p {
+        font-size: 14.5px; /* Razor-sharp legibility on small screens */
+        line-height: 1.5;
+    }
+
+    /* --- Optimized Touch Interaction --- */
+    /* Prevents the extreme mouse-oriented jumps from breaking touch scrolling */
+    .tool-card:hover {
+        /* Softened elevation: shifts just enough to show it's active without glitching */
+        transform: translateY(-4px) scale(1.01);
+        
+        /* Subdued, highly compressed shadow profile tailored for mobile screens */
+        box-shadow: 
+            0 8px 16px -6px rgba(37, 99, 235, 0.15),
+            0 16px 32px -10px rgba(37, 99, 235, 0.25);
+    }
+}
+
+/* --- Ultimate Micro-Phone Optimization Layer (Screens under 400px) --- */
+@media (max-width: 400px) {
+    .tool-card {
+        /* Super tight compact paddings to give text maximum horizontal container room */
+        padding: 24px 16px;
+        border-radius: 14px;
+        margin-bottom: 16px; /* Adds consistent breathing spacing between stacked cards */
+    }
+
+    .tool-card h3 {
+        font-size: 18px; /* Safe micro-scaling boundary so long text strings never break */
+        margin-bottom: 8px;
+        letter-spacing: -0.3px;
+    }
+
+    .tool-card p {
+        font-size: 13.5px; /* Perfect compact reading size */
+        line-height: 1.45;
+    }
+    
+    /* --- Touch Optimization for Small Displays --- */
+    .tool-card:hover {
+        /* Disables vertical jump entirely on tiny screens to keep scrolling 100% stable */
+        transform: translateY(0) scale(1.01);
+        
+        /* Flattens the shadow so it doesn't spill awkwardly into neighboring content blocks */
+        box-shadow: 0 8px 20px rgba(37, 99, 235, 0.2);
+    }
 }
 
 .categories.reveal {
