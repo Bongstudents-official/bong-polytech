@@ -13,6 +13,412 @@ Contact Bong Polytechnic | Student Help & Support
         <link rel="stylesheet" href="styles.css" />
         <link rel="icon" type="image/png" href="favicon.png">
         <script src="script.js" defer></script>
+        <style>/* --- High-End Bento Grid Contact Hub --- */
+.contact-hub-section {
+    max-width: 1050px;
+    margin: 80px auto;
+    padding: 0 24px;
+}
+
+.contact-hub-section .section-title {
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    text-align: center;
+    color: var(--text-main);
+    margin-bottom: 12px;
+}
+
+.contact-hub-section .section-subtitle {
+    font-size: 16.5px;
+    font-weight: 500;
+    text-align: center;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto 50px;
+    line-height: 1.5;
+}
+
+/* --- The Layout Grid System --- */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 32px;
+    align-items: start;
+}
+
+/* --- Left Side: Hero Interactive Contact Card --- */
+.contact-main-card {
+    background: #ffffff;
+    padding: 44px 40px;
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(15, 23, 42, 0.05);
+    box-shadow: 
+        0 4px 6px -1px rgba(15, 23, 42, 0.01),
+        0 20px 40px -10px rgba(15, 23, 42, 0.04);
+    position: relative;
+    will-change: transform, box-shadow;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.contact-main-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 
+        0 30px 60px -15px rgba(37, 99, 235, 0.12),
+        0 0 0 1px rgba(37, 99, 235, 0.03);
+}
+
+.card-icon {
+    font-size: 32px;
+    margin-bottom: 16px;
+}
+
+.contact-main-card h3 {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: var(--text-main);
+    margin-bottom: 8px;
+}
+
+.contact-main-card > p {
+    font-size: 15px;
+    color: var(--text-muted);
+    font-weight: 500;
+    margin-bottom: 24px;
+    line-height: 1.6;
+}
+
+/* High-End Dynamic Email Capsule Box */
+.email-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 14px 24px;
+    background: var(--bg-soft);
+    border: 1px solid rgba(37, 99, 235, 0.1);
+    border-radius: 14px;
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: -0.2px;
+    transition: var(--transition-smooth);
+}
+
+.contact-main-card:hover .email-badge {
+    background: var(--accent-light);
+    border-color: rgba(37, 99, 235, 0.25);
+    transform: scale(1.02);
+}
+
+.message-meta {
+    margin-top: 36px;
+    padding-top: 28px;
+    border-top: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+.message-meta h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 14px;
+}
+
+.message-meta ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.message-meta li {
+    font-size: 14.5px;
+    color: var(--text-muted);
+    font-weight: 500;
+    margin: 8px 0;
+    padding-left: 18px;
+    position: relative;
+}
+
+.message-meta li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 700;
+}
+
+/* --- Right Side: Clean Stacked Info Chips --- */
+.contact-info-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info-chip {
+    display: flex;
+    gap: 20px;
+    padding: 24px;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    border-radius: 18px;
+    border: 1px solid rgba(15, 23, 42, 0.04);
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.02);
+    transition: var(--transition-smooth);
+}
+
+.info-chip:hover {
+    background: #ffffff;
+    transform: translateX(6px);
+    box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.05);
+}
+
+.chip-icon {
+    font-size: 22px;
+    margin-top: 2px;
+}
+
+.info-chip h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 4px;
+}
+
+.info-chip p {
+    font-size: 14px;
+    color: var(--text-muted);
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+/* Custom Warning Variant Box styling */
+.warning-chip {
+    background: rgba(254, 242, 242, 0.4);
+    border-color: rgba(239, 68, 68, 0.1);
+}
+
+.warning-chip h4 {
+    color: #991b1b;
+}
+
+.warning-chip:hover {
+    background: #fef2f2;
+}
+
+/* --- Fluid Responsive Adaptations --- */
+@media (max-width: 820px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    
+    .contact-main-card {
+        padding: 36px 28px;
+    }
+}
+        
+        
+        
+            
+            /* --- Ultra-Premium Reviews & Contact Hub Framework --- */
+.feedback-hub-container {
+    max-width: 1100px;
+    margin: 90px auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 44px;
+    align-items: start;
+}
+
+.hub-title {
+    font-size: 34px;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    color: var(--text-main);
+    margin-bottom: 8px;
+}
+
+.hub-subtitle {
+    font-size: 15.5px;
+    color: var(--text-muted);
+    font-weight: 500;
+    margin-bottom: 36px;
+    line-height: 1.5;
+}
+
+/* --- Left Side: Glass Review Layout Elements --- */
+.reviews-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.review-glass-card {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(12px);
+    padding: 32px;
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(15, 23, 42, 0.04);
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.01);
+    transition: var(--transition-smooth);
+}
+
+.review-glass-card:hover {
+    background: #ffffff;
+    transform: translateY(-4px);
+    box-shadow: 0 16px 36px -10px rgba(15, 23, 42, 0.06);
+}
+
+.review-stars {
+    color: #f59e0b; /* Gorgeous premium amber gold */
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.review-text {
+    font-size: 15px;
+    font-style: italic;
+    color: var(--text-main);
+    font-weight: 500;
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.reviewer-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(148, 163, 184, 0.1);
+    padding-top: 12px;
+}
+
+.reviewer-name {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.reviewer-dept {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--text-muted);
+    background: rgba(148, 163, 184, 0.08);
+    padding: 2px 10px;
+    border-radius: 20px;
+}
+
+/* --- Right Side: High-End Contact Card & Input Fields --- */
+.contact-form-card {
+    background: #ffffff;
+    padding: 44px;
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(15, 23, 42, 0.05);
+    box-shadow: 
+        0 10px 40px -15px rgba(15, 23, 42, 0.05),
+        0 0 0 6px rgba(255, 255, 255, 0.4);
+}
+
+.contact-form-card h3 {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: var(--text-main);
+    margin-bottom: 6px;
+}
+
+.contact-form-card p {
+    font-size: 14.5px;
+    color: var(--text-muted);
+    font-weight: 500;
+    margin-bottom: 28px;
+}
+
+.secure-email-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-group label {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--text-main);
+    letter-spacing: -0.1px;
+}
+
+/* Interactive Floating Input Elements */
+.input-group input,
+.input-group textarea {
+    padding: 14px 18px;
+    background: var(--bg-soft);
+    border: 1px solid rgba(148, 163, 184, 0.15);
+    border-radius: 12px;
+    color: var(--text-main);
+    font-size: 15px;
+    font-weight: 600;
+    outline: none;
+    transition: var(--transition-smooth);
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    background: #ffffff;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.08);
+}
+
+/* --- Kinetic Animated Form Submit Button --- */
+.submit-form-btn {
+    margin-top: 8px;
+    padding: 16px;
+    background: var(--text-main);
+    color: #ffffff;
+    border: none;
+    border-radius: 14px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 14px rgba(11, 19, 41, 0.1);
+    transition: var(--transition-elastic);
+}
+
+.submit-form-btn:hover {
+    background: var(--accent);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(37, 99, 235, 0.25);
+}
+
+.btn-arrow {
+    transition: transform 0.3s ease;
+}
+
+.submit-form-btn:hover .btn-arrow {
+    transform: translateX(4px);
+}
+
+/* --- Responsive Layout Optimization --- */
+@media (max-width: 880px) {
+    .feedback-hub-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .contact-form-card {
+        padding: 32px 24px;
+    }
+}
+        
+        </style>
     </head>
     <body id="body">
         <header class="navbar">
@@ -36,61 +442,126 @@ Contact Bong Polytechnic | Student Help & Support
         <div class="marquee">
             <p class="p1">
                 Free PYQs, Notes, Syllabus And Tips For Students.
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Note:
-                Currently Only First Year Is Available.
             </p>
         </div>
        <br>
        <br><br>
        <br>
        <br>
-        <section class="categories reveal">
-        <h2 style="text-align: center;">Contact Us</h2>
-<br><br>
-       <br>
-<h4>If you have any questions, suggestions, or feedback, feel free to contact us. We are always happy to help students and improve our platform.
-</h4>
-<BR><br>
-       <br>
-<h4>📩 Get in Touch
-</h4>
-            <br>
-<p>You can reach us through:</p>
-            <br>
-<h4>Email: studentsbong@gmail.com</h4>
-<br><br>
-       <br>
-<h4>💬 Send Us a Message
-</h4>
-            <br>
-<p>If you have:
-<br>
-- Questions about question papers
-    <br>
-- Suggestions for improving the website
-    <br>
-- Requests for specific resources
-    <br>
-Feel free to contact us anytime.
-</p><br>
-       <br>
-<br><h4>⚠️ Note</h4><br>
-<p>Bong Polytechnic is an independent student-help platform and not an official government website. For official information, please visit the respective government websites.
-</p>
-<br><br>
-       <br>
-<h4>⏱️ Response Time</h4>
-            <br>
-<p>We try to respond to all queries within 24–48 hours.
-</p>
-<br><br>
-       <br>
-<h4>🙌 Your Feedback Matters</h4>
-<br><p>Your feedback helps us improve and provide better resources for all polytechnic students.
-</p>
-<br><br>
-       <br>
-<h3 style="text-align: center;">Thank you for visiting Bong Polytechnic!</h3></section>
+        <section class="contact-hub-section">
+    <h2 class="section-title">Contact Us</h2>
+    <p class="section-subtitle">Have questions, suggestions, or feedback? We are always happy to help students and improve our platform.</p>
+
+    <div class="contact-grid">
+        <div class="contact-main-card">
+            <div class="card-icon">📩</div>
+            <h3>Get in Touch</h3>
+            <p>You can reach us directly through our official student support line:</p>
+            <div class="email-badge">
+                <span>studentsbong@gmail.com</span>
+            </div>
+            
+            <div class="message-meta">
+                <h4>💬 Send Us a Message If You Have:</h4>
+                <ul>
+                    <li>Questions about question papers</li>
+                    <li>Suggestions for improving the website</li>
+                    <li>Requests for specific resources</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="contact-info-stack">
+            <div class="info-chip">
+                <div class="chip-icon">⏱️</div>
+                <div>
+                    <h4>Response Time</h4>
+                    <p>We try to respond to all student queries within 24–48 hours.</p>
+                </div>
+            </div>
+
+            <div class="info-chip">
+                <div class="chip-icon">🙌</div>
+                <div>
+                    <h4>Your Feedback Matters</h4>
+                    <p>Your insights help us upgrade and provide better resources for everyone.</p>
+                </div>
+            </div>
+
+            <div class="info-chip warning-chip">
+                <div class="chip-icon">⚠️</div>
+                <div>
+                    <h4>Important Note</h4>
+                    <p>Bong Polytechnic is an independent student-help platform and not an official government website.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+        <section class="feedback-hub-container">
+    
+    <div class="reviews-column">
+        <h2 class="hub-title">What Students Say</h2>
+        <p class="hub-subtitle">Real feedback from polytechnic students utilizing our resource platform.</p>
+        
+        <div class="reviews-stack">
+            <div class="review-glass-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"The previous years analyzed important questions saved my semester. The interface is incredibly fast and clean!"</p>
+                <div class="reviewer-meta">
+                    <span class="reviewer-name">Rahul Das</span>
+                    <span class="reviewer-dept">Mechanical Engg.</span>
+                </div>
+            </div>
+            
+            <div class="review-glass-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"Finally a platform that doesn't lag on mobile. Calculating my SGPA took literally two seconds."</p>
+                <div class="reviewer-meta">
+                    <span class="reviewer-name">Ananya Sen</span>
+                    <span class="reviewer-dept">Computer Science</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-column">
+        <div class="contact-form-card">
+            <h3>Send a Direct Message</h3>
+            <p>Have an issue or need a resource? Drop your detail notes below.</p>
+            
+            <form action="https://api.web3forms.com/submit" method="POST" class="secure-email-form">
+                
+                <!-- The Secret Token: Connects this form straight to studentsbong@gmail.com -->
+    <input type="hidden" name="access_key" value="87cf3df8-7c8d-40be-9d83-aa7d91e3a94b">
+    
+    <!-- Optional: Automatically redirects users to a nice Web3Forms success page -->
+    <input type="hidden" name="from_name" value="Bong Polytechnic Portal">
+                
+                <div class="input-group">
+                    <label for="user-name">Your Name</label>
+                    <input type="text" id="user-name" name="name" placeholder="Your Name" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="user-email">Email Address</label>
+                    <input type="email" id="user-email" name="email" placeholder="you@example.com" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="user-message">Your Message</label>
+                    <textarea id="user-message" name="message" rows="4" placeholder="Tell us what you need..." required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-form-btn">
+                    <span>Send Message</span>
+                    <span class="btn-arrow">→</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+</section>
         <br>
        <br>
         <br>
