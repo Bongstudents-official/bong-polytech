@@ -19,6 +19,7 @@
     --shadow-soft: 0 8px 32px 0 rgba(15, 23, 42, 0.03);
     --shadow-lux: 0 30px 60px -15px rgba(15, 23, 42, 0.12), 0 4px 12px rgba(15, 23, 42, 0.03);
     
+    /* Global Radius Foundations */
     --radius-md: 22px;
     --radius-lg: 36px;
     --transition-elastic: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -33,6 +34,7 @@
     font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
     -webkit-font-smoothing: antialiased;
 }
+
 html, body {
     scroll-behavior: smooth;
     color: var(--text-main);
@@ -42,6 +44,7 @@ html, body {
     position: relative;
     overflow-x: hidden;
 }
+
 body::before {
     content: "";
     position: fixed;
@@ -67,13 +70,6 @@ body::before {
 @keyframes ambientRotate {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
-}
-
-/* --- The Animation that makes the background slide smoothly --- */
-@keyframes ambientMorph {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 50% 100%; }
 }
 
 a {
@@ -145,16 +141,16 @@ nav a:hover {
 /* --- Premium Interactive Hero Section --- */
 .hero {
     text-align: center;
-    padding: 125px 50px 100px;
+    padding: 160px 50px 80px; /* Enhanced top offset to clear floating navbar */
     position: relative;
 }
 
 .hero h1 {
-    font-size: 3rem;
-    font-weight: 960;
-    letter-spacing: 2.5px;
-    line-height: 1.05;
-    margin-bottom: -50px;
+    font-size: 3.5rem;
+    font-weight: 900;
+    letter-spacing: -1.5px; /* Clean modern tight spacing */
+    line-height: 1.1;
+    margin-bottom: 24px;
     color: var(--text-main);
     background: linear-gradient(135deg, #0b1329 30%, #1e3a8a 100%);
     -webkit-background-clip: text;
@@ -163,10 +159,10 @@ nav a:hover {
 }
 
 .hero p {
-    font-size: 22px;
+    font-size: 20px;
     color: var(--text-muted);
     max-width: 680px;
-    margin: auto;
+    margin: 0 auto 36px;
     line-height: 1.6;
     font-weight: 500;
     opacity: 0;
@@ -174,51 +170,42 @@ nav a:hover {
 }
 
 .hero-buttons {
-    margin-top: 44px;
     display: flex;
     gap: 18px;
     justify-content: center;
-    opacity: 1;
+    opacity: 0;
     animation: fadeUpIn 0.8s var(--transition-smooth) 0.4s forwards;
 }
 
-/* --- Glassmorphic Tool Cards --- */
+/* --- Glassmorphic Tool Cards Container --- */
 .tools {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-    gap: 38px;
-    padding: 60px 15%;
+    gap: 30px;
+    padding: 40px 10%;
 }
 
 .tool-card {
-    padding: 33px 21px;
-    border-radius: 32px;
+    padding: 44px 32px;
+    border-radius: 24px;
     text-align: center;
     position: relative;
     z-index: 1;
     overflow: hidden;
     
     /* --- Base State --- */
-    /* Clean, high-contrast crisp white background */
-    background: linear-gradient(135deg, #01def8, #ffffff); 
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%); 
     border: 1px solid rgba(15, 23, 42, 0.06);
-    
-    /* Feather-light, deep-dispersion layout shadow */
     box-shadow: 
         0 4px 6px -1px rgba(15, 23, 42, 0.02),
         0 10px 30px -10px rgba(15, 23, 42, 0.04);
     
-    /* GPU performance anchors */
-    will-change: transform, box-shadow, background-color;
+    will-change: transform, box-shadow;
     transition: 
-        transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
-        box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1),
-        background-color 0.6s cubic-bezier(0.16, 1, 0.3, 1),
-        border-color 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+        box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* --- The Dynamic Background Engine --- */
-/* This hidden layer creates an immersive dark-mode shift without layout lag */
 .tool-card::before {
     content: '';
     position: absolute;
@@ -227,58 +214,46 @@ nav a:hover {
     opacity: 0;
     z-index: -1;
     will-change: opacity;
-    transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: opacity 0.4s ease;
 }
 
-/* --- The Luxury Interaction State --- */
 .tool-card:hover {
-    transform: translateY(-14px) scale(1.02);
-    border-color: rgba(37, 235, 216, 0.62);
-    
-    /* 
-       AMAZING SHADOW TRANSITION:
-       Transforms from a boring flat shadow into a multi-layered, 
-       glowing electric-cobalt neon aura that radiates from beneath the card.
-    */
+    transform: translateY(-10px) scale(1.02);
+    border-color: rgba(37, 235, 216, 0.4);
     box-shadow: 
-        0 0 1px rgba(37, 99, 235, 0.3),
-        0 12px 24px -10px rgba(37, 99, 235, 0.2),
-        0 30px 60px -15px rgba(37, 99, 235, 0.35);
+        0 12px 24px -10px rgba(37, 99, 235, 0.15),
+        0 30px 60px -15px rgba(37, 99, 235, 0.3);
 }
 
-/* Instantly morphs the background to deep midnight on hover */
 .tool-card:hover::before {
     opacity: 1;
 }
 
-/* --- Typography Color Flipping --- */
 .tool-card h3 {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 800;
     letter-spacing: -0.5px;
-    margin-bottom: 14px;
-    color: var(--text-main); /* Default deep slate text */
-    transition: color 0.4s ease, transform 0.4s ease;
+    margin-bottom: 12px;
+    color: var(--text-main);
+    transition: color 0.3s ease;
 }
 
-/* Flips text to pure crisp white to stand out over the dark hover background */
 .tool-card:hover h3 {
     color: #ffffff;
-    transform: translateY(-2px);
 }
 
 .tool-card p {
     color: var(--text-muted);
     font-weight: 500;
-    font-size: 15.5px;
+    font-size: 15px;
     line-height: 1.6;
-    transition: color 0.4s ease;
+    transition: color 0.3s ease;
 }
 
-/* Softens the description text into a clean silver over the dark canvas */
 .tool-card:hover p {
-    color: rgba(255, 255, 255, 0.75);
+    color: rgba(255, 255, 255, 0.8);
 }
+
 /* --- High-End Buttons --- */
 .btn, .btns {
     padding: 16px 38px;
@@ -319,7 +294,7 @@ nav a:hover {
 
 /* --- Interactive Input Systems --- */
 .searchsection {
-    padding: 60px 20px;
+    padding: 40px 20px;
     display: flex;
     justify-content: center;
 }
@@ -352,10 +327,12 @@ nav a:hover {
 .marquee {
     width: 100%;
     overflow: hidden;
-    background: rgba(255, 0, 0, 0.55);
+    background: rgba(255, 255, 255, 0.4);
     backdrop-filter: blur(16px);
-    padding: 18px 0;
+    padding: 16px 0;
     white-space: nowrap;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .marquee p {
@@ -376,135 +353,61 @@ nav a:hover {
 
 .quotes {
     text-align: center;
-    padding: 56px;
+    padding: 44px 32px;
     background: var(--bg-glass);
     backdrop-filter: var(--glass-blur);
     -webkit-backdrop-filter: var(--glass-blur);
     border-radius: var(--radius-lg);
     max-width: 760px;
-    margin: 60px auto;
+    margin: 40px auto;
     border: 1px solid rgba(255, 255, 255, 0.6);
     box-shadow: var(--shadow-soft);
-    transition: var(--transition-smooth);
-}
-
-.quotes:hover {
-    background: var(--bg-glass-hover);
-    box-shadow: var(--shadow-lux);
 }
 
 /* --- Core Copy & SEO Blocks --- */
-/* --- High-End Typography & Section Structural Layout --- */
-.seo-section, 
-.faq-section, 
-.seo-article, 
-.seo-admission, 
-.sgpa-section {
+.seo-section, .faq-section, .seo-article, .seo-admission, .sgpa-section {
     max-width: 860px;
     margin: 0 auto;
-    /* Optimized vertical spacing to prevent giant empty voids between sections */
-    padding: 60px 24px; 
+    padding: 50px 24px; 
     line-height: 1.85;
 }
 
-/* --- Premium Left-Accent Border Styling for Section Headings --- */
-.seo-article h1, 
-.seo-admission h1,
-.seo-section h1,
-.faq-section h2,
-.sgpa-section h2 {
-    font-size: 38px;
+.seo-article h1, .seo-admission h1, .seo-section h1, .faq-section h2, .sgpa-section h2 {
+    font-size: 36px;
     font-weight: 800;
-    letter-spacing: -1.5px;
-    line-height: 1.2;
+    letter-spacing: -1.2px;
+    line-height: 1.25;
     color: var(--text-main);
-    margin-bottom: 28px;
-    position: relative;
+    margin-bottom: 24px;
 }
 
-.seo-article h2, 
-.seo-admission h2,
-.seo-section h2,
-.sgpa-section h3 {
+.seo-article h2, .seo-admission h2, .seo-section h2, .sgpa-section h3 {
     font-size: 24px;
     font-weight: 800;
     letter-spacing: -0.5px;
-    margin-top: 44px;
-    margin-bottom: 18px;
-    padding-left: 18px;
+    margin-top: 36px;
+    margin-bottom: 16px;
+    padding-left: 16px;
     color: var(--text-main);
-    
-    /* Luxury vertical accent line that roots the text visually */
     border-left: 4px solid var(--accent);
-    will-change: padding-left, border-color;
-    transition: 
-        padding-left 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-        border-color 0.4s ease,
-        color 0.4s ease;
+    transition: padding-left 0.3s ease, color 0.3s ease;
 }
 
-/* Subtle interactive slide effect when reading/hovering over subheadings */
-.seo-article h2:hover, 
-.seo-admission h2:hover,
-.seo-section h2:hover,
-.sgpa-section h3:hover {
-    padding-left: 24px;
+.seo-article h2:hover, .seo-admission h2:hover, .seo-section h2:hover, .sgpa-section h3:hover {
+    padding-left: 22px;
     color: var(--accent);
-    border-color: var(--text-main);
 }
 
-/* --- Clean, Readable Body Copy Styling --- */
-.seo-section p, 
-.seo-article p, 
-.seo-admission p,
-.sgpa-section p {
-    font-size: 16px;
+.seo-section p, .seo-article p, .seo-admission p, .sgpa-section p, .faq-item p {
+    font-size: 15.5px;
     font-weight: 500;
     color: var(--text-muted);
-    margin-bottom: 20px;
-}
-
-/* Smooth color highlight when a user highlights your SEO copy */
-.seo-section p::selection,
-.seo-article p::selection,
-.seo-admission p::selection {
-    background: rgba(37, 99, 235, 0.1);
-    color: var(--accent);
-}
-
-.seo-article h1, .seo-admission h1 {
-    font-size: 48px;
-    font-weight: 800;
-    letter-spacing: -2px;
-    color: var(--text-main);
-    margin-bottom: 32px;
-}
-
-.seo-article h2, .seo-admission h2 {
-    font-size: 28px;
-    font-weight: 800;
-    margin-top: 50px;
-    margin-bottom: 20px;
-    padding-left: 20px;
-    border-left: 5px solid var(--accent);
-    transition: var(--transition-smooth);
-    color: var(--text-main);
-}
-
-.seo-admission h2:hover, .seo-article h2:hover {
-    padding-left: 26px;
-    color: var(--accent);
-}
-
-.seo-article p, .seo-admission p, .faq-item p {
-    color: var(--text-muted);
-    font-weight: 500;
-    font-size: 16px;
+    margin-bottom: 18px;
 }
 
 .faq-item {
-    margin: 24px 0;
-    padding: 30px;
+    margin: 20px 0;
+    padding: 24px;
     background: var(--bg-glass);
     backdrop-filter: var(--glass-blur);
     -webkit-backdrop-filter: var(--glass-blur);
@@ -517,19 +420,19 @@ nav a:hover {
 .faq-item:hover {
     background: var(--bg-glass-hover);
     box-shadow: var(--shadow-lux);
-    transform: translateX(6px);
+    transform: translateX(4px);
 }
 
 /* --- Interactive Stat Matrices --- */
 .stats {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 32px;
-    padding: 60px 8%;
+    gap: 24px;
+    padding: 40px 8%;
 }
 
 .stat-card {
-    padding: 44px 24px;
+    padding: 36px 20px;
     background: var(--bg-glass);
     backdrop-filter: var(--glass-blur);
     -webkit-backdrop-filter: var(--glass-blur);
@@ -541,15 +444,15 @@ nav a:hover {
 }
 
 .stat-card:hover {
-    transform: scale(1.05);
+    transform: scale(1.04);
     box-shadow: var(--shadow-lux);
 }
 
 .stat-card h2 {
-    font-size: 48px;
+    font-size: 44px;
     font-weight: 800;
     color: var(--accent);
-    margin-bottom: 6px;
+    margin-bottom: 4px;
 }
 
 .subject-row input {
@@ -564,22 +467,21 @@ nav a:hover {
     transition: var(--transition-smooth);
 }
 
-.subject-row input:focus {
-    background: #ffffff;
-    border-color: var(--accent);
-    box-shadow: var(--shadow-soft);
-}
-
 /* --- Global Reveal System --- */
 .reveal {
     opacity: 0;
-    transform: translateY(40px) scale(0.97);
-    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .reveal.active {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: translateY(0);
+}
+
+.categories.reveal {
+    opacity: 1 !important;
+    transform: none !important;
 }
 
 /* --- Entry Animations Keyframes --- */
@@ -591,7 +493,7 @@ nav a:hover {
 @keyframes fadeUpIn {
     from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(24px);
     }
     to {
         opacity: 1;
@@ -602,21 +504,20 @@ nav a:hover {
 /* --- Premium Footer --- */
 .footer {
     text-align: center;
-    padding: 80px 20px;
+    padding: 60px 20px;
     background: rgba(247, 247, 247, 0.3);
     backdrop-filter: var(--glass-blur);
-    -webkit-backdrop-filter: var(--glass-blur);
     border-top: 1px solid rgba(221, 212, 212, 0.4);
 }
 
 .fl {
-    margin: 28px 0;
+    margin: 20px 0;
 }
 
 .fl a {
     color: var(--text-muted);
-    margin: 0 18px;
-    font-size: 14.5px;
+    margin: 0 14px;
+    font-size: 14px;
     font-weight: 700;
 }
 
@@ -624,157 +525,205 @@ nav a:hover {
     color: var(--accent);
 }
 
-/* --- Mobile System --- */
+
+/* ==========================================================================
+   unified advanced mobile system (screens under 768px)
+   ========================================================================== */
 @media (max-width: 768px) {
-    /* --- Premium Fluid Mobile Side Drawer --- */
+    /* --- Navigation Side Drawer Mechanics --- */
     nav {
         position: fixed;
         top: 70px;
-        /* Completely hides the drawer off-screen safely using a flexible percentage */
         right: -100%; 
         height: calc(100vh - 70px);
-        /* Uses 85% of viewport width up to a clean mobile limit */
         width: 85%;
-        max-width: 320px;
-        
-        /* Glassmorphism blend tweaked for absolute high-contrast text rendering */
-        background: rgba(255, 255, 255, 0.94);
+        max-width: 300px;
+        background: rgba(255, 255, 255, 0.96);
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
-        
         display: flex;
         flex-direction: column;
-        gap: 24px;
-        padding: 36px 24px;
+        gap: 20px;
+        padding: 32px 20px;
         align-items: flex-start;
         border-left: 1px solid rgba(15, 23, 42, 0.06);
-        
-        /* Ultra-smooth hardware-accelerated drawer transition */
         will-change: right;
         transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         z-index: 999;
     }
     
-    /* Activates side navigation menu smoothly */
     nav.active { 
         right: 0; 
         box-shadow: -10px 0 40px rgba(11, 19, 41, 0.12);
     }
 
-    /* Modern tap comfortable padding for menu list links inside drawer */
     nav a {
         width: 100%;
         padding: 12px 16px;
         border-radius: 10px;
-        font-size: 16px;
+        font-size: 15px;
         font-weight: 700;
         color: var(--text-main);
         display: block;
-        transition: background-color 0.2s ease, color 0.2s ease;
-    }
-
-    /* Gives a soft highlight trace to drawer links on tap/hover */
-    nav a:hover, nav a:active {
-        background-color: var(--accent-light);
-        color: var(--accent);
     }
     
-    /* --- Accessible Touch Targets --- */
     .hamburger { 
         display: block; 
-        cursor: pointer;
-        padding: 12px; /* Amplifies the touch trigger area for easier tapping on smaller screens */
+        padding: 10px;
     }
     
-    /* --- Anti-Clipping Typography Controls --- */
+    /* --- Fluid Typography Scaling --- */
+    .hero {
+        padding: 130px 20px 50px;
+    }
+    
     .hero h1 { 
-        /* Drops down to a fluid size so long titles fit without breaking text across boxes */
-        font-size: 34px; 
-        letter-spacing: -1px;
-        line-height: 1.2;
+        font-size: 32px; 
+        letter-spacing: -0.5px;
+        margin-bottom: 16px;
     }
     
     .hero p { 
         font-size: 15.5px; 
         line-height: 1.5;
-        padding: 0 4px;
+        margin-bottom: 28px;
     }
-}
 
-/* --- Added Extra Ultra-Small Phone Target Layer --- */
-@media (max-width: 400px) {
-    .hero h1 {
-        font-size: 28px; /* Safe size boundary for compact entry-level screens */
+    .hero-buttons {
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+        max-width: 300px;
+        margin: 32px auto 0;
     }
-    .hero p {
-        font-size: 14px;
-    }
-}
-@media (max-width: 768px) {
-    /* --- Your existing nav, hamburger, and hero mobile styles go here --- */
 
-    /* --- High-Comfort Mobile Tool Cards --- */
+    .btn, .btns {
+        width: 100%;
+        text-align: center;
+        padding: 14px 24px;
+    }
+
+    /* --- Smart swipeable or ultra-compact tools grid layout --- */
+    .tools {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 18px;
+        padding: 20px 24px 30px; /* Reclaims massive horizontal screen space */
+        scrollbar-width: none; /* Hides basic scrollbar on Firefox */
+    }
+
+    .tools::-webkit-scrollbar {
+        display: none; /* Hides bulky scrollbar on Chrome, Safari, Opera */
+    }
+
+    /* --- High-Comfort Mobile Cards --- */
     .tool-card {
-        /* Drops down massive paddings so text has maximum room to breathe horizontally */
-        padding: 32px 20px;
-        /* Slightly tighter corners looks much better on smaller viewports */
-        border-radius: 18px;
+        flex: 0 0 85%; /* Keeps cards perfectly sized and hints at a sequential trail */
+        scroll-snap-align: start;
+        padding: 28px 20px;
+        border-radius: 20px;
+        text-align: left; /* Swapped to left alignment for easier reading while swiping */
     }
 
     .tool-card h3 {
-        font-size: 20px; /* Slightly scaled down from 24px to prevent words from breaking */
-        margin-bottom: 10px;
+        font-size: 19px;
+        margin-bottom: 8px;
     }
 
     .tool-card p {
-        font-size: 14.5px; /* Razor-sharp legibility on small screens */
+        font-size: 14px;
         line-height: 1.5;
     }
 
-    /* --- Optimized Touch Interaction --- */
-    /* Prevents the extreme mouse-oriented jumps from breaking touch scrolling */
     .tool-card:hover {
-        /* Softened elevation: shifts just enough to show it's active without glitching */
         transform: translateY(-4px) scale(1.01);
-        
-        /* Subdued, highly compressed shadow profile tailored for mobile screens */
-        box-shadow: 
-            0 8px 16px -6px rgba(37, 99, 235, 0.15),
-            0 16px 32px -10px rgba(37, 99, 235, 0.25);
+        box-shadow: 0 8px 24px rgba(37, 99, 235, 0.15);
+    }
+
+    /* --- Other Section Adjustments --- */
+    .stats {
+        grid-template-columns: 1fr 1fr; /* 2 columns on mobile instead of stacking long single columns */
+        gap: 16px;
+        padding: 30px 20px;
+    }
+
+    .stat-card {
+        padding: 24px 12px;
+    }
+
+    .stat-card h2 {
+        font-size: 32px;
+    }
+
+    .seo-article h1, .seo-admission h1, .seo-section h1, .faq-section h2, .sgpa-section h2 {
+        font-size: 26px;
+    }
+
+    .seo-article h2, .seo-admission h2, .seo-section h2, .sgpa-section h3 {
+        font-size: 20px;
     }
 }
 
-/* --- Ultimate Micro-Phone Optimization Layer (Screens under 400px) --- */
+/* --- Micro-Phone Overrides (Screens under 400px) --- */
 @media (max-width: 400px) {
+    .hero h1 { font-size: 26px; }
+    .hero p { font-size: 14px; }
+    
+    .tools {
+        padding: 16px 16px 24px;
+        gap: 14px;
+    }
+
     .tool-card {
-        /* Super tight compact paddings to give text maximum horizontal container room */
+        flex: 0 0 88%;
         padding: 24px 16px;
-        border-radius: 14px;
-        margin-bottom: 16px; /* Adds consistent breathing spacing between stacked cards */
+        border-radius: 16px;
     }
 
-    .tool-card h3 {
-        font-size: 18px; /* Safe micro-scaling boundary so long text strings never break */
-        margin-bottom: 8px;
-        letter-spacing: -0.3px;
+    .tool-card h3 { font-size: 18px; }
+    
+    .tool-card:hover {
+        transform: none; /* Disables motions entirely on ultra-low viewports */
     }
 
-    .tool-card p {
-        font-size: 13.5px; /* Perfect compact reading size */
-        line-height: 1.45;
+    .stats {
+        grid-template-columns: 1fr; /* Stacks layout back safely to 1 column for extremely tiny widths */
+    }
+}
+@media (max-width: 768px) {
+    /* --- Add this right here to tame the Categories block --- */
+    .categories {
+        padding-top: 20px !important;    /* Crushes giant top empty space gaps */
+        padding-bottom: 20px !important; /* Crushes giant bottom empty space gaps */
+        margin-top: 10px !important;     /* Minimizes outer spacing friction */
+        margin-bottom: 10px !important;  
+        height: auto !important;         /* Prevents desktop min-heights from stretching it */
+    }
+
+    /* If your categories section has an inner heading/title stretching things out: */
+    .categories h2, .categories h1 {
+        font-size: 24px !important;
+        margin-bottom: 16px !important;
+        margin-top: 0 !important;
+    }
+
+    /* If your categories are wrapped in a layout grid/container that's stacking vertically: */
+    .categories-container, .categories-grid {
+        display: flex !important;
+        flex-direction: column;
+        gap: 12px !important;            /* Tightens the space between internal elements */
+    }
+}
+
+/* --- Also apply it to the Micro-Phone layer --- */
+@media (max-width: 400px) {
+    .categories {
+        padding-top: 12px !important;
+        padding-bottom: 12px !important;
     }
     
-    /* --- Touch Optimization for Small Displays --- */
-    .tool-card:hover {
-        /* Disables vertical jump entirely on tiny screens to keep scrolling 100% stable */
-        transform: translateY(0) scale(1.01);
-        
-        /* Flattens the shadow so it doesn't spill awkwardly into neighboring content blocks */
-        box-shadow: 0 8px 20px rgba(37, 99, 235, 0.2);
+    .categories h2 {
+        font-size: 20px !important;
     }
-}
-
-.categories.reveal {
-    opacity: 1 !important;
-    transform: none !important;
 }
