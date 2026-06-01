@@ -173,7 +173,7 @@ nav a:hover {
     display: flex;
     gap: 18px;
     justify-content: center;
-    opacity: 0;
+    opacity: 16;
     animation: fadeUpIn 0.8s var(--transition-smooth) 0.4s forwards;
 }
 
