@@ -4,23 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Applied Physics MCQ Quiz | WB Polytechnic PYQ Practice | Bong Polytechnic</title>
-<meta name="description"
-content="Practice Applied Physics MCQ quiz for WB Polytechnic with previous year questions, important repeated concepts, optics, semiconductors, laser, magnetism, and exam preparation.">
-<meta name="robots"
-content="index, follow">
-<link rel="canonical"
-href="https://bong-polytech.vercel.app/physics-quiz.html">
-<meta property="og:title"
-content="Applied Physics MCQ Quiz | Bong Polytechnic">
-<meta property="og:description"
-content="Practice real WB Polytechnic Applied Physics MCQ based on previous year questions and exam analysis.">
-<meta property="og:type"
-content="website">
-<meta property="og:url"
-content="https://bong-polytech.vercel.app/physics-quiz.html">
+    <meta name="description" content="Practice Applied Physics MCQ quiz for WB Polytechnic with previous year questions, important repeated concepts, optics, semiconductors, laser, magnetism, and exam preparation.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://bong-polytech.vercel.app/physics-quiz.html">
+    <meta property="og:title" content="Applied Physics MCQ Quiz | Bong Polytechnic">
+    <meta property="og:description" content="Practice real WB Polytechnic Applied Physics MCQ based on previous year questions and exam analysis.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bong-polytech.vercel.app/physics-quiz.html">
     <link rel="stylesheet" href="styles.css" />
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4467350362330366"
-     crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4467350362330366" crossorigin="anonymous"></script>
+    
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
     <style>
         :root {
             --primary-color: #2e7d32;
@@ -28,25 +31,39 @@ content="https://bong-polytech.vercel.app/physics-quiz.html">
             --bg-color: #f4f7f6;
             --text-color: #333;
             --white: #ffffff;
+            --accent-color: #fbc02d;
         }
 
-        .body {
+        body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: var(--bg-color);
             margin: 0;
+            padding: 0;
             min-height: 100vh;
         }
 
-         .quiz-container {
-            background-color: var(--white);
-            width: 95%;
-            max-width: 750px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            padding: 30px;
+        /* Fixed structural responsive container wrapper */
+        .quiz-page-wrapper {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 15px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
         }
 
-        h1 { color: var(--primary-color); text-align: center; margin-top: 0; }
+        .quiz-container {
+            background-color: var(--white);
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            padding: 25px;
+            box-sizing: border-box;
+        }
+
+        h1 { color: var(--primary-color); text-align: center; margin-top: 0; font-size: 1.8rem; }
 
         #progress-bar-container {
             width: 100%;
@@ -65,42 +82,46 @@ content="https://bong-polytech.vercel.app/physics-quiz.html">
         }
 
         .question-text {
-            font-size: 1.25rem;
+            font-size: 1.15rem;
             font-weight: 600;
             margin-bottom: 20px;
             line-height: 1.5;
+            color: var(--text-color);
         }
 
         .options-container {
             display: grid;
+            grid-template-columns: 1fr;
             gap: 12px;
         }
 
         .option-btn {
             background: white;
             border: 2px solid #ddd;
-            padding: 15px;
+            padding: 14px 18px;
             border-radius: 10px;
             cursor: pointer;
             text-align: left;
-            font-size: 1rem;
+            font-size: 0.95rem;
             transition: 0.2s;
+            color: var(--text-color);
+            line-height: 1.4;
         }
 
         .option-btn:hover:not(:disabled) { border-color: var(--secondary-color); background: #f0f7ff; }
-        .correct { background-color: #c8e6c9 !important; border-color: #4caf50 !important; color: #1b5e20; }
-        .wrong { background-color: #ffcdd2 !important; border-color: #f44336 !important; color: #b71c1c; }
+        .correct { background-color: #c8e6c9 !important; border-color: #4caf50 !important; color: #1b5e20 !important; font-weight: 600; }
+        .wrong { background-color: #ffcdd2 !important; border-color: #f44336 !important; color: #b71c1c !important; }
 
-        /* Explanation Box Style */
         #explanation-box {
             display: none;
             margin-top: 20px;
-            padding: 20px;
-            background-color: #fff9c4; /* Light yellow */
+            padding: 18px;
+            background-color: #fff9c4; 
             border-left: 5px solid var(--accent-color);
             border-radius: 5px;
             font-size: 0.95rem;
-            line-height: 1.4;
+            line-height: 1.5;
+            color: #333;
         }
 
         .controls {
@@ -108,254 +129,430 @@ content="https://bong-polytech.vercel.app/physics-quiz.html">
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        #question-counter {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #555;
         }
 
         #next-btn, #restart-btn {
             background-color: var(--primary-color);
             color: white;
             border: none;
-            padding: 12px 35px;
+            padding: 12px 30px;
             border-radius: 8px;
             font-weight: bold;
             cursor: pointer;
             display: none;
+            font-size: 0.95rem;
+            transition: background-color 0.2s;
         }
+        
+        #next-btn:hover { background-color: #1b5e20; }
 
         #result-screen { display: none; text-align: center; }
-        .score-display { font-size: 3rem; font-weight: bold; color: var(--secondary-color); margin: 20px 0; }
+        .score-display { font-size: 2.8rem; font-weight: bold; color: var(--secondary-color); margin: 15px 0; }
+
+        /* Responsive Mobile Scaling */
+        @media (max-width: 600px) {
+            .quiz-container { padding: 18px; border-radius: 10px; }
+            h1 { font-size: 1.5rem; }
+            .question-text { font-size: 1.05rem; }
+            .option-btn { padding: 12px 15px; font-size: 0.9rem; }
+            .controls { flex-direction: column; text-align: center; }
+            #next-btn { width: 100%; padding: 12px; }
+        }
     </style>
 </head>
-<body id="body">
-        <header class="navbar">
-            <div class="top">
-                <h1 style="color: darkturquoise" class="logo">BONG POLYTECHNIC</h1>
-                <nav id="navMenu">
-                    <a href="index.html" class="bt">Home</a>
-                    <a href="index.html#pyqs" class="bt">PYQs</a>
-                    <a href="notes.html" class="bt">Notes</a>
-                    <a href="wb-polytechnic-admission-2026.html" class="bt">Admission</a>
-                    <a href="wb-polytechnic-admission-2026.html#collegeContainer">Colleges</a>
-                    <a href="cutoff-rank-predictor.html">College Predictor</a>
-                    <a href="quizzes.html">Quizzes</a>
-                    <a href="sgpa-calculator.html" class="bt">SGPA Cal.</a>
-                    <a href="index.html#syllabus" class="bt">Syllabus</a>
-                    <a href="about.html" class="bt">About</a>
-                    <a href="contact.html" class="bt">Contact</a>
-                </nav>
-            </div>
-            <div class="hamburger" onclick="toggleMenu()">☰</div>
-        </header><br><br><br><br><br><br><br><br><br><br><br><br>
-    <section class="categories" style="align-content: center; justify-content: center;display: flex">
-<div class="quiz-container reveal" >
-    <div id="quiz-screen">
-        <h1>Applied Physics II Quiz🔥</h1><br>
-        <div id="progress-bar-container"><div id="progress-bar"></div></div>
+<body>
+
+    <header class="navbar">
+        <div class="top">
+            <h1 style="color: darkturquoise; margin: 0;" class="logo">BONG POLYTECHNIC</h1>
+            <nav id="navMenu">
+                <a href="index.html" class="bt">Home</a>
+                <a href="index.html#pyqs" class="bt">PYQs</a>
+                <a href="notes.html" class="bt">Notes</a>
+                <a href="wb-polytechnic-admission-2026.html" class="bt">Admission</a>
+                <a href="wb-polytechnic-admission-2026.html#collegeContainer">Colleges</a>
+                <a href="cutoff-rank-predictor.html">College Predictor</a>
+                <a href="quizzes.html">Quizzes</a>
+                <a href="sgpa-calculator.html" class="bt">SGPA Cal.</a>
+                <a href="index.html#syllabus" class="bt">Syllabus</a>
+                <a href="about.html" class="bt">About</a>
+                <a href="contact.html" class="bt">Contact</a>
+            </nav>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+    </header>
+
+    <div style="height: 100px; width: 100%;"></div>
+
+    <main class="quiz-page-wrapper">
         
-        <div id="question-area">
-            <div class="question-text" id="question-text">Loading question...</div>
-            <div class="options-container" id="options-container"></div>
+        <div class="quiz-container reveal">
+            <div id="quiz-screen">
+                <h1>Applied Physics II Quiz🔥</h1>
+                <div id="progress-bar-container"><div id="progress-bar"></div></div>
+                
+                <div id="question-area">
+                    <div class="question-text" id="question-text">Loading question...</div>
+                    <div class="options-container" id="options-container"></div>
+                </div>
+
+                <div id="explanation-box">
+                    <strong>Explanation:</strong> <span id="explanation-text"></span>
+                </div>
+
+                <div class="controls">
+                    <span id="question-counter"></span>
+                    <button id="next-btn">Next Question →</button>
+                </div>
+            </div>
+
+            <div id="result-screen">
+                <h1>Results</h1>
+                <p>You have completed all 65 questions!</p>
+                <div class="score-display" id="final-score">0 / 65</div>
+                <button id="restart-btn" style="display:inline-block;">Restart & Reshuffle</button>
+            </div>
         </div>
 
-        <div id="explanation-box">
-            <strong>Explanation:</strong> <span id="explanation-text"></span>
+        <div class="tool-card" style="cursor: default; text-align: left; height: auto; padding: 25px; box-sizing: border-box; width: 100%;">
+            <h2 style="color: darkturquoise; margin-top: 0; margin-bottom: 15px; font-size: 20px;">⚡ APPLIED PHYSICS-II: FROM TEXTBOOK FORMULAS TO SHOP-FLOOR REALITY</h2>
+            <p style="color: #ccc; line-height: 1.6; margin-bottom: 15px; font-size: 14px;">
+                In your Applied Physics-II exam, you write equations to score passing marks. In the industry, those exact physical principles prevent factory explosions, transfer high-speed internet data, and run industrial manufacturing setups:
+            </p>
+
+            <div style="margin-bottom: 20px; padding-left: 10px; border-left: 3px solid #38bdf8;">
+                <strong style="color: #fff; font-size: 15px;">1. Dielectric Strength & Insulation Breakdown (Electrostatics Unit)</strong>
+                <p style="color: #aaa; font-size: 13.5px; margin: 5px 0 0 0; line-height: 1.5;">
+                    <strong>The Book Formula:</strong> $E_{max} = \frac{V}{d}$ (Electric Field equals Voltage over Distance).<br>
+                    <strong>The Real-World Reality:</strong> High-voltage substation cables use specialized rubber insulation. If moisture gets inside or the cable is bent too sharply, the distance ($d$) drops, pushing the electric field beyond the material's dielectric strength limit. This triggers a catastrophic arc-flash explosion. Industrial electricians use a tool called a **Megger** to test this exact insulation resistance before powering up sub-stations.
+                </p>
+            </div>
+
+            <div style="margin-bottom: 20px; padding-left: 10px; border-left: 3px solid #a855f7;">
+                <strong style="color: #fff; font-size: 15px;">2. Total Internal Reflection & Fiber Optic Attenuation (Wave Optics Unit)</strong>
+                <p style="color: #aaa; font-size: 13.5px; margin: 5px 0 0 0; line-height: 1.5;">
+                    <strong>The Book Formula:</strong> $\sin(\theta_c) = \frac{n_2}{n_1}$ (Critical angle calculation for total internal reflection).<br>
+                    <strong>The Real-World Reality:</strong> Modern high-speed networking and automation PLC systems use fiber optic cables instead of standard copper lines to completely eliminate electromagnetic interference. If a site worker bends an active fiber optic line past its physical critical radius during installation, the data light rays escape the core rather than reflecting internally. This creates what field engineers call **Optical Attenuation (signal loss)**, causing the entire communication loop to drop offline.
+                </p>
+            </div>
+
+            <div style="margin-bottom: 20px; padding-left: 10px; border-left: 3px solid #22c55e;">
+                <strong style="color: #fff; font-size: 15px;">3. P-N Junction Overheating & Thermal Runaway (Semiconductor Unit)</strong>
+                <p style="color: #aaa; font-size: 13.5px; margin: 5px 0 0 0; line-height: 1.5;">
+                    <strong>The Book Formula:</strong> The exponential forward-bias diode current equation.<br>
+                    <strong>The Real-World Reality:</strong> Electronics like rectifiers and VFD (Variable Frequency Drive) motor controllers rely on silicon chips. When electricity flows through a semiconductor junction, it creates heat. If a panel's cooling fan fails, the junction temperature surges, releasing extra minority charge carriers. This increases current flow, generating *even more heat* in a destructive loop known as **Thermal Runaway**, melting the silicon crystal structure completely. This is why adding thermal paste and aluminum heat sinks is just as critical as wiring the circuit correctly.
+                </p>
+            </div>
+
+            <div style="padding-left: 10px; border-left: 3px solid #eab308;">
+                <strong style="color: #fff; font-size: 15px;">4. Stimulated Emission & Industrial Material Processing (Modern Physics Unit)</strong>
+                <p style="color: #aaa; font-size: 13.5px; margin: 5px 0 0 0; line-height: 1.5;">
+                    <strong>The Book Formula:</strong> $E_2 - E_1 = h\nu$ (Photon energy differences during atomic transition).<br>
+                    <strong>The Real-World Reality:</strong> In mechanical engineering shops, heavy $CO_2$ and Fiber **CNC Laser Cutters** utilize this exact atomic energy state jump to focus light energy down into a pinpoint diameter. Instead of cutting with physical friction (like a traditional saw blade that dulls over time), these machines use massive localized photon density to cleanly melt and vaporize 16mm thick carbon steel plates instantly.
+                </p>
+            </div>
         </div>
 
-        <div class="controls">
-            <span id="question-counter"></span>
-            <button id="next-btn">Next Question →</button>
+        <div class="tool-card" style="cursor: default; text-align: left; height: auto; padding: 25px; box-sizing: border-box; width: 100%;">
+            <h2 style="color: darkturquoise; margin-top: 0; margin-bottom: 15px; font-size: 20px;">📋 CRITICAL SYLLABUS CONDITIONS & EXAM CRITERIA</h2>
+            <p style="color: #ccc; line-height: 1.6; margin-bottom: 15px; font-size: 14px;">
+                WBSCTE subjective papers frequently ask for the "necessary conditions" to achieve specific physical phenomena. Memorize these exact parameters to secure full marks:
+            </p>
+
+            <div style="overflow-x: auto; margin-bottom: 20px;">
+                <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 13.5px;">
+                    <thead>
+                        <tr style="border-bottom: 2px solid rgba(255,255,255,0.1); color: #fff;">
+                            <th style="padding: 8px 4px; width: 30%;">Syllabus Topic</th>
+                            <th style="padding: 8px 4px; width: 35%;">Mandatory Condition Criteria</th>
+                            <th style="padding: 8px 4px; width: 35%;">Why It Matters / Exam Tip</th>
+                        </tr>
+                    </thead>
+                    <tbody style="color: #aaa;">
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                            <td style="padding: 8px 4px;"><strong style="color: #fff;">Sustained Interference</strong></td>
+                            <td style="padding: 8px 4px; color: #eab308;">1. Light sources must be coherent.<br>2. Amplitudes must be nearly equal.<br>3. Continuous monochromatic light wave emission.</td>
+                            <td style="padding: 8px 4px;">If sources are independent or incoherent, the phase difference changes rapidly, causing the interference pattern to blur out.</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                            <td style="padding: 8px 4px;"><strong style="color: #fff;">Total Internal Reflection (TIR)</strong></td>
+                            <td style="padding: 8px 4px; color: #eab308;">1. Light must travel from a denser to a rarer medium.<br>2. Angle of incidence must be greater than the critical angle ($i > \theta_c$).</td>
+                            <td style="padding: 8px 4px;">Crucial for optical fiber questions. If light enters from air to glass, TIR is physically impossible.</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                            <td style="padding: 8px 4px;"><strong style="color: #fff;">Lasing Action (LASER)</strong></td>
+                            <td style="padding: 8px 4px; color: #eab308;">1. Population Inversion ($N_2 > N_1$).<br>2. Presence of a long-lived Metastable state.<br>3. Optical pumping mechanism to supply energy.</td>
+                            <td style="padding: 8px 4px;">In normal thermal equilibrium, lower states hold more atoms. Lasing cannot happen until this distribution is completely inverted.</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px 4px;"><strong style="color: #fff;">Ohm’s Law Validity</strong></td>
+                            <td style="padding: 8px 4px; color: #eab308;">Physical conditions (specifically temperature, mechanical strain, and material composition) must remain strictly constant.</td>
+                            <td style="padding: 8px 4px;">Semiconductors violate Ohm's Law because their temperature changes release free charge carriers, creating a non-linear $V-I$ graph.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
+
+        <div class="tool-card" style="cursor: default; text-align: left; height: auto; padding: 25px; box-sizing: border-box; width: 100%;">
+            <h2 style="color: darkturquoise; margin-top: 0; margin-bottom: 15px; font-size: 20px;">📐 QUICK-LOOKUP FORMULA BANK FOR NUMERICALS</h2>
+            <p style="color: #ccc; line-height: 1.6; margin-bottom: 15px; font-size: 14px;">
+                Almost 30% of the marks in Applied Physics-II involve numerical problem-solving. Use this structured reference map to remember your formulas alongside their proper SI units:
+            </p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+                <div style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05);">
+                    <h3 style="color: #38bdf8; margin: 0 0 10px 0; font-size: 15px;">Optics & Wave Motion</h3>
+                    <p style="color: #aaa; font-size: 13px; margin: 0; line-height: 1.6;">
+                        • <strong>Fringe Width:</strong> $\beta = \frac{\lambda D}{d}$<br>
+                        • <strong>Lens Maker's Formula:</strong> $\frac{1}{f} = (\mu - 1)\left(\frac{1}{R_1} - \frac{1}{R_2}\right)$<br>
+                        • <strong>Velocity of Wave:</strong> $v = n\lambda$ (where $n$ is frequency)<br>
+                        <span style="color: #777;">*Note: Ensure $D$ (screen distance) and $d$ (slit separation) are both converted to meters before calculating.</span>
+                    </p>
+                </div>
+
+                <div style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05);">
+                    <h3 style="color: #a855f7; margin: 0 0 10px 0; font-size: 15px;">Electrostatics & Current</h3>
+                    <p style="color: #aaa; font-size: 13px; margin: 0; line-height: 1.6;">
+                        • <strong>Capacitance (Parallel Plate):</strong> $C = \frac{\varepsilon_0 A}{d}$<br>
+                        • <strong>Equivalent Cap. (Series):</strong> $\frac{1}{C_s} = \frac{1}{C_1} + \frac{1}{C_2}$<br>
+                        • <strong>Temperature Resistance Change:</strong> $R_t = R_0(1 + \alpha \Delta t)$<br>
+                        <span style="color: #777;">*Value Constant: $\varepsilon_0 = 8.854 \times 10^{-12} \text{ F/m}$</span>
+                    </p>
+                </div>
+
+                <div style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05);">
+                    <h3 style="color: #22c55e; margin: 0 0 10px 0; font-size: 15px;">Electromagnetism & Photons</h3>
+                    <p style="color: #aaa; font-size: 13px; margin: 0; line-height: 1.6;">
+                        • <strong>Magnetic Flux:</strong> $\phi = B \cdot A \cdot \cos(\theta)$<br>
+                        • <strong>Induced EMF (Faraday's):</strong> $e = -L\frac{dI}{dt}$<br>
+                        • <strong>Photon Energy:</strong> $E = h\nu = \frac{hc}{\lambda}$<br>
+                        <span style="color: #777;">*Value Constant: $h = 6.63 \times 10^{-34} \text{ J}\cdot\text{s}$</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tool-card" style="cursor: default; text-align: left; height: auto; padding: 25px; box-sizing: border-box; width: 100%;">
+            <h2 style="color: darkturquoise; margin-top: 0; margin-bottom: 15px; font-size: 20px;">✍️ EXPERT STEP-BY-STEP EXAM NUMERICAL COMPASS</h2>
+            <p style="color: #ccc; line-height: 1.6; margin-bottom: 15px; font-size: 14px;">
+                Let's break down how to correctly lay out your math for a classic WBSCTE board question to guarantee step-marking points even if you commit a calculation mistake:
+            </p>
+
+            <div style="background: rgba(0,0,0,0.2); padding: 18px; border-radius: 8px; border-left: 4px solid #22c55e;">
+                <strong style="color: #fff; font-size: 14px; display: block; margin-bottom: 8px;">Syllabus Question Model:</strong>
+                <p style="color: #bbb; font-size: 13.5px; margin: 0; font-style: italic; line-height: 1.5;">
+                    "In a Young's Double Slit Experiment, the slits are separated by 0.2 mm and the screen is placed 1.2 meters away. If the wavelength of the light source used is 5000 Å, calculate the distance between consecutive bright fringes."
+                </p>
+                
+                <div style="margin-top: 15px; font-size: 13px; color: #aaa; line-height: 1.6;">
+                    <strong style="color: darkturquoise; display: block; margin-bottom: 5px;">Step 1: Write down the given values with standard units</strong>
+                    • Distance between slits ($d$) = $0.2 \text{ mm} = 0.2 \times 10^{-3} \text{ m}$<br>
+                    • Distance to screen ($D$) = $1.2 \text{ m}$<br>
+                    • Wavelength ($\lambda$) = $5000 \text{ Å} = 5000 \times 10^{-10} \text{ m} = 5 \times 10^{-7} \text{ m}$ <span style="color: #ff9800;">(Crucial step!)</span>
+                    
+                    <strong style="color: darkturquoise; display: block; margin-top: 12px; margin-bottom: 5px;">Step 2: State the primary governing formula</strong>
+                    • Fringe Width formula: $\beta = \frac{\lambda D}{d}$
+                    
+                    <strong style="color: darkturquoise; display: block; margin-top: 12px; margin-bottom: 5px;">Step 3: Substitute and simplify explicitly</strong>
+                    • $\beta = \frac{(5 \times 10^{-7} \text{ m}) \times (1.2 \text{ m})}{0.2 \times 10^{-3} \text{ m}}$<br>
+                    • $\beta = \frac{6 \times 10^{-7}}{2 \times 10^{-4}} = 3 \times 10^{-3} \text{ m}$
+                    
+                    <strong style="color: darkturquoise; display: block; margin-top: 12px; margin-bottom: 5px;">Step 4: Box your final answer with its metric unit</strong>
+                    • <span style="padding: 2px 6px; border: 1px dashed #22c55e; color: #fff; font-weight: bold;">$\beta = 3 \text{ mm}$ or $0.003 \text{ m}$</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="categories reveal" style="padding: 0; margin: 0; width: 100%;">
+            <a href="index.html" style="text-decoration: none;"><div class="tool-card" style="text-align: center; margin: 0;">BACK</div></a>
+        </div>
+    </main>
+
+    <div class="footer">
+        <a href="#"><h3>Bong Polytechnic</h3></a>
+        <p>Your Study Partner For PYQs, Notes & Resources</p>
+        <div class="fl">
+            <a href="index.html">Home</a>
+            <a href="index.html#pyqs">PYQs</a>
+            <a href="notes.html">Notes</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="privacy.html">Privacy Policy</a>
+        </div>
+        <div class="fl">
+            <a href="disclaimer.html">Disclaimer</a>
+            <a href="terms.html">Terms & Conditions</a>
+        </div>
+        <p>&copy;2026 Bong Polytechnic. All Rights Reserved.</p>
     </div>
 
-    <div id="result-screen">
-        <h1>Results</h1>
-        <p>You have completed all 65 questions!</p>
-        <div class="score-display" id="final-score">0 / 65</div>
-        <button id="restart-btn" style="display:inline-block;">Restart & Reshuffle</button>
-    </div>
-</div>
-    </section><br><br><br><br>
-    <div class="categories reveal"><br /><br><br>
-            <a href="index.html"><div class="tool-card">BACK</div></a></div>
-<br /><br /><br /><br><br><br><br><br><br><br><br><br><br><br><br>
-        <div class="footer">
-            <a href="#"><h3>Bong Polytechnic</h3></a>
-            <p>Your Study Partner For PYQs, Notes & Resources</p>
-            <div class="fl">
-                <a href="index.html">Home</a>
-                <a href="index.html#pyqs">PYQs</a>
-                <a href="notes.html">Notes</a>
-                <a href="about.html">About Us</a>
-                <a href="contact.html">Contact</a>
-                <a href="privacy.html">Privacy Policy</a>
-            </div>
-            <div class="fl">
-                <a href="disclaimer.html">Disclaimer</a>
-                <a href="terms.html">Terms & Conditions</a>
-            </div>
-            <p>&copy;2026 Bong Polytechnic. All Rights Reserved.</p>
-        </div>
-        <div></div>
-        <script src="script.js"></script>
+    <script src="script.js"></script>
     
+    <script>
+        const mcqData = [
+            // WAVE MOTION
+            { q: "What happens to the wavelength of a sound wave in air if its frequency increases?", options: ["Decreases", "Increases", "Remains constant", "Becomes zero"], correct: 0, exp: "The wavelength (λ) is related to frequency (f) by v = fλ. Since the speed of sound (v) is constant, if frequency increases, wavelength must decrease." },
+            { q: "What is the beat frequency if two waves of 400 Hz and 405 Hz interfere?", options: ["5 Hz", "400 Hz", "405 Hz", "805 Hz"], correct: 0, exp: "The beat frequency is the absolute difference between the two interfering frequencies: |400 - 405| = 5 Hz." },
+            { q: "If y1 = 6 sin 250πt and y2 = 3 sin 256πt superpose, the number of beats per second is:", options: ["3", "5", "6", "8"], correct: 0, exp: "n1 = 250π/2π = 125 Hz; n2 = 256π/2π = 128 Hz. Beats = n2 - n1 = 128 - 125 = 3." },
+            { q: "For the particle executing SHM y = 5 sin (2π/5)(10t + x), the frequency and amplitude are:", options: ["10, 5", "5, 2", "2, 5", "5/π, 5"], correct: 2, exp: "Comparing with Asin(ωt+φ), A=5 and ω=2π/5 * 10 = 4π. Freq = ω/2π = 4π/2π = 2. So (2, 5)." },
+            { q: "What is the total phase of a particle in SHM y = A sin(ωt + φ)?", options: ["ωt + φ", "ωt", "φ", "ω"], correct: 0, exp: "In the displacement equation, the entire argument (ωt + φ) represents the total phase of the motion." },
+            // OPTICS
+            { q: "The working of an optical fibre is based on:", options: ["Total internal reflection", "Refraction", "Interference", "Diffraction"], correct: 0, exp: "Light repeatedly bounces off the inner walls of the fiber due to Total Internal Reflection (TIR), allowing long-distance transmission." },
+            { q: "Nature of image formed by convex lens when object is at twice the focal length?", options: ["Real and inverted", "Virtual and erect", "Real and erect", "Virtual and inverted"], correct: 0, exp: "At 2f, the image is formed on the opposite side at 2f. It is real, inverted, and the same size as the object." },
+            { q: "Focal length of two contact lenses with power +5D and -2.5D?", options: ["+40cm", "-40cm", "+40m", "none of these"], correct: 0, exp: "Combined P = P1 + P2 = +2.5D. f = 1/P = 1/2.5 = 0.4m = +40cm." },
+            { q: "Focal length of a convex lens is maximum for which color?", options: ["Blue", "Yellow", "Green", "Red"], correct: 3, exp: "Refractive index is lowest for red. Since focal length is inversely proportional to (μ-1), lower μ means higher focal length." },
+            { q: "Relationship between focal lengths for blue (fb) and yellow (fy) light?", options: ["fb = fy", "fb > fy", "fb < fy", "fb << fy"], correct: 2, exp: "Refractive index for blue is higher than yellow. Thus, focal length for blue is less than for yellow (fb < fy)." },
+            { q: "Maximum magnifying power of a convex lens with f = 5 cm?", options: ["6", "10", "25", "1"], correct: 0, exp: "M = 1 + D/f. Using D=25cm, M = 1 + 25/5 = 6." },
+            { q: "If a lens is surrounded by a medium denser than air, focal length:", options: ["Decreases", "Increases", "Remains same", "Undefined"], correct: 1, exp: "The relative refractive index decreases, causing light to bend less; hence, the focal length increases." },
+            { q: "In interference, if dark band width is β1 and bright band is β2 then:", options: ["2β1 = β2", "2β2 = β1", "β1 = β2", "β1 + 3β2 = 1"], correct: 2, exp: "Fringes are equally spaced in Young's experiment; the distance between consecutive dark or bright fringes is the same." },
+            { q: "Speed of light in diamond (n=2.4) if c=3x10^8 m/s?", options: ["3 x 10^8 m/s", "7.2 x 10^8 m/s", "1.25 x 10^8 m/s", "none"], correct: 2, exp: "v = c/n = (3 x 10^8) / 2.4 = 1.25 x 10^8 m/s." },
+            { q: "Velocity of light in glass of refractive index 1.5?", options: ["3 x 10^8 m/s", "4.5 x 10^8 m/s", "2 x 10^8 m/s", "2 x 10^7 m/s"], correct: 2, exp: "v = c/n = (3 x 10^8) / 1.5 = 2 x 10^8 m/s." },
+            // ELECTROSTATICS
+            { q: "The electric field inside a hollow conducting sphere is:", options: ["Increasing", "Decreasing", "Constant", "Zero"], correct: 3, exp: "Charges reside only on the surface of a conductor. Inside the hollow space, there are no charges, so the field is zero." },
+            { q: "Which factor does capacitance depend on?", options: ["Voltage", "Current", "Area of plates", "Resistance"], correct: 2, exp: "Capacitance (C) depends on geometry: C = εkA/d, where A is the area of the plates." },
+            // CURRENT ELECTRICITY
+            { q: "The SI unit of resistivity is:", options: ["Ohm. m^-1", "Vm^-1", "Vm", "Ohm. m"], correct: 3, exp: "Resistivity ρ = RA/L. Units: (Ω * m^2)/m = Ω.m (Ohm.meter)." },
+            { q: "Currents 1A, 2A, 3A enter a junction. Current leaving is:", options: ["6A", "5A", "3A", "0A"], correct: 0, exp: "Kirchhoff's Current Law (KCL) states total current entering equals total current leaving: 1+2+3 = 6A." },
+            { q: "Charge flowing for 0.5A in 5 minutes?", options: ["216C", "300C", "150C", "25C"], correct: 2, exp: "Q = It. Time = 5 * 60 = 300s. Q = 0.5 * 300 = 150 Coulombs." },
+            { q: "Energy used by 2V source sending 0.2A for 5s?", options: ["0.2 J", "0.4 J", "4.0 J", "2.0 J"], correct: 3, exp: "Energy = VIt = 2 * 0.2 * 5 = 2.0 Joules." },
+            { q: "Wire length (radius 0.25mm, ρ=45x10^-8) for 8 Ohm?", options: ["5m", "4.5m", "3.5m", "2.5m"], correct: 2, exp: "L = RA/ρ. Area = πr². After calculation, L ≈ 3.5 meters." },
+            { q: "Specific resistance of wire (L=170cm, D=0.3mm, R=4 Ohm)?", options: ["1.66 x 10^-4 Ωm", "1.66 x 10^-3 Ωm", "1.66 x 10^-5 Ωm", "none"], correct: 0, exp: "ρ = RA/L. Using πd²/4 for area, the calculation yields 1.66 x 10^-4 Ω.m." },
+            { q: "Wire length halved and area doubled, resistance becomes:", options: ["Four times", "Two times", "Halved", "One-fourth"], correct: 3, exp: "R ∝ L/A. New R' = (L/2) / (2A) = 1/4 (L/A). It becomes one-fourth." },
+            { q: "Wire length halved and area doubled, specific resistance:", options: ["Unchanged", "Halved", "Doubled", "Quadrupled"], correct: 0, exp: "Specific resistance (resistivity) is a material property. It does not change with physical dimensions like length or area." },
+            { q: "Value of Red-Red-Red-Gold carbon resistor?", options: ["200 Ω", "2000 Ω", "2200 Ω", "2220 Ω"], correct: 2, exp: "Color Code: Red (2), Red (2), multiplier Red (10^2), Gold (±5%). Value = 22 x 100 = 2200 Ω." },
+            { q: "Specific resistance of copper depends on:", options: ["Length", "Area", "Temperature", "All"], correct: 2, exp: "Resistivity is an intensive property that depends only on the type of material and its temperature." },
+            { q: "6Ω/3Ω parallel + 4Ω series, 6V battery current?", options: ["1A", ">1A", "<1A", "none"], correct: 0, exp: "Parallel (6*3)/(6+3)=2Ω. Total R = 2+4=6Ω. I = V/R = 6/6 = 1 Ampere." },
+            { q: "Current through 60W-240V bulb on 160V main?", options: ["1/2 A", "1/3 A", "1/6 A", "1/12 A"], correct: 2, exp: "R = V²/P = 240²/60 = 960Ω. New I = V/R = 160/960 = 1/6 Ampere." },
+            { q: "Power for 6Ω and 8Ω parallel across 24V?", options: ["48W", "84W", "168W", "36W"], correct: 2, exp: "Equivalent R = 24/7 Ω. Power = V²/R = 24² / (24/7) = 24 * 7 = 168 Watts." },
+            { q: "Resistance of lamp marked 100W, 220V?", options: ["22 Ω", "484 Ω", "576 Ω", "2.2 Ω"], correct: 1, exp: "R = V²/P = (220 * 220) / 100 = 484 Ohms." },
+            { q: "Ratio of resistances 40W (110V) and 60W (220V)?", options: ["3 : 8", "3 : 4", "3 : 2", "3 : 1"], correct: 0, exp: "R ∝ V²/P. Ratio = (110²/40) / (220²/60) = (1/40) / (4/60) = 60/160 = 3/8." },
+            { q: "Heat evolved/absorbed at junction of dissimilar metals?", options: ["Seebeck", "Joule", "Peltier", "Thomson"], correct: 2, exp: "The Peltier effect occurs when current passes through junctions of different metals, causing heating or cooling." },
+            // ELECTROMAGNETISM
+            { q: "Dimensional formula of electric field (E = F/q)?", options: ["M1 L1 T-3 I-1", "M1 L1 T-3 C-1", "M1 L1 T-2 I-1", "M1 L1 T-2 C-1"], correct: 0, exp: "F = MLT⁻² and q = TI. E = F/q = (MLT⁻²) / (TI) = M¹L¹T⁻³I⁻¹." },
+            { q: "Magnetic field inside long solenoid (Turns N, Length L)?", options: ["μ0NI/2", "μ0NI/2L", "μ0NI/L", "none"], correct: 2, exp: "B = μ0nI, where n is turns per unit length (N/L). Thus, B = μ0NI/L." },
+            { q: "Lenz's law is a form of the law of:", options: ["Energy conservation", "Charge conservation", "Mass conservation", "none"], correct: 0, exp: "Lenz's law ensures energy conservation by requiring mechanical work to overcome magnetic opposition." },
+            { q: "A moving charge produces:", options: ["Electric only", "Magnetic only", "Both", "none"], correct: 2, exp: "A static charge produces an electric field; a moving charge produces both electric and magnetic fields." },
+            { q: "Which of the following does NOT exist?", options: ["Static charge", "Moving charge", "Magnetic dipole", "Magnetic monopole"], correct: 3, exp: "Magnets always have two poles (dipoles). A single north or south pole (monopole) has never been observed." },
+            { q: "SI unit of magnetic flux is:", options: ["Weber", "Gauss", "Oersted", "Tesla"], correct: 0, exp: "Magnetic flux (Φ) is measured in Webers (Wb). Magnetic flux density (B) is measured in Teslas." },
+            { q: "Weber/m^2 (Tesla) is the unit of:", options: ["Magnetic field", "Flux density", "Magnetic flux", "none"], correct: 1, exp: "Weber per square meter measures flux per unit area, which defines Magnetic Flux Density." },
+            { q: "SI unit of magnetic flux density is:", options: ["Weber", "Gauss", "Oersted", "Tesla"], correct: 3, exp: "Tesla (T) is the standard SI unit for Magnetic Flux Density (B-field intensity)." },
+            { q: "Henry can also be expressed as:", options: ["Volt. s. Amp", "Volt. s. Amp^-1", "Volt. s^-1. Amp^-1", "Volt. s. Amp^-2"], correct: 1, exp: "Inductance L = e / (dI/dt). Units: Volt / (Amp/sec) = Volt.s.Amp⁻¹." },
+            { q: "Induced emf (1mH, 5A to 3A in 10^-3s)?", options: ["2 x 10^-6 V", "8 x 10^-6 V", "2 V", "8 V"], correct: 2, exp: "e = -L(dI/dt) = -10⁻³ * (3-5)/10⁻³ = 2 Volts." },
+            { q: "Direction of induced emf in conductor in B-field?", options: ["Laplace", "Fleming Left", "Fleming Right", "none"], correct: 2, exp: "Fleming's Right-Hand Rule identifies the direction of induced current in a generator/moving conductor." },
+            { q: "SI unit of magnetic pole strength is:", options: ["Am", "Am^-1", "Am^-2", "Am^2"], correct: 0, exp: "Pole strength is measured in Ampere-meters (Am)." },
+            // SEMICONDUCTORS
+            { q: "In germanium crystal, energy band gap is:", options: ["0.068 eV", "6.8 eV", "68 eV", "0.68 eV"], correct: 3, exp: "Germanium has a narrow band gap of 0.68 eV. (Silicon is 1.1 eV)." },
+            { q: "In a junction diode the holes are due to:", options: ["Protons", "Extra electrons", "Neutrons", "Missing electrons"], correct: 3, exp: "A hole is not a physical particle but a vacancy left behind when an electron moves." },
+            { q: "In a transistor the base is doped:", options: ["Heavily", "Moderately", "Lightly", "Randomly"], correct: 2, exp: "The base is kept very thin and lightly doped to ensure most carriers pass to the collector." },
+            { q: "In unbiased p-n junction, Idiff and Idrift relationship?", options: ["Idiff = Idrift", "Idiff > Idrift", "Idiff < Idrift", "Idiff >> Idrift"], correct: 0, exp: "In equilibrium (unbiased), the diffusion and drift currents are equal and opposite, so net current is zero." },
+            { q: "Forward bias increased, width of depletion region:", options: ["Decrease", "Increase", "Remain same", "Increase prop."], correct: 0, exp: "Forward bias pushes carriers toward the junction, neutralizing ions and narrowing the depletion layer." },
+            { q: "Which transistor doping statement is correct?", options: ["Emitter highly doped", "Base moderately doped", "Collector lightly doped", "none"], correct: 0, exp: "The Emitter must be highly doped to provide a large number of charge carriers for conduction." },
+            { q: "Depletion region of p-n junction has a shortage of:", options: ["Acceptor ions", "Holes and electrons", "Donor ions", "none"], correct: 1, exp: "The depletion region is 'depleted' of mobile charge carriers (holes and electrons), leaving only fixed ions." },
+            { q: "Temp. coefficient of resistance of semiconductor is:", options: ["Positive", "Zero", "Constant", "Negative"], correct: 3, exp: "Semiconductors have a negative coefficient; as temperature rises, more carriers are freed, and resistance drops." },
+            { q: "The output of a full wave rectifier is:", options: ["AC voltage", "Constant DC", "Zero", "Pulsating unidirectional"], correct: 3, exp: "The rectifier flips the negative halves of AC to positive, but ripples remain, making it pulsating DC." },
+            { q: "Impurity material to obtain p-type semiconductor?", options: ["Tetravalent", "Pentavalent", "Trivalent", "none"], correct: 2, exp: "Adding trivalent atoms (like Boron or Indium) creates holes, forming a positive-type (p-type) semiconductor." },
+            // MODERN PHYSICS
+            { q: "Energy of first excited state of hydrogen atom?", options: ["-13.6 eV", "-3.4 eV", "-1.51 eV", "none"], correct: 1, exp: "E = -13.6/n². For first excited state (n=2), E = -13.6/4 = -3.4 eV." },
+            { q: "Staying time of atoms in metastable states (seconds)?", options: ["10^-2", "10^-3", "10^-4", "10^-6"], correct: 1, exp: "Metastable states are long-lived excited states where atoms stay for about 10⁻³ seconds before emission." },
+            { q: "X-rays are deflected by:", options: ["Electric", "Magnetic", "Both", "Neither"], correct: 3, exp: "X-rays are high-frequency electromagnetic waves (photons). Since they carry no charge, fields do not deflect them." },
+            { q: "X-ray penetrating power can be increased by:", options: ["Inc. current", "Inc. tube voltage", "Dec. current", "Dec. tube voltage"], correct: 1, exp: "Increasing voltage increases electron kinetic energy, resulting in higher-energy (harder) X-rays with more penetration." },
+            { q: "In X-ray experiment, Ka and Kb denote:", options: ["Char. lines", "Cont. spectrum", "α, β emissions", "none"], correct: 2, exp: "Ka and Kb refer to specific spectral lines produced by electron transitions between specific shells (L→K and M→K)." },
+            { q: "X-ray intensity can be increased by:", options: ["Inc. voltage", "Dec. voltage", "Dec. current", "Inc. filament current"], correct: 3, exp: "Intensity depends on the number of photons, which is controlled by the number of electrons (filament current)." },
+            { q: "Characteristic X-ray depends on:", options: ["Nature of target", "Electron velocity", "Striking number", "none"], correct: 0, exp: "Characteristic X-rays are unique to the target material because they depend on its specific atomic energy levels." },
+            { q: "Pumping method used in He-Ne laser is:", options: ["Optical", "Gas dynamic", "Chemical", "Electrical"], correct: 3, exp: "He-Ne lasers use electrical discharge to excite helium atoms, which then collide with neon atoms." },
+            { q: "Lasing action is based on:", options: ["Stimulated emission", "Spontaneous emission", "Absorption", "none"], correct: 0, exp: "LASER stands for Light Amplification by Stimulated Emission of Radiation; it is the fundamental core of the technology." },
+            { q: "Freq. relationship: X-rays(a), Gamma(b), Visible(c)?", options: ["a < b, b > c", "a < b, b < c", "a > b > c", "a > b, b < c"], correct: 0, exp: "Gamma rays have the highest frequency, followed by X-rays, then visible light. So a < b and b > c." }
+        ];
 
-<script>
-    const mcqData = [
-        // WAVE MOTION
-        { q: "What happens to the wavelength of a sound wave in air if its frequency increases?", options: ["Decreases", "Increases", "Remains constant", "Becomes zero"], correct: 0, exp: "The wavelength (λ) is related to frequency (f) by v = fλ. Since the speed of sound (v) is constant, if frequency increases, wavelength must decrease." },
-        { q: "What is the beat frequency if two waves of 400 Hz and 405 Hz interfere?", options: ["5 Hz", "400 Hz", "405 Hz", "805 Hz"], correct: 0, exp: "The beat frequency is the absolute difference between the two interfering frequencies: |400 - 405| = 5 Hz." },
-        { q: "If y1 = 6 sin 250πt and y2 = 3 sin 256πt superpose, the number of beats per second is:", options: ["3", "5", "6", "8"], correct: 0, exp: "n1 = 250π/2π = 125 Hz; n2 = 256π/2π = 128 Hz. Beats = n2 - n1 = 128 - 125 = 3." },
-        { q: "For the particle executing SHM y = 5 sin (2π/5)(10t + x), the frequency and amplitude are:", options: ["10, 5", "5, 2", "2, 5", "5/π, 5"], correct: 2, exp: "Comparing with Asin(ωt+φ), A=5 and ω=2π/5 * 10 = 4π. Freq = ω/2π = 4π/2π = 2. So (2, 5)." },
-        { q: "What is the total phase of a particle in SHM y = A sin(ωt + φ)?", options: ["ωt + φ", "ωt", "φ", "ω"], correct: 0, exp: "In the displacement equation, the entire argument (ωt + φ) represents the total phase of the motion." },
-        // OPTICS
-        { q: "The working of an optical fibre is based on:", options: ["Total internal reflection", "Refraction", "Interference", "Diffraction"], correct: 0, exp: "Light repeatedly bounces off the inner walls of the fiber due to Total Internal Reflection (TIR), allowing long-distance transmission." },
-        { q: "Nature of image formed by convex lens when object is at twice the focal length?", options: ["Real and inverted", "Virtual and erect", "Real and erect", "Virtual and inverted"], correct: 0, exp: "At 2f, the image is formed on the opposite side at 2f. It is real, inverted, and the same size as the object." },
-        { q: "Focal length of two contact lenses with power +5D and -2.5D?", options: ["+40cm", "-40cm", "+40m", "none of these"], correct: 0, exp: "Combined P = P1 + P2 = +2.5D. f = 1/P = 1/2.5 = 0.4m = +40cm." },
-        { q: "Focal length of a convex lens is maximum for which color?", options: ["Blue", "Yellow", "Green", "Red"], correct: 3, exp: "Refractive index is lowest for red. Since focal length is inversely proportional to (μ-1), lower μ means higher focal length." },
-        { q: "Relationship between focal lengths for blue (fb) and yellow (fy) light?", options: ["fb = fy", "fb > fy", "fb < fy", "fb << fy"], correct: 2, exp: "Refractive index for blue is higher than yellow. Thus, focal length for blue is less than for yellow (fb < fy)." },
-        { q: "Maximum magnifying power of a convex lens with f = 5 cm?", options: ["6", "10", "25", "1"], correct: 0, exp: "M = 1 + D/f. Using D=25cm, M = 1 + 25/5 = 6." },
-        { q: "If a lens is surrounded by a medium denser than air, focal length:", options: ["Decreases", "Increases", "Remains same", "Undefined"], correct: 1, exp: "The relative refractive index decreases, causing light to bend less; hence, the focal length increases." },
-        { q: "In interference, if dark band width is β1 and bright band is β2 then:", options: ["2β1 = β2", "2β2 = β1", "β1 = β2", "β1 + 3β2 = 1"], correct: 2, exp: "Fringes are equally spaced in Young's experiment; the distance between consecutive dark or bright fringes is the same." },
-        { q: "Speed of light in diamond (n=2.4) if c=3x10^8 m/s?", options: ["3 x 10^8 m/s", "7.2 x 10^8 m/s", "1.25 x 10^8 m/s", "none"], correct: 2, exp: "v = c/n = (3 x 10^8) / 2.4 = 1.25 x 10^8 m/s." },
-        { q: "Velocity of light in glass of refractive index 1.5?", options: ["3 x 10^8 m/s", "4.5 x 10^8 m/s", "2 x 10^8 m/s", "2 x 10^7 m/s"], correct: 2, exp: "v = c/n = (3 x 10^8) / 1.5 = 2 x 10^8 m/s." },
-        // ELECTROSTATICS
-        { q: "The electric field inside a hollow conducting sphere is:", options: ["Increasing", "Decreasing", "Constant", "Zero"], correct: 3, exp: "Charges reside only on the surface of a conductor. Inside the hollow space, there are no charges, so the field is zero." },
-        { q: "Which factor does capacitance depend on?", options: ["Voltage", "Current", "Area of plates", "Resistance"], correct: 2, exp: "Capacitance (C) depends on geometry: C = εkA/d, where A is the area of the plates." },
-        // CURRENT ELECTRICITY
-        { q: "The SI unit of resistivity is:", options: ["Ohm. m^-1", "Vm^-1", "Vm", "Ohm. m"], correct: 3, exp: "Resistivity ρ = RA/L. Units: (Ω * m^2)/m = Ω.m (Ohm.meter)." },
-        { q: "Currents 1A, 2A, 3A enter a junction. Current leaving is:", options: ["6A", "5A", "3A", "0A"], correct: 0, exp: "Kirchhoff's Current Law (KCL) states total current entering equals total current leaving: 1+2+3 = 6A." },
-        { q: "Charge flowing for 0.5A in 5 minutes?", options: ["216C", "300C", "150C", "25C"], correct: 2, exp: "Q = It. Time = 5 * 60 = 300s. Q = 0.5 * 300 = 150 Coulombs." },
-        { q: "Energy used by 2V source sending 0.2A for 5s?", options: ["0.2 J", "0.4 J", "4.0 J", "2.0 J"], correct: 3, exp: "Energy = VIt = 2 * 0.2 * 5 = 2.0 Joules." },
-        { q: "Wire length (radius 0.25mm, ρ=45x10^-8) for 8 Ohm?", options: ["5m", "4.5m", "3.5m", "2.5m"], correct: 2, exp: "L = RA/ρ. Area = πr². After calculation, L ≈ 3.5 meters." },
-        { q: "Specific resistance of wire (L=170cm, D=0.3mm, R=4 Ohm)?", options: ["1.66 x 10^-4 Ωm", "1.66 x 10^-3 Ωm", "1.66 x 10^-5 Ωm", "none"], correct: 0, exp: "ρ = RA/L. Using πd²/4 for area, the calculation yields 1.66 x 10^-4 Ω.m." },
-        { q: "Wire length halved and area doubled, resistance becomes:", options: ["Four times", "Two times", "Halved", "One-fourth"], correct: 3, exp: "R ∝ L/A. New R' = (L/2) / (2A) = 1/4 (L/A). It becomes one-fourth." },
-        { q: "Wire length halved and area doubled, specific resistance:", options: ["Unchanged", "Halved", "Doubled", "Quadrupled"], correct: 0, exp: "Specific resistance (resistivity) is a material property. It does not change with physical dimensions like length or area." },
-        { q: "Value of Red-Red-Red-Gold carbon resistor?", options: ["200 Ω", "2000 Ω", "2200 Ω", "2220 Ω"], correct: 2, exp: "Color Code: Red (2), Red (2), multiplier Red (10^2), Gold (±5%). Value = 22 x 100 = 2200 Ω." },
-        { q: "Specific resistance of copper depends on:", options: ["Length", "Area", "Temperature", "All"], correct: 2, exp: "Resistivity is an intensive property that depends only on the type of material and its temperature." },
-        { q: "6Ω/3Ω parallel + 4Ω series, 6V battery current?", options: ["1A", ">1A", "<1A", "none"], correct: 0, exp: "Parallel (6*3)/(6+3)=2Ω. Total R = 2+4=6Ω. I = V/R = 6/6 = 1 Ampere." },
-        { q: "Current through 60W-240V bulb on 160V main?", options: ["1/2 A", "1/3 A", "1/6 A", "1/12 A"], correct: 2, exp: "R = V²/P = 240²/60 = 960Ω. New I = V/R = 160/960 = 1/6 Ampere." },
-        { q: "Power for 6Ω and 8Ω parallel across 24V?", options: ["48W", "84W", "168W", "36W"], correct: 2, exp: "Equivalent R = 24/7 Ω. Power = V²/R = 24² / (24/7) = 24 * 7 = 168 Watts." },
-        { q: "Resistance of lamp marked 100W, 220V?", options: ["22 Ω", "484 Ω", "576 Ω", "2.2 Ω"], correct: 1, exp: "R = V²/P = (220 * 220) / 100 = 484 Ohms." },
-        { q: "Ratio of resistances 40W (110V) and 60W (220V)?", options: ["3 : 8", "3 : 4", "3 : 2", "3 : 1"], correct: 0, exp: "R ∝ V²/P. Ratio = (110²/40) / (220²/60) = (1/40) / (4/60) = 60/160 = 3/8." },
-        { q: "Heat evolved/absorbed at junction of dissimilar metals?", options: ["Seebeck", "Joule", "Peltier", "Thomson"], correct: 2, exp: "The Peltier effect occurs when current passes through junctions of different metals, causing heating or cooling." },
-        // ELECTROMAGNETISM
-        { q: "Dimensional formula of electric field (E = F/q)?", options: ["M1 L1 T-3 I-1", "M1 L1 T-3 C-1", "M1 L1 T-2 I-1", "M1 L1 T-2 C-1"], correct: 0, exp: "F = MLT⁻² and q = TI. E = F/q = (MLT⁻²) / (TI) = M¹L¹T⁻³I⁻¹." },
-        { q: "Magnetic field inside long solenoid (Turns N, Length L)?", options: ["μ0NI/2", "μ0NI/2L", "μ0NI/L", "none"], correct: 2, exp: "B = μ0nI, where n is turns per unit length (N/L). Thus, B = μ0NI/L." },
-        { q: "Lenz's law is a form of the law of:", options: ["Energy conservation", "Charge conservation", "Mass conservation", "none"], correct: 0, exp: "Lenz's law ensures energy conservation by requiring mechanical work to overcome magnetic opposition." },
-        { q: "A moving charge produces:", options: ["Electric only", "Magnetic only", "Both", "none"], correct: 2, exp: "A static charge produces an electric field; a moving charge produces both electric and magnetic fields." },
-        { q: "Which of the following does NOT exist?", options: ["Static charge", "Moving charge", "Magnetic dipole", "Magnetic monopole"], correct: 3, exp: "Magnets always have two poles (dipoles). A single north or south pole (monopole) has never been observed." },
-        { q: "SI unit of magnetic flux is:", options: ["Weber", "Gauss", "Oersted", "Tesla"], correct: 0, exp: "Magnetic flux (Φ) is measured in Webers (Wb). Magnetic flux density (B) is measured in Teslas." },
-        { q: "Weber/m^2 (Tesla) is the unit of:", options: ["Magnetic field", "Flux density", "Magnetic flux", "none"], correct: 1, exp: "Weber per square meter measures flux per unit area, which defines Magnetic Flux Density." },
-        { q: "SI unit of magnetic flux density is:", options: ["Weber", "Gauss", "Oersted", "Tesla"], correct: 3, exp: "Tesla (T) is the standard SI unit for Magnetic Flux Density (B-field intensity)." },
-        { q: "Henry can also be expressed as:", options: ["Volt. s. Amp", "Volt. s. Amp^-1", "Volt. s^-1. Amp^-1", "Volt. s. Amp^-2"], correct: 1, exp: "Inductance L = e / (dI/dt). Units: Volt / (Amp/sec) = Volt.s.Amp⁻¹." },
-        { q: "Induced emf (1mH, 5A to 3A in 10^-3s)?", options: ["2 x 10^-6 V", "8 x 10^-6 V", "2 V", "8 V"], correct: 2, exp: "e = -L(dI/dt) = -10⁻³ * (3-5)/10⁻³ = 2 Volts." },
-        { q: "Direction of induced emf in conductor in B-field?", options: ["Laplace", "Fleming Left", "Fleming Right", "none"], correct: 2, exp: "Fleming's Right-Hand Rule identifies the direction of induced current in a generator/moving conductor." },
-        { q: "SI unit of magnetic pole strength is:", options: ["Am", "Am^-1", "Am^-2", "Am^2"], correct: 0, exp: "Pole strength is measured in Ampere-meters (Am)." },
-        // SEMICONDUCTORS
-        { q: "In germanium crystal, energy band gap is:", options: ["0.068 eV", "6.8 eV", "68 eV", "0.68 eV"], correct: 3, exp: "Germanium has a narrow band gap of 0.68 eV. (Silicon is 1.1 eV)." },
-        { q: "In a junction diode the holes are due to:", options: ["Protons", "Extra electrons", "Neutrons", "Missing electrons"], correct: 3, exp: "A hole is not a physical particle but a vacancy left behind when an electron moves." },
-        { q: "In a transistor the base is doped:", options: ["Heavily", "Moderately", "Lightly", "Randomly"], correct: 2, exp: "The base is kept very thin and lightly doped to ensure most carriers pass to the collector." },
-        { q: "In unbiased p-n junction, Idiff and Idrift relationship?", options: ["Idiff = Idrift", "Idiff > Idrift", "Idiff < Idrift", "Idiff >> Idrift"], correct: 0, exp: "In equilibrium (unbiased), the diffusion and drift currents are equal and opposite, so net current is zero." },
-        { q: "Forward bias increased, width of depletion region:", options: ["Decrease", "Increase", "Remain same", "Increase prop."], correct: 0, exp: "Forward bias pushes carriers toward the junction, neutralizing ions and narrowing the depletion layer." },
-        { q: "Which transistor doping statement is correct?", options: ["Emitter highly doped", "Base moderately doped", "Collector lightly doped", "none"], correct: 0, exp: "The Emitter must be highly doped to provide a large number of charge carriers for conduction." },
-        { q: "Depletion region of p-n junction has a shortage of:", options: ["Acceptor ions", "Holes and electrons", "Donor ions", "none"], correct: 1, exp: "The depletion region is 'depleted' of mobile charge carriers (holes and electrons), leaving only fixed ions." },
-        { q: "Temp. coefficient of resistance of semiconductor is:", options: ["Positive", "Zero", "Constant", "Negative"], correct: 3, exp: "Semiconductors have a negative coefficient; as temperature rises, more carriers are freed, and resistance drops." },
-        { q: "The output of a full wave rectifier is:", options: ["AC voltage", "Constant DC", "Zero", "Pulsating unidirectional"], correct: 3, exp: "The rectifier flips the negative halves of AC to positive, but ripples remain, making it pulsating DC." },
-        { q: "Impurity material to obtain p-type semiconductor?", options: ["Tetravalent", "Pentavalent", "Trivalent", "none"], correct: 2, exp: "Adding trivalent atoms (like Boron or Indium) creates holes, forming a positive-type (p-type) semiconductor." },
-        // MODERN PHYSICS
-        { q: "Energy of first excited state of hydrogen atom?", options: ["-13.6 eV", "-3.4 eV", "-1.51 eV", "none"], correct: 1, exp: "E = -13.6/n². For first excited state (n=2), E = -13.6/4 = -3.4 eV." },
-        { q: "Staying time of atoms in metastable states (seconds)?", options: ["10^-2", "10^-3", "10^-4", "10^-6"], correct: 1, exp: "Metastable states are long-lived excited states where atoms stay for about 10⁻³ seconds before emission." },
-        { q: "X-rays are deflected by:", options: ["Electric", "Magnetic", "Both", "Neither"], correct: 3, exp: "X-rays are high-frequency electromagnetic waves (photons). Since they carry no charge, fields do not deflect them." },
-        { q: "X-ray penetrating power can be increased by:", options: ["Inc. current", "Inc. tube voltage", "Dec. current", "Dec. tube voltage"], correct: 1, exp: "Increasing voltage increases electron kinetic energy, resulting in higher-energy (harder) X-rays with more penetration." },
-        { q: "In X-ray experiment, Ka and Kb denote:", options: ["Char. lines", "Cont. spectrum", "α, β emissions", "none"], correct: 2, exp: "Ka and Kb refer to specific spectral lines produced by electron transitions between specific shells (L→K and M→K)." },
-        { q: "X-ray intensity can be increased by:", options: ["Inc. voltage", "Dec. voltage", "Dec. current", "Inc. filament current"], correct: 3, exp: "Intensity depends on the number of photons, which is controlled by the number of electrons (filament current)." },
-        { q: "Characteristic X-ray depends on:", options: ["Nature of target", "Electron velocity", "Striking number", "none"], correct: 0, exp: "Characteristic X-rays are unique to the target material because they depend on its specific atomic energy levels." },
-        { q: "Pumping method used in He-Ne laser is:", options: ["Optical", "Gas dynamic", "Chemical", "Electrical"], correct: 3, exp: "He-Ne lasers use electrical discharge to excite helium atoms, which then collide with neon atoms." },
-        { q: "Lasing action is based on:", options: ["Stimulated emission", "Spontaneous emission", "Absorption", "none"], correct: 0, exp: "LASER stands for Light Amplification by Stimulated Emission of Radiation; it is the fundamental core of the technology." },
-        { q: "Freq. relationship: X-rays(a), Gamma(b), Visible(c)?", options: ["a < b, b > c", "a < b, b < c", "a > b > c", "a > b, b < c"], correct: 0, exp: "Gamma rays have the highest frequency, followed by X-rays, then visible light. So a < b and b > c." }
-    ];
+        let shuffledQuestions = [];
+        let currentIdx = 0;
+        let score = 0;
 
-    let shuffledQuestions = [];
-    let currentIdx = 0;
-    let score = 0;
+        const qText = document.getElementById("question-text");
+        const optCont = document.getElementById("options-container");
+        const nextBtn = document.getElementById("next-btn");
+        const counter = document.getElementById("question-counter");
+        const progBar = document.getElementById("progress-bar");
+        const expBox = document.getElementById("explanation-box");
+        const expText = document.getElementById("explanation-text");
 
-    const qText = document.getElementById("question-text");
-    const optCont = document.getElementById("options-container");
-    const nextBtn = document.getElementById("next-btn");
-    const counter = document.getElementById("question-counter");
-    const progBar = document.getElementById("progress-bar");
-    const expBox = document.getElementById("explanation-box");
-    const expText = document.getElementById("explanation-text");
-
-    function shuffle(arr) {
-        for (let i = arr.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [arr[i], arr[j]] = [arr[j], arr[i]];
-        }
-    }
-
-    function initQuiz() {
-        shuffledQuestions = JSON.parse(JSON.stringify(mcqData));
-        shuffle(shuffledQuestions);
-        currentIdx = 0;
-        score = 0;
-        document.getElementById("quiz-screen").style.display = "block";
-        document.getElementById("result-screen").style.display = "none";
-        loadQuestion();
-    }
-
-    function loadQuestion() {
-        const data = shuffledQuestions[currentIdx];
-        qText.innerText = data.q;
-        optCont.innerHTML = "";
-        nextBtn.style.display = "none";
-        expBox.style.display = "none";
-
-        data.options.forEach((opt, i) => {
-            const btn = document.createElement("button");
-            btn.innerText = opt;
-            btn.className = "option-btn";
-            btn.onclick = () => handleSelection(i, data.correct, data.exp);
-            optCont.appendChild(btn);
-        });
-
-        counter.innerText = `Question ${currentIdx + 1} of 65`;
-        progBar.style.width = `${(currentIdx / 65) * 100}%`;
-    }
-
-    function handleSelection(selected, correct, explanation) {
-        const btns = optCont.getElementsByClassName("option-btn");
-        if (selected === correct) {
-            btns[selected].classList.add("correct");
-            score++;
-        } else {
-            btns[selected].classList.add("wrong");
-            btns[correct].classList.add("correct");
+        function shuffle(arr) {
+            for (let i = arr.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [arr[i], arr[j]] = [arr[j], arr[i]];
+            }
         }
 
-        // Show Explanation
-        expText.innerText = explanation;
-        expBox.style.display = "block";
+        function initQuiz() {
+            shuffledQuestions = JSON.parse(JSON.stringify(mcqData));
+            shuffle(shuffledQuestions);
+            currentIdx = 0;
+            score = 0;
+            document.getElementById("quiz-screen").style.display = "block";
+            document.getElementById("result-screen").style.display = "none";
+            loadQuestion();
+        }
 
-        Array.from(btns).forEach(b => b.disabled = true);
-        nextBtn.style.display = "block";
-    }
+        function loadQuestion() {
+            const data = shuffledQuestions[currentIdx];
+            qText.innerText = data.q;
+            optCont.innerHTML = "";
+            nextBtn.style.display = "none";
+            expBox.style.display = "none";
 
-    nextBtn.onclick = () => {
-        currentIdx++;
-        if (currentIdx < shuffledQuestions.length) loadQuestion();
-        else showResults();
-    };
+            data.options.forEach((opt, i) => {
+                const btn = document.createElement("button");
+                btn.innerText = opt;
+                btn.className = "option-btn";
+                btn.onclick = () => handleSelection(i, data.correct, data.exp);
+                optCont.appendChild(btn);
+            });
 
-    function showResults() {
-        document.getElementById("quiz-screen").style.display = "none";
-        document.getElementById("result-screen").style.display = "block";
-        document.getElementById("final-score").innerText = `${score} / 65`;
-    }
+            counter.innerText = `Question ${currentIdx + 1} of 65`;
+            progBar.style.width = `${(currentIdx / 65) * 100}%`;
+        }
 
-    document.getElementById("restart-btn").onclick = initQuiz;
+        function handleSelection(selected, correct, explanation) {
+            const btns = optCont.getElementsByClassName("option-btn");
+            if (selected === correct) {
+                btns[selected].classList.add("correct");
+                score++;
+            } else {
+                btns[selected].classList.add("wrong");
+                btns[correct].classList.add("correct");
+            }
 
-    initQuiz();
-</script>
+            expText.innerText = explanation;
+            expBox.style.display = "block";
 
+            Array.from(btns).forEach(b => b.disabled = true);
+            nextBtn.style.display = "block";
+        }
+
+        nextBtn.onclick = () => {
+            currentIdx++;
+            if (currentIdx < shuffledQuestions.length) loadQuestion();
+            else showResults();
+        };
+
+        function showResults() {
+            document.getElementById("quiz-screen").style.display = "none";
+            document.getElementById("result-screen").style.display = "block";
+            document.getElementById("final-score").innerText = `${score} / 65`;
+        }
+
+        document.getElementById("restart-btn").onclick = initQuiz;
+
+        initQuiz();
+    </script>
 </body>
 </html>
