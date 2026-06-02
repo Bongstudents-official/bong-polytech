@@ -15,6 +15,125 @@ content="Read the terms and conditions for using Bong Polytechnic including educ
 href="https://bong-polytech.vercel.app/terms.html">
         <link rel="stylesheet" href="styles.css" />
         <script src="script.js"></script>
+        <style>/* --- High-End Privacy Section Layout --- */
+.privacy-container {
+    max-width: 860px;
+    margin: 80px auto;
+    padding: 40px 24px !important;
+}
+
+.privacy-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.privacy-header h2 {
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: var(--text-main);
+    margin-bottom: 12px !important;
+}
+
+.update-badge {
+    display: inline-block;
+    background: rgba(37, 99, 235, 0.08);
+    color: var(--accent);
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.lead-text {
+    font-size: 17px !important;
+    line-height: 1.7;
+    color: var(--text-main);
+    margin-bottom: 32px;
+}
+
+/* Elegant spacing for legal cards instead of using stacked <br> tags */
+.policy-card {
+    background: var(--bg-glass);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 30px;
+    border-radius: 20px;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow-soft);
+}
+
+.policy-card h3 {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--text-main);
+    margin-bottom: 12px;
+    letter-spacing: -0.3px;
+}
+
+.policy-card p {
+    font-size: 15.5px;
+    line-height: 1.65;
+    color: var(--text-muted);
+    margin-bottom: 0; /* Clear internal stray margin offsets */
+}
+
+.policy-list {
+    list-style: none;
+    margin: 12px 0;
+    padding-left: 4px;
+}
+
+.policy-list li {
+    font-size: 15px;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 20px;
+}
+
+/* Sleek custom bullets */
+.policy-list li::before {
+    content: "•";
+    color: var(--accent);
+    font-weight: bold;
+    position: absolute;
+    left: 4px;
+}
+
+.note-text {
+    margin-top: 12px !important;
+    font-weight: 600;
+    color: #e11d48 !important; /* Soft premium warning red */
+}
+
+/* --- Mobile Spacing Compression System --- */
+@media (max-width: 768px) {
+    .privacy-container {
+        margin: 40px auto;
+        padding: 20px 16px !important; /* Compacts layout boundaries */
+    }
+    
+    .privacy-header h2 {
+        font-size: 26px;
+    }
+
+    .policy-card {
+        padding: 20px 16px; /* Squeezes internal whitespace padding down */
+        margin-bottom: 16px; /* Restores small, comfortable block separation */
+        border-radius: 14px;
+    }
+
+    .policy-card h3 {
+        font-size: 18px;
+    }
+
+    .policy-card p, .policy-list li {
+        font-size: 14.5px;
+        line-height: 1.55;
+    }
+}</style>
     </head>
     <body id="body">
         <header class="navbar">
@@ -48,87 +167,104 @@ href="https://bong-polytech.vercel.app/terms.html">
         </div>
         <br />
         <br /><br /><br /><br />
-        <section class="categories">
-            <h2 style="text-align: center;">Terms and Conditions for Bong Polytechnic</h2>
-            <br /><br /><br /><br />
-            <p>
-                Welcome to Bong Polytechnic. By accessing and using this website, you agree to comply with and be bound
-                by the following Terms and Conditions.
-            </p>
-            <br /><br><br><br>
-            <h4>1. Use of Website</h4>
-            <br />
+       <!-- --- Beautifully Restructured Terms & Conditions Section --- -->
+<section class="categories privacy-container">
+    <div class="privacy-header">
+        <h2>Terms and Conditions for Bong Polytechnic</h2>
+        <span class="update-badge">Last updated: 2026</span>
+    </div>
+
+    <div class="privacy-content">
+        <p class="lead-text">
+            Welcome to Bong Polytechnic. By accessing and using this website, you agree to comply with and be bound
+            by the following Terms and Conditions. Please read them carefully.
+        </p>
+
+        <div class="policy-card">
+            <h3>1. Use of Website</h3>
             <p>
                 The content provided on Bong Polytechnic is for educational and informational purposes only. By using
-                this website, you agree to use it responsibly and not for any unlawful activities.
+                this website, you agree to use it responsibly and strictly refrain from any unlawful activities.
             </p>
-            <br />
-            <h4>2. Intellectual Property Rights</h4>
-            <br />
-            <p>
-                All content on this website, including text, design, and layout, is the property of Bong Polytechnic
-                unless otherwise stated. Some materials such as previous year question papers, notices, and official
-                documents are sourced from publicly available resources and belong to their respective authorities. We
-                do not claim ownership of such third-party materials and provide proper credit wherever applicable.
-            </p>
-            <br />
-            <h4>3. Use of External Links</h4>
-            <br />
-            <p>
-                Our website may contain links to external websites (such as official government portals or unofficial portals). We do not have
-                control over the content and policies of these external sites and are not responsible for them.
-            </p>
-            <br />
+        </div>
 
-            <h4>4. Accuracy of Information</h4>
-            <br />
+        <div class="policy-card">
+            <h3>2. Intellectual Property Rights</h3>
             <p>
-                We strive to provide accurate and updated information. However, we do not guarantee the completeness,
-                reliability, or accuracy of any content.
+                All original content on this website, including text, design, and layout, is the property of Bong Polytechnic
+                unless otherwise stated. 
             </p>
-            <br />
-            <p>Users are advised to verify information from official sources.</p>
-            <br />
+            <p style="margin-top: 10px;">
+                Some educational materials such as previous year question papers (PYQs), notices, and official university/board 
+                documents are sourced from publicly available channels and belong to their respective authorities. We do not claim 
+                ownership over such third-party assets and provide appropriate credit wherever applicable.
+            </p>
+        </div>
 
-            <h4>5. Limitation of Liability</h4>
-            <br />
+        <div class="policy-card">
+            <h3>3. Use of External Links</h3>
             <p>
-                Bong Polytechnic shall not be held responsible for any loss or damage resulting from the use of this
-                website or reliance on its content.
+                Our website contains direct links to external platforms (such as official state government portals or educational boards). 
+                We maintain no active control over the shifting content, security frameworks, or terms of these external sites and 
+                cannot be held responsible for them.
             </p>
-            <br />
+        </div>
 
-            <h4>6. User Responsibilities</h4>
-            <br />
-            <p>By using this website, you agree:</p>
-            <br />
-            <p>- Not to misuse or attempt to harm the website.</p>
-            <p>- Not to copy or redistribute content without permission.</p>
-            <p>- Not to engage in any activity that disrupts the website.</p>
-            <br />
-            <h4>7. Changes to Terms</h4>
+        <div class="policy-card">
+            <h3>4. Accuracy of Information</h3>
+            <p>
+                While we strive to upload highly accurate and updated resource sheets, we do not guarantee the completeness, 
+                absolute reliability, or definitive accuracy of any content hosted here.
+            </p>
+            <p class="note-text" style="color: var(--accent, darkturquoise); font-weight: 600; margin-top: 10px;">
+                Users are strongly advised to cross-verify crucial timelines and metrics directly from official board sources.
+            </p>
+        </div>
 
-            <br />
+        <div class="policy-card">
+            <h3>5. Limitation of Liability</h3>
             <p>
-                We reserve the right to update or modify these Terms and Conditions at any time. Changes will be posted
-                on this page.
+                Bong Polytechnic, its creators, or administrators shall not be held liable for any loss, academic setbacks, 
+                or damages resulting from the use of this platform or direct reliance on its informational contents.
             </p>
-            <br />
-            <h4>8. Governing Law</h4>
-            <br />
-            <p>These Terms and Conditions shall be governed by and interpreted in accordance with the laws of India.</p>
-            <br />
-            <h4>9. Contact Us</h4>
-            <br />
+        </div>
+
+        <div class="policy-card">
+            <h3>6. User Responsibilities</h3>
+            <p>By browsing and accessing this website, you explicitly promise:</p>
+            <ul class="policy-list">
+                <li><strong>No Misuse:</strong> You will not attempt to scrape, attack, or maliciously harm this platform.</li>
+                <li><strong>No Unauthorized Redistribution:</strong> You will not copy or commercially redistribute our aggregated study assets without written permission.</li>
+                <li><strong>No Disruptions:</strong> You will not engage in activities that intentionally spike bandwidth consumption or disrupt server access for fellow students.</li>
+            </ul>
+        </div>
+
+        <div class="policy-card">
+            <h3>7. Changes to Terms</h3>
             <p>
-                If you have any questions regarding these Terms and Conditions, you can contact us through our website.
+                We reserve the exclusive right to modify or completely rewrite these Terms and Conditions at any chosen interval. 
+                Any structural adjustments will be updated live on this page instantly.
             </p>
-            <br />
-<br><br><br>
-            <h4 style="text-align: center;">Last updated: 2026</h4>
-        </section><br><br><br><br><br><br>
+        </div>
+
+        <div class="policy-card">
+            <h3>8. Governing Law</h3>
+            <p>
+                These Terms and Conditions are strictly governed by and interpreted in accordance with the prevailing laws of the Republic of India.
+            </p>
+        </div>
+
+        <div class="policy-card">
+            <h3>9. Contact Us</h3>
+            <p>
+                If you have any burning questions, clarifying doubts, or formal queries regarding these stated Terms and Conditions, 
+                feel free to reach out to our team directly via our Contact page.
+            </p>
+        </div>
+    </div>
+</section><br><br><br>
         <div class="footer">
-            <a href="#"><h3>Bong Polytechnic</h3></a>
+            <a href="index.html"><h3>Bong Polytechnic</h3></a>
             <p>Your Study Partner For PYQs, Notes & Resources</p>
             <div class="fl">
                 <a href="index.html">Home</a>
