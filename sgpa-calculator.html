@@ -24,6 +24,205 @@ href="https://bong-polytech.vercel.app/sgpa-calculator.html">
 
   gtag('config', 'G-9141ZW4KK4');
 </script>
+        <style>
+ 
+/* --- High-End Privacy Section Layout --- */
+.privacy-container {
+    max-width: 860px;
+    margin: 80px auto;
+    padding: 40px 24px !important;
+}
+
+.privacy-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.privacy-header h2 {
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: var(--text-main);
+    margin-bottom: 12px !important;
+}
+
+.update-badge {
+    display: inline-block;
+    background: rgba(37, 99, 235, 0.08);
+    color: var(--accent);
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.lead-text {
+    font-size: 17px !important;
+    line-height: 1.7;
+    color: var(--text-main);
+    margin-bottom: 32px;
+}
+
+/* Elegant spacing for legal cards instead of using stacked <br> tags */
+.policy-card {
+    background: var(--bg-glass);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 30px;
+    border-radius: 20px;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow-soft);
+}
+
+.policy-card h3 {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--text-main);
+    margin-bottom: 12px;
+    letter-spacing: -0.3px;
+}
+
+.policy-card p {
+    font-size: 15.5px;
+    line-height: 1.65;
+    color: var(--text-muted);
+    margin-bottom: 0; /* Clear internal stray margin offsets */
+}
+
+.policy-list {
+    list-style: none;
+    margin: 12px 0;
+    padding-left: 4px;
+}
+
+.policy-list li {
+    font-size: 15px;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 20px;
+}
+
+/* Sleek custom bullets */
+.policy-list li::before {
+    content: "•";
+    color: var(--accent);
+    font-weight: bold;
+    position: absolute;
+    left: 4px;
+}
+
+.note-text {
+    margin-top: 12px !important;
+    font-weight: 600;
+    color: #e11d48 !important; /* Soft premium warning red */
+}
+
+/* --- Mobile Spacing Compression System --- */
+@media (max-width: 768px) {
+    .privacy-container {
+        margin: 40px auto;
+        padding: 20px 16px !important; /* Compacts layout boundaries */
+    }
+    
+    .privacy-header h2 {
+        font-size: 26px;
+    }
+
+    .policy-card {
+        padding: 20px 16px; /* Squeezes internal whitespace padding down */
+        margin-bottom: 16px; /* Restores small, comfortable block separation */
+        border-radius: 14px;
+    }
+
+    .policy-card h3 {
+        font-size: 18px;
+    }
+
+    .policy-card p, .policy-list li {
+        font-size: 14.5px;
+        line-height: 1.55;
+    }
+}
+            
+/* --- SGPA Input Module & Layout Optimization --- */
+.calculator-card {
+    background: var(--bg-glass);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 30px;
+    border-radius: 20px;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow-soft);
+}
+
+.subject-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.subject-row input {
+    flex: 1;
+    padding: 12px 16px;
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 10px;
+    font-size: 15px;
+    background: rgba(255,255,255,0.8);
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.subject-row input:focus {
+    border-color: var(--accent, darkturquoise);
+}
+
+.calc-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.calc-actions button {
+    flex: 1;
+    cursor: pointer;
+    font-weight: 600;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    transition: transform 0.1s ease, opacity 0.2s ease;
+}
+
+.calc-actions button:active {
+    transform: scale(0.98);
+}
+
+.result-box {
+    margin-top: 25px;
+    text-align: center;
+    border-top: 1px solid rgba(0,0,0,0.08);
+    padding-top: 20px;
+}
+
+.result-box h3 {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--text-main);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 480px) {
+    .subject-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .calc-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+}</style>
     </head>
     <body id="body">
         <header class="navbar">
@@ -57,37 +256,133 @@ href="https://bong-polytech.vercel.app/sgpa-calculator.html">
         </div>
         <br />
         <br />
-        <section class="sgpa-section reveal">
-            <h2>Free SGPA Calculator</h2>
-<br><br>
-            <div id="subjects">
-                <div class="subject-row">
-                    <input type="number" placeholder="Credits" class="credit" />
+        
+        <br />
+        <!-- --- SGPA Calculator Section --- -->
+        <section class="sgpa-section privacy-container reveal">
+            <div class="privacy-header">
+                <h2>Free SGPA Calculator</h2>
+                <span class="update-badge">WBSCTE Diploma System</span>
+            </div>
 
-                    <input type="number" placeholder="Grade Point" class="grade" />
+            <div class="calculator-card">
+                <div id="subjects">
+                    <div class="subject-row">
+                        <input type="number" placeholder="Credits" class="credit" min="1" max="6" />
+                        <input type="number" placeholder="Grade Point" class="grade" min="0" max="10" />
+                    </div>
+                </div>
+                
+                <div class="calc-actions">
+                    <button onclick="addSubject()" class="btn">+ Add Subject</button>
+                    <button onclick="calculateSGPA()" class="btns">Calculate SGPA</button>
+                </div>
+
+                <div class="result-box">
+                    <h3 id="result">Your SGPA: 0.00</h3>
                 </div>
             </div>
-<br>
-            <button onclick="addSubject()" class="btn">+ Add Subject</button>
+        </section>
 
-            <button onclick="calculateSGPA()" class="btns">Calculate SGPA</button>
-<br><br><br>
-            <h3 id="result" style="color: dimgrey">Your SGPA: 0.00</h3>
+        <!-- --- New Academic Information Guide Section --- -->
+        <section class="categories privacy-container reveal" style="margin-top: 0;">
+            <div class="policy-card">
+                <h3>How Your SGPA is Calculated</h3>
+                <p>
+                    Semester Grade Point Average (SGPA) is calculated using a weighted average system based on subject credits 
+                    and earned grade points. The mathematical formula used by polytechnic boards across India is:
+                </p>
+                
+                <div style="background: rgba(0,0,0,0.03); padding: 15px; border-radius: 10px; font-family: monospace; text-align: center; margin: 15px 0; font-size: 14px; color: var(--text-main);">
+                    SGPA = Σ (Subject Credits × Grade Point Obtained) / Total Credits Taken
+                </div>
+
+                <p>
+                    <strong>Step-by-step calculation breakdown:</strong>
+                </p>
+                <ul class="policy-list">
+                    <li>Multiply the credit hour allocation of each individual subject by the grade points you achieved in it.</li>
+                    <li>Sum up all of those calculated credit-point products together.</li>
+                    <li>Divide that grand total by the cumulative sum of all credits attempted during that semester.</li>
+                </ul>
+            </div>
+
+            <!-- Grade Point Classification Table Card -->
+            <div class="policy-card">
+                <h3>Diploma Grade Point Classification</h3>
+                <p style="margin-bottom: 15px;">
+                    Here is how your marks convert to grade points and how your final performance scale is categorized:
+                </p>
+                
+                <div style="overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 14.5px;">
+                        <thead>
+                            <tr style="border-bottom: 2px solid rgba(0,0,0,0.1); color: var(--text-main);">
+                                <th style="padding: 10px 5px;">Percentage Range</th>
+                                <th style="padding: 10px 5px;">Letter Grade</th>
+                                <th style="padding: 10px 5px;">Grade Point</th>
+                                <th style="padding: 10px 5px;">Performance Classification</th>
+                            </tr>
+                        </thead>
+                        <tbody style="color: var(--text-muted);">
+                            <tr style="border-bottom: 1px solid rgba(0,0,0,0.05);">
+                                <td style="padding: 10px 5px;">90% - 100%</td>
+                                <td style="padding: 10px 5px;"><strong>O</strong></td>
+                                <td style="padding: 10px 5px;">10</td>
+                                <td style="padding: 10px 5px; color: #10b981; font-weight: 600;">Outstanding</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(0,0,0,0.05);">
+                                <td style="padding: 10px 5px;">80% - 89%</td>
+                                <td style="padding: 10px 5px;"><strong>E</strong></td>
+                                <td style="padding: 10px 5px;">9</td>
+                                <td style="padding: 10px 5px; color: #059669; font-weight: 600;">Excellent</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(0,0,0,0.05);">
+                                <td style="padding: 10px 5px;">70% - 79%</td>
+                                <td style="padding: 10px 5px;"><strong>A</strong></td>
+                                <td style="padding: 10px 5px;">8</td>
+                                <td style="padding: 10px 5px; color: #2563eb; font-weight: 600;">Very Good</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(0,0,0,0.05);">
+                                <td style="padding: 10px 5px;">60% - 69%</td>
+                                <td style="padding: 10px 5px;"><strong>B</strong></td>
+                                <td style="padding: 10px 5px;">7</td>
+                                <td style="padding: 10px 5px; color: #4b5563;">Good / Above Average</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(0,0,0,0.05);">
+                                <td style="padding: 10px 5px;">50% - 59%</td>
+                                <td style="padding: 10px 5px;"><strong>C</strong></td>
+                                <td style="padding: 10px 5px;">6</td>
+                                <td style="padding: 10px 5px; color: #d97706;">Pass / Average</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(0,0,0,0.05);">
+                                <td style="padding: 10px 5px;">40% - 49%</td>
+                                <td style="padding: 10px 5px;"><strong>D</strong></td>
+                                <td style="padding: 10px 5px;">5</td>
+                                <td style="padding: 10px 5px; color: #dc2626;">Poor / Marginal Pass</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px 5px;">Below 40%</td>
+                                <td style="padding: 10px 5px; color: #dc2626;"><strong>F</strong></td>
+                                <td style="padding: 10px 5px;">0</td>
+                                <td style="padding: 10px 5px; color: #dc2626; font-weight: 600;">Fail / Unsatisfactory</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Navigation Return Button -->
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="index.html" style="text-decoration: none;">
+                    <div class="tool-card" style="display: inline-block; padding: 12px 30px; margin: 0 auto;">
+                        <h5 style="margin: 0; font-size: 16px;">← Back to Home</h5>
+                    </div>
+                </a>
+            </div>
         </section>
         <br />
-        <br />
-        <section class="categories reveal">
-            <br />
-            <br />
-            <a href="index.html"
-                ><div class="tool-card">
-                    <h5>Back</h5>
-                </div></a
-            >
-            <br />
-            <br />
-        </section>
-        <br /><br /><br />
+       <br><br>
         <div class="footer">
             <a href="#"><h3>Bong Polytechnic</h3></a>
             <p>Your Study Partner For PYQs, Notes & Resources</p>
