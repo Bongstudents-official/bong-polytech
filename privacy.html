@@ -25,6 +25,125 @@ href="https://bong-polytech.vercel.app/privacy.html">
 
   gtag('config', 'G-9141ZW4KK4');
 </script>
+        <style>/* --- High-End Privacy Section Layout --- */
+.privacy-container {
+    max-width: 860px;
+    margin: 80px auto;
+    padding: 40px 24px !important;
+}
+
+.privacy-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.privacy-header h2 {
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: var(--text-main);
+    margin-bottom: 12px !important;
+}
+
+.update-badge {
+    display: inline-block;
+    background: rgba(37, 99, 235, 0.08);
+    color: var(--accent);
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.lead-text {
+    font-size: 17px !important;
+    line-height: 1.7;
+    color: var(--text-main);
+    margin-bottom: 32px;
+}
+
+/* Elegant spacing for legal cards instead of using stacked <br> tags */
+.policy-card {
+    background: var(--bg-glass);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 30px;
+    border-radius: 20px;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow-soft);
+}
+
+.policy-card h3 {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--text-main);
+    margin-bottom: 12px;
+    letter-spacing: -0.3px;
+}
+
+.policy-card p {
+    font-size: 15.5px;
+    line-height: 1.65;
+    color: var(--text-muted);
+    margin-bottom: 0; /* Clear internal stray margin offsets */
+}
+
+.policy-list {
+    list-style: none;
+    margin: 12px 0;
+    padding-left: 4px;
+}
+
+.policy-list li {
+    font-size: 15px;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 20px;
+}
+
+/* Sleek custom bullets */
+.policy-list li::before {
+    content: "•";
+    color: var(--accent);
+    font-weight: bold;
+    position: absolute;
+    left: 4px;
+}
+
+.note-text {
+    margin-top: 12px !important;
+    font-weight: 600;
+    color: #e11d48 !important; /* Soft premium warning red */
+}
+
+/* --- Mobile Spacing Compression System --- */
+@media (max-width: 768px) {
+    .privacy-container {
+        margin: 40px auto;
+        padding: 20px 16px !important; /* Compacts layout boundaries */
+    }
+    
+    .privacy-header h2 {
+        font-size: 26px;
+    }
+
+    .policy-card {
+        padding: 20px 16px; /* Squeezes internal whitespace padding down */
+        margin-bottom: 16px; /* Restores small, comfortable block separation */
+        border-radius: 14px;
+    }
+
+    .policy-card h3 {
+        font-size: 18px;
+    }
+
+    .policy-card p, .policy-list li {
+        font-size: 14.5px;
+        line-height: 1.55;
+    }
+}</style>
     </head>
    <body id="body">
         <header class="navbar">
@@ -52,70 +171,106 @@ href="https://bong-polytech.vercel.app/privacy.html">
         <div class="marquee">
             <p class="p1">
                 Free PYQs, Notes, Syllabus And Tips For Students.
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Note:
-                Currently Only First Year Is Available.
             </p>
         </div>
         <br />
         <br />
         <br /><br /><br />
-        <section class="categories">
-            <h2 style="text-align: center;">Privacy Policy For Bong Polytechnic</h2><br><br><br>
-            <p>
-                At Bong Polytechnic, accessible from our website, one of our main priorities is the privacy of our
-                visitors. This Privacy Policy document outlines the types of information that are collected and recorded
-                by Bong Polytechnic and how we use it.
-            </p>
-            <br /><br><br>
-            <p><b>1. Information We Collect : </b></p>
-            <br /><br><br>
+       <!-- --- Beautifully Restructured Privacy Policy Section --- -->
+<section class="categories privacy-container">
+    <div class="privacy-header">
+        <h2>Privacy Policy for Bong Polytechnic</h2>
+        <span class="update-badge">Last updated: 2026</span>
+    </div>
+
+    <div class="privacy-content">
+        <p class="lead-text">
+            At Bong Polytechnic, accessible from our website, one of our main priorities is the privacy of our
+            visitors. This Privacy Policy document outlines the types of information that are collected and recorded
+            by Bong Polytechnic and how we use it.
+        </p>
+
+        <div class="policy-card">
+            <h3>1. Information We Collect</h3>
             <p>We may collect personal information such as:</p>
+            <ul class="policy-list">
+                <li><strong>Name</strong> (if provided by user)</li>
+                <li><strong>Email address</strong> (if you contact us)</li>
+                <li><strong>Messages</strong> or details sent through contact forms</li>
+            </ul>
+            <p class="note-text">We do not collect sensitive personal data.</p>
+        </div>
+
+        <div class="policy-card">
+            <h3>2. How We Use Your Information</h3>
+            <p>We use the collected information to:</p>
+            <ul class="policy-list">
+                <li>Improve our website performance and user experience</li>
+                <li>Respond efficiently to user queries and feedback</li>
+                <li>Maintain and develop our core educational services</li>
+            </ul>
+        </div>
+
+        <div class="policy-card">
+            <h3>3. Log Files</h3>
             <p>
-                - Name (if provided by user) - Email address (if you contact us) - Any message or information you send
-                through contact forms.
+                Bong Polytechnic follows a standard procedure of using log files. These files log visitors when they
+                visit websites. The information collected may include IP addresses, browser types, Internet Service
+                Providers (ISP), date/time stamps, and referring/exit pages. This information is not linked to any 
+                personally identifiable data.
             </p>
-            <br />
-            <p>We do not collect sensitive personal data.</p>
-            <br /><br><br>
-            <p><b>2. How We Use Your Information</b></p><br><br>
-            <br />
-            We use the collected information to: - Improve our website and user experience - Respond to user queries and
-            feedback - Maintain and develop our services.
-            <br />
-            <br /><br><br>
-            <p><b>3. Log Files </b></p><br><br>
-            <br />Bong Polytechnic follows a standard procedure of using log files. These files log visitors when they
-            visit websites. The information collected may include: - IP address - Browser type - Internet Service
-            Provider (ISP) - Date and time stamp - Referring/exit pages This information is not linked to any personally
-            identifiable information. <br /><br /><br><br>
-            <p><b>4. Cookies and Web Beacons</b></p>
-            <br /><br><br>
-            We may use cookies to store information about visitors’ preferences and optimize the user experience by
-            customizing our web page content. You can choose to disable cookies through your individual browser options.
-            <br /><br /><br><br>
-            <p><b>5. Third-Party Privacy Policies</b></p><br><br>
-            <br />Bong Polytechnic’s Privacy Policy does not apply to other websites or services. We may link to
-            external websites (such as official government sources or unofficial sources), and we advise you to review their respective
-            Privacy Policies.<br /><br /><br><br>
-            <p><b>6. Google AdSense (Future Use)</b></p><br><br>
-            <br />We may use Google AdSense or other advertising partners in the future. These third-party ad servers
-            may use technologies like cookies, JavaScript, or web beacons in their advertisements. These are used to
-            measure advertising effectiveness and personalize the ads you see. <br /><br /><br><br>
-            <p><b>7. Children’s Information</b></p><br><br>
-            <br />
-            We do not knowingly collect any Personal Identifiable Information from children under the age of 13. If you
-            think your child has provided such information, please contact us, and we will remove it promptly.
-            <br /><br /><br><br>
-            <p><b>8. Consent</b></p>
-            <br /><br><br>
-            By using our website, you hereby consent to our Privacy Policy and agree to its terms.<br><br><br /><br />
-            <p><b> 9. Updates to This Policy</b></p>
-            <br /><br><br>
-            We may update this Privacy Policy from time to time. Any changes will be posted on this page. 10. Contact Us
-            If you have any questions about this Privacy Policy, you can contact us through our website. <br /><br />
-            <br><br><br>
-            <h4 style="text-align: center;">Last updated: 2026</h4>
-        </section><br><br><br><br><br>
+        </div>
+
+        <div class="policy-card">
+            <h3>4. Cookies and Web Beacons</h3>
+            <p>
+                We use cookies to store information about visitors’ preferences and optimize the user experience by
+                customizing our web page content. You can choose to disable cookies through your individual browser options.
+            </p>
+        </div>
+
+        <div class="policy-card">
+            <h3>5. Third-Party Privacy Policies</h3>
+            <p>
+                Bong Polytechnic’s Privacy Policy does not apply to other advertisers or websites. We may link to
+                external websites (such as official government portals), and we strongly advise you to review their 
+                respective Privacy Policies.
+            </p>
+        </div>
+
+        <div class="policy-card">
+            <h3>6. Google AdSense (Advertising)</h3>
+            <p>
+                We use Google AdSense on our website. These third-party ad servers use technologies like cookies, 
+                JavaScript, or web beacons within their advertisements to measure campaign effectiveness and personalize 
+                the ad content you interact with.
+            </p>
+        </div>
+
+        <div class="policy-card">
+            <h3>7. Children’s Information</h3>
+            <p>
+                We do not knowingly collect any Personal Identifiable Information from children under the age of 13. If you
+                think your child has provided this information, contact us immediately and we will remove it promptly.
+            </p>
+        </div>
+
+        <div class="policy-card">
+            <h3>8. Consent</h3>
+            <p>
+                By using our website, you hereby consent to our Privacy Policy and explicitly agree to its terms and conditions.
+            </p>
+        </div>
+
+        <div class="policy-card">
+            <h3>9. Updates to This Policy</h3>
+            <p>
+                We may update this Privacy Policy from time to time. Any changes will be updated live on this page. If you have 
+                any questions about this policy, please reach out to us through our standard contact methods.
+            </p>
+        </div>
+    </div>
+</section><br><br><br>
         <div class="footer">
             <a href="#"><h3>Bong Polytechnic</h3></a>
             <p>Your Study Partner For PYQs, Notes & Resources</p>
