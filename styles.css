@@ -1,3 +1,101 @@
+/* Cookie Consent Banner Styles */
+.cookie-banner {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #1f2937; /* Dark background, adjust to match site theme */
+    color: #f3f4f6;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    font-family: system-ui, -apple-system, sans-serif;
+    border: 1px solid #374151;
+    
+    /* Entrance Animation */
+    transform: translateY(100px);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out, visibility 0.5s;
+}
+
+/* Class added by JS to show the banner */
+.cookie-banner.show {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+.cookie-content p {
+    margin: 0 0 15px 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.cookie-content a {
+    color: #60a5fa; /* Link color */
+    text-decoration: underline;
+}
+
+.cookie-content a:hover {
+    text-decoration: none;
+}
+
+.cookie-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+}
+
+.cookie-btn {
+    padding: 8px 20px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.2s;
+}
+
+.cookie-btn.accept {
+    background-color: #2563eb; /* Blue Accept button */
+    color: white;
+}
+
+.cookie-btn.accept:hover {
+    background-color: #1d4ed8;
+}
+
+.cookie-btn.decline {
+    background-color: #374151; /* Gray Decline button */
+    color: #d1d5db;
+}
+
+.cookie-btn.decline:hover {
+    background-color: #4b5563;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 640px) {
+    .cookie-banner {
+        bottom: 10px;
+        left: 10px;
+        right: 10px;
+        padding: 15px;
+    }
+    
+    .cookie-buttons {
+        flex-direction: column-reverse;
+    }
+    
+    .cookie-btn {
+        width: 100%;
+    }
+}
+
 /* --- Import Premium Modern Geometric Font --- */
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
