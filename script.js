@@ -150,3 +150,59 @@ function calculateSGPA() {
 
     document.getElementById("result").innerText = "Your SGPA: " + sgpa.toFixed(2);
 }
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            e.preventDefault();
+            targetElement.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const banner = document.getElementById('cookie-consent-banner');
+    const acceptBtn = document.getElementById('accept-cookies');
+    const declineBtn = document.getElementById('decline-cookies');
+
+    // 1. Check if user has already accepted or declined
+    // We use localStorage because it persists longer than session cookies
+    const consentGiven = localStorage.getItem('bongPolytechnicCookieConsent');
+
+    // 2. If NO consent is found in localStorage, show the banner after a small delay
+    if (!consentGiven) {
+        setTimeout(() => {
+            banner.classList.add('show');
+        }, 800); // Show after 0.8 seconds so the page isn't immediately covered
+    }
+
+    // 3. Function to handle the hiding of the banner
+    function hideBanner() {
+        banner.classList.remove('show');
+    }
+
+    // 4. Logic for "Accept" button
+    acceptBtn.addEventListener('click', () => {
+        hideBanner();
+        // Set item in localStorage to remember choice for 1 year (optional expiration logic)
+        // Date.now() + 31536000000 represents roughly 1 year in milliseconds
+        localStorage.setItem('bongPolytechnicCookieConsent', 'accepted');
+        
+        // OPTIONAL: Initialize your Google Analytics or tracking scripts here
+        // gtag('consent', 'update', {'ad_storage': 'granted', 'analytics_storage': 'granted'});
+        console.log('Cookies accepted by user.');
+    });
+
+    // 5. Logic for "Decline" button (treats decline same as accept for UI purposes, just stops asking)
+    declineBtn.addEventListener('click', () => {
+        hideBanner();
+        localStorage.setItem('bongPolytechnicCookieConsent', 'declined');
+        // You might want to disable tracking cookies here if the user declines
+        console.log('Cookies declined by user.');
+    });
+});
