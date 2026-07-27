@@ -167,6 +167,23 @@
             #next-btn { width: 100%; padding: 12px; }
         }
     </style>
+    <!-- KaTeX CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" crossorigin="anonymous">
+
+<!-- KaTeX JS - The core library -->
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js" crossorigin="anonymous"></script>
+
+<!-- Auto-render extension to automatically convert text/code math -->
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+    onload="renderMathInElement(document.body, {
+        delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false},
+            {left: '\\(', right: '\\)', display: false},
+            {left: '\\[', right: '\\]', display: true}
+        ]
+    });">
+</script>
 </head>
 <body>
 
@@ -222,159 +239,159 @@
             </div>
         </div>
 
-        <div class="tool-card" style="cursor: default; text-align: left; height: auto; padding: 25px; box-sizing: border-box; width: 100%;">
-            <h2 style="color: darkturquoise; margin-top: 0; margin-bottom: 15px; font-size: 20px;">⚡ APPLIED PHYSICS-II: FROM TEXTBOOK FORMULAS TO SHOP-FLOOR REALITY</h2>
-            <p style="color: #ccc; line-height: 1.6; margin-bottom: 15px; font-size: 14px;">
-                In your Applied Physics-II exam, you write equations to score passing marks. In the industry, those exact physical principles prevent factory explosions, transfer high-speed internet data, and run industrial manufacturing setups:
+        <div class="tool-card" style="cursor: default; text-align: left; height: auto; padding: 25px; box-sizing: border-box; width: 100%; color: #000000;">
+    <h2 style="color: #000000; margin-top: 0; margin-bottom: 15px; font-size: 20px;">⚡ APPLIED PHYSICS-II: FROM TEXTBOOK FORMULAS TO SHOP-FLOOR REALITY</h2>
+    <p style="color: #000000; line-height: 1.6; margin-bottom: 15px; font-size: 14px;">
+        In your Applied Physics-II exam, you write equations to score passing marks. In the industry, those exact physical principles prevent factory explosions, transfer high-speed internet data, and run industrial manufacturing setups:
+    </p>
+
+    <div style="margin-bottom: 20px; padding-left: 10px; border-left: 3px solid #000000;">
+        <strong style="color: #000000; font-size: 15px;">1. Dielectric Strength & Insulation Breakdown (Electrostatics Unit)</strong>
+        <p style="color: #000000; font-size: 13.5px; margin: 5px 0 0 0; line-height: 1.5;">
+            <strong style="color: #000000;">The Book Formula:</strong> $E_{max} = \frac{V}{d}$ (Electric Field equals Voltage over Distance).<br>
+            <strong style="color: #000000;">The Real-World Reality:</strong> High-voltage substation cables use specialized rubber insulation. If moisture gets inside or the cable is bent too sharply, the distance ($d$) drops, pushing the electric field beyond the material's dielectric strength limit. This triggers a catastrophic arc-flash explosion. Industrial electricians use a tool called a <strong style="color: #000000;">Megger</strong> to test this exact insulation resistance before powering up sub-stations.
+        </p>
+    </div>
+
+    <div style="margin-bottom: 20px; padding-left: 10px; border-left: 3px solid #000000;">
+        <strong style="color: #000000; font-size: 15px;">2. Total Internal Reflection & Fiber Optic Attenuation (Wave Optics Unit)</strong>
+        <p style="color: #000000; font-size: 13.5px; margin: 5px 0 0 0; line-height: 1.5;">
+            <strong style="color: #000000;">The Book Formula:</strong> $\sin(\theta_c) = \frac{n_2}{n_1}$ (Critical angle calculation for total internal reflection).<br>
+            <strong style="color: #000000;">The Real-World Reality:</strong> Modern high-speed networking and automation PLC systems use fiber optic cables instead of standard copper lines to completely eliminate electromagnetic interference. If a site worker bends an active fiber optic line past its physical critical radius during installation, the data light rays escape the core rather than reflecting internally. This creates what field engineers call <strong style="color: #000000;">Optical Attenuation (signal loss)</strong>, causing the entire communication loop to drop offline.
+        </p>
+    </div>
+
+    <div style="margin-bottom: 20px; padding-left: 10px; border-left: 3px solid #000000;">
+        <strong style="color: #000000; font-size: 15px;">3. P-N Junction Overheating & Thermal Runaway (Semiconductor Unit)</strong>
+        <p style="color: #000000; font-size: 13.5px; margin: 5px 0 0 0; line-height: 1.5;">
+            <strong style="color: #000000;">The Book Formula:</strong> The exponential forward-bias diode current equation.<br>
+            <strong style="color: #000000;">The Real-World Reality:</strong> Electronics like rectifiers and VFD (Variable Frequency Drive) motor controllers rely on silicon chips. When electricity flows through a semiconductor junction, it creates heat. If a panel's cooling fan fails, the junction temperature surges, releasing extra minority charge carriers. This increases current flow, generating <em style="color: #000000;">even more heat</em> in a destructive loop known as <strong style="color: #000000;">Thermal Runaway</strong>, melting the silicon crystal structure completely. This is why adding thermal paste and aluminum heat sinks is just as critical as wiring the circuit correctly.
+        </p>
+    </div>
+
+    <div style="padding-left: 10px; border-left: 3px solid #000000;">
+        <strong style="color: #000000; font-size: 15px;">4. Stimulated Emission & Industrial Material Processing (Modern Physics Unit)</strong>
+        <p style="color: #000000; font-size: 13.5px; margin: 5px 0 0 0; line-height: 1.5;">
+            <strong style="color: #000000;">The Book Formula:</strong> $E_2 - E_1 = h\nu$ (Photon energy differences during atomic transition).<br>
+            <strong style="color: #000000;">The Real-World Reality:</strong> In mechanical engineering shops, heavy $CO_2$ and Fiber <strong style="color: #000000;">CNC Laser Cutters</strong> utilize this exact atomic energy state jump to focus light energy down into a pinpoint diameter. Instead of cutting with physical friction (like a traditional saw blade that dulls over time), these machines use massive localized photon density to cleanly melt and vaporize 16mm thick carbon steel plates instantly.
+        </p>
+    </div>
+</div>
+
+<div class="tool-card" style="cursor: default; text-align: left; height: auto; padding: 25px; box-sizing: border-box; width: 100%; color: #000000;">
+    <h2 style="color: #000000; margin-top: 0; margin-bottom: 15px; font-size: 20px;">📋 CRITICAL SYLLABUS CONDITIONS & EXAM CRITERIA</h2>
+    <p style="color: #000000; line-height: 1.6; margin-bottom: 15px; font-size: 14px;">
+        WBSCTE subjective papers frequently ask for the "necessary conditions" to achieve specific physical phenomena. Memorize these exact parameters to secure full marks:
+    </p>
+
+    <div style="overflow-x: auto; margin-bottom: 20px;">
+        <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 13.5px; color: #000000;">
+            <thead>
+                <tr style="border-bottom: 2px solid #000000; color: #000000;">
+                    <th style="padding: 8px 4px; width: 30%; color: #000000;">Syllabus Topic</th>
+                    <th style="padding: 8px 4px; width: 35%; color: #000000;">Mandatory Condition Criteria</th>
+                    <th style="padding: 8px 4px; width: 35%; color: #000000;">Why It Matters / Exam Tip</th>
+                </tr>
+            </thead>
+            <tbody style="color: #000000;">
+                <tr style="border-bottom: 1px solid #000000;">
+                    <td style="padding: 8px 4px; color: #000000;"><strong style="color: #000000;">Sustained Interference</strong></td>
+                    <td style="padding: 8px 4px; color: #000000;">1. Light sources must be coherent.<br>2. Amplitudes must be nearly equal.<br>3. Continuous monochromatic light wave emission.</td>
+                    <td style="padding: 8px 4px; color: #000000;">If sources are independent or incoherent, the phase difference changes rapidly, causing the interference pattern to blur out.</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #000000;">
+                    <td style="padding: 8px 4px; color: #000000;"><strong style="color: #000000;">Total Internal Reflection (TIR)</strong></td>
+                    <td style="padding: 8px 4px; color: #000000;">1. Light must travel from a denser to a rarer medium.<br>2. Angle of incidence must be greater than the critical angle ($i > \theta_c$).</td>
+                    <td style="padding: 8px 4px; color: #000000;">Crucial for optical fiber questions. If light enters from air to glass, TIR is physically impossible.</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #000000;">
+                    <td style="padding: 8px 4px; color: #000000;"><strong style="color: #000000;">Lasing Action (LASER)</strong></td>
+                    <td style="padding: 8px 4px; color: #000000;">1. Population Inversion ($N_2 > N_1$).<br>2. Presence of a long-lived Metastable state.<br>3. Optical pumping mechanism to supply energy.</td>
+                    <td style="padding: 8px 4px; color: #000000;">In normal thermal equilibrium, lower states hold more atoms. Lasing cannot happen until this distribution is completely inverted.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px 4px; color: #000000;"><strong style="color: #000000;">Ohm’s Law Validity</strong></td>
+                    <td style="padding: 8px 4px; color: #000000;">Physical conditions (specifically temperature, mechanical strain, and material composition) must remain strictly constant.</td>
+                    <td style="padding: 8px 4px; color: #000000;">Semiconductors violate Ohm's Law because their temperature changes release free charge carriers, creating a non-linear $V-I$ graph.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="tool-card" style="cursor: default; text-align: left; height: auto; padding: 25px; box-sizing: border-box; width: 100%; color: #000000;">
+    <h2 style="color: #000000; margin-top: 0; margin-bottom: 15px; font-size: 20px;">📐 QUICK-LOOKUP FORMULA BANK FOR NUMERICALS</h2>
+    <p style="color: #000000; line-height: 1.6; margin-bottom: 15px; font-size: 14px;">
+        Almost 30% of the marks in Applied Physics-II involve numerical problem-solving. Use this structured reference map to remember your formulas alongside their proper SI units:
+    </p>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+        <div style="background: rgba(0,0,0,0.03); padding: 15px; border-radius: 8px; border: 1px solid rgba(0,0,0,0.1); color: #000000;">
+            <h3 style="color: #000000; margin: 0 0 10px 0; font-size: 15px;">Optics & Wave Motion</h3>
+            <p style="color: #000000; font-size: 13px; margin: 0; line-height: 1.6;">
+                • <strong style="color: #000000;">Fringe Width:</strong> $\beta = \frac{\lambda D}{d}$<br>
+                • <strong style="color: #000000;">Lens Maker's Formula:</strong> $\frac{1}{f} = (\mu - 1)\left(\frac{1}{R_1} - \frac{1}{R_2}\right)$<br>
+                • <strong style="color: #000000;">Velocity of Wave:</strong> $v = n\lambda$ (where $n$ is frequency)<br>
+                <span style="color: #000000;">*Note: Ensure $D$ (screen distance) and $d$ (slit separation) are both converted to meters before calculating.</span>
             </p>
-
-            <div style="margin-bottom: 20px; padding-left: 10px; border-left: 3px solid #38bdf8;">
-                <strong style="color: #fff; font-size: 15px;">1. Dielectric Strength & Insulation Breakdown (Electrostatics Unit)</strong>
-                <p style="color: #aaa; font-size: 13.5px; margin: 5px 0 0 0; line-height: 1.5;">
-                    <strong>The Book Formula:</strong> $E_{max} = \frac{V}{d}$ (Electric Field equals Voltage over Distance).<br>
-                    <strong>The Real-World Reality:</strong> High-voltage substation cables use specialized rubber insulation. If moisture gets inside or the cable is bent too sharply, the distance ($d$) drops, pushing the electric field beyond the material's dielectric strength limit. This triggers a catastrophic arc-flash explosion. Industrial electricians use a tool called a **Megger** to test this exact insulation resistance before powering up sub-stations.
-                </p>
-            </div>
-
-            <div style="margin-bottom: 20px; padding-left: 10px; border-left: 3px solid #a855f7;">
-                <strong style="color: #fff; font-size: 15px;">2. Total Internal Reflection & Fiber Optic Attenuation (Wave Optics Unit)</strong>
-                <p style="color: #aaa; font-size: 13.5px; margin: 5px 0 0 0; line-height: 1.5;">
-                    <strong>The Book Formula:</strong> $\sin(\theta_c) = \frac{n_2}{n_1}$ (Critical angle calculation for total internal reflection).<br>
-                    <strong>The Real-World Reality:</strong> Modern high-speed networking and automation PLC systems use fiber optic cables instead of standard copper lines to completely eliminate electromagnetic interference. If a site worker bends an active fiber optic line past its physical critical radius during installation, the data light rays escape the core rather than reflecting internally. This creates what field engineers call **Optical Attenuation (signal loss)**, causing the entire communication loop to drop offline.
-                </p>
-            </div>
-
-            <div style="margin-bottom: 20px; padding-left: 10px; border-left: 3px solid #22c55e;">
-                <strong style="color: #fff; font-size: 15px;">3. P-N Junction Overheating & Thermal Runaway (Semiconductor Unit)</strong>
-                <p style="color: #aaa; font-size: 13.5px; margin: 5px 0 0 0; line-height: 1.5;">
-                    <strong>The Book Formula:</strong> The exponential forward-bias diode current equation.<br>
-                    <strong>The Real-World Reality:</strong> Electronics like rectifiers and VFD (Variable Frequency Drive) motor controllers rely on silicon chips. When electricity flows through a semiconductor junction, it creates heat. If a panel's cooling fan fails, the junction temperature surges, releasing extra minority charge carriers. This increases current flow, generating *even more heat* in a destructive loop known as **Thermal Runaway**, melting the silicon crystal structure completely. This is why adding thermal paste and aluminum heat sinks is just as critical as wiring the circuit correctly.
-                </p>
-            </div>
-
-            <div style="padding-left: 10px; border-left: 3px solid #eab308;">
-                <strong style="color: #fff; font-size: 15px;">4. Stimulated Emission & Industrial Material Processing (Modern Physics Unit)</strong>
-                <p style="color: #aaa; font-size: 13.5px; margin: 5px 0 0 0; line-height: 1.5;">
-                    <strong>The Book Formula:</strong> $E_2 - E_1 = h\nu$ (Photon energy differences during atomic transition).<br>
-                    <strong>The Real-World Reality:</strong> In mechanical engineering shops, heavy $CO_2$ and Fiber **CNC Laser Cutters** utilize this exact atomic energy state jump to focus light energy down into a pinpoint diameter. Instead of cutting with physical friction (like a traditional saw blade that dulls over time), these machines use massive localized photon density to cleanly melt and vaporize 16mm thick carbon steel plates instantly.
-                </p>
-            </div>
         </div>
 
-        <div class="tool-card" style="cursor: default; text-align: left; height: auto; padding: 25px; box-sizing: border-box; width: 100%;">
-            <h2 style="color: darkturquoise; margin-top: 0; margin-bottom: 15px; font-size: 20px;">📋 CRITICAL SYLLABUS CONDITIONS & EXAM CRITERIA</h2>
-            <p style="color: #ccc; line-height: 1.6; margin-bottom: 15px; font-size: 14px;">
-                WBSCTE subjective papers frequently ask for the "necessary conditions" to achieve specific physical phenomena. Memorize these exact parameters to secure full marks:
+        <div style="background: rgba(0,0,0,0.03); padding: 15px; border-radius: 8px; border: 1px solid rgba(0,0,0,0.1); color: #000000;">
+            <h3 style="color: #000000; margin: 0 0 10px 0; font-size: 15px;">Electrostatics & Current</h3>
+            <p style="color: #000000; font-size: 13px; margin: 0; line-height: 1.6;">
+                • <strong style="color: #000000;">Capacitance (Parallel Plate):</strong> $C = \frac{\varepsilon_0 A}{d}$<br>
+                • <strong style="color: #000000;">Equivalent Cap. (Series):</strong> $\frac{1}{C_s} = \frac{1}{C_1} + \frac{1}{C_2}$<br>
+                • <strong style="color: #000000;">Temperature Resistance Change:</strong> $R_t = R_0(1 + \alpha \Delta t)$<br>
+                <span style="color: #000000;">*Value Constant: $\varepsilon_0 = 8.854 \times 10^{-12} \text{ F/m}$</span>
             </p>
-
-            <div style="overflow-x: auto; margin-bottom: 20px;">
-                <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 13.5px;">
-                    <thead>
-                        <tr style="border-bottom: 2px solid rgba(255,255,255,0.1); color: #fff;">
-                            <th style="padding: 8px 4px; width: 30%;">Syllabus Topic</th>
-                            <th style="padding: 8px 4px; width: 35%;">Mandatory Condition Criteria</th>
-                            <th style="padding: 8px 4px; width: 35%;">Why It Matters / Exam Tip</th>
-                        </tr>
-                    </thead>
-                    <tbody style="color: #aaa;">
-                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
-                            <td style="padding: 8px 4px;"><strong style="color: #fff;">Sustained Interference</strong></td>
-                            <td style="padding: 8px 4px; color: #eab308;">1. Light sources must be coherent.<br>2. Amplitudes must be nearly equal.<br>3. Continuous monochromatic light wave emission.</td>
-                            <td style="padding: 8px 4px;">If sources are independent or incoherent, the phase difference changes rapidly, causing the interference pattern to blur out.</td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
-                            <td style="padding: 8px 4px;"><strong style="color: #fff;">Total Internal Reflection (TIR)</strong></td>
-                            <td style="padding: 8px 4px; color: #eab308;">1. Light must travel from a denser to a rarer medium.<br>2. Angle of incidence must be greater than the critical angle ($i > \theta_c$).</td>
-                            <td style="padding: 8px 4px;">Crucial for optical fiber questions. If light enters from air to glass, TIR is physically impossible.</td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
-                            <td style="padding: 8px 4px;"><strong style="color: #fff;">Lasing Action (LASER)</strong></td>
-                            <td style="padding: 8px 4px; color: #eab308;">1. Population Inversion ($N_2 > N_1$).<br>2. Presence of a long-lived Metastable state.<br>3. Optical pumping mechanism to supply energy.</td>
-                            <td style="padding: 8px 4px;">In normal thermal equilibrium, lower states hold more atoms. Lasing cannot happen until this distribution is completely inverted.</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 8px 4px;"><strong style="color: #fff;">Ohm’s Law Validity</strong></td>
-                            <td style="padding: 8px 4px; color: #eab308;">Physical conditions (specifically temperature, mechanical strain, and material composition) must remain strictly constant.</td>
-                            <td style="padding: 8px 4px;">Semiconductors violate Ohm's Law because their temperature changes release free charge carriers, creating a non-linear $V-I$ graph.</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
         </div>
 
-        <div class="tool-card" style="cursor: default; text-align: left; height: auto; padding: 25px; box-sizing: border-box; width: 100%;">
-            <h2 style="color: darkturquoise; margin-top: 0; margin-bottom: 15px; font-size: 20px;">📐 QUICK-LOOKUP FORMULA BANK FOR NUMERICALS</h2>
-            <p style="color: #ccc; line-height: 1.6; margin-bottom: 15px; font-size: 14px;">
-                Almost 30% of the marks in Applied Physics-II involve numerical problem-solving. Use this structured reference map to remember your formulas alongside their proper SI units:
+        <div style="background: rgba(0,0,0,0.03); padding: 15px; border-radius: 8px; border: 1px solid rgba(0,0,0,0.1); color: #000000;">
+            <h3 style="color: #000000; margin: 0 0 10px 0; font-size: 15px;">Electromagnetism & Photons</h3>
+            <p style="color: #000000; font-size: 13px; margin: 0; line-height: 1.6;">
+                • <strong style="color: #000000;">Magnetic Flux:</strong> $\phi = B \cdot A \cdot \cos(\theta)$<br>
+                • <strong style="color: #000000;">Induced EMF (Faraday's):</strong> $e = -L\frac{dI}{dt}$<br>
+                • <strong style="color: #000000;">Photon Energy:</strong> $E = h\nu = \frac{hc}{\lambda}$<br>
+                <span style="color: #000000;">*Value Constant: $h = 6.63 \times 10^{-34} \text{ J}\cdot\text{s}$</span>
             </p>
-
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
-                <div style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05);">
-                    <h3 style="color: #38bdf8; margin: 0 0 10px 0; font-size: 15px;">Optics & Wave Motion</h3>
-                    <p style="color: #aaa; font-size: 13px; margin: 0; line-height: 1.6;">
-                        • <strong>Fringe Width:</strong> $\beta = \frac{\lambda D}{d}$<br>
-                        • <strong>Lens Maker's Formula:</strong> $\frac{1}{f} = (\mu - 1)\left(\frac{1}{R_1} - \frac{1}{R_2}\right)$<br>
-                        • <strong>Velocity of Wave:</strong> $v = n\lambda$ (where $n$ is frequency)<br>
-                        <span style="color: #777;">*Note: Ensure $D$ (screen distance) and $d$ (slit separation) are both converted to meters before calculating.</span>
-                    </p>
-                </div>
-
-                <div style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05);">
-                    <h3 style="color: #a855f7; margin: 0 0 10px 0; font-size: 15px;">Electrostatics & Current</h3>
-                    <p style="color: #aaa; font-size: 13px; margin: 0; line-height: 1.6;">
-                        • <strong>Capacitance (Parallel Plate):</strong> $C = \frac{\varepsilon_0 A}{d}$<br>
-                        • <strong>Equivalent Cap. (Series):</strong> $\frac{1}{C_s} = \frac{1}{C_1} + \frac{1}{C_2}$<br>
-                        • <strong>Temperature Resistance Change:</strong> $R_t = R_0(1 + \alpha \Delta t)$<br>
-                        <span style="color: #777;">*Value Constant: $\varepsilon_0 = 8.854 \times 10^{-12} \text{ F/m}$</span>
-                    </p>
-                </div>
-
-                <div style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05);">
-                    <h3 style="color: #22c55e; margin: 0 0 10px 0; font-size: 15px;">Electromagnetism & Photons</h3>
-                    <p style="color: #aaa; font-size: 13px; margin: 0; line-height: 1.6;">
-                        • <strong>Magnetic Flux:</strong> $\phi = B \cdot A \cdot \cos(\theta)$<br>
-                        • <strong>Induced EMF (Faraday's):</strong> $e = -L\frac{dI}{dt}$<br>
-                        • <strong>Photon Energy:</strong> $E = h\nu = \frac{hc}{\lambda}$<br>
-                        <span style="color: #777;">*Value Constant: $h = 6.63 \times 10^{-34} \text{ J}\cdot\text{s}$</span>
-                    </p>
-                </div>
-            </div>
         </div>
+    </div>
+</div>
 
-        <div class="tool-card" style="cursor: default; text-align: left; height: auto; padding: 25px; box-sizing: border-box; width: 100%;">
-            <h2 style="color: darkturquoise; margin-top: 0; margin-bottom: 15px; font-size: 20px;">✍️ EXPERT STEP-BY-STEP EXAM NUMERICAL COMPASS</h2>
-            <p style="color: #ccc; line-height: 1.6; margin-bottom: 15px; font-size: 14px;">
-                Let's break down how to correctly lay out your math for a classic WBSCTE board question to guarantee step-marking points even if you commit a calculation mistake:
-            </p>
+<div class="tool-card" style="cursor: default; text-align: left; height: auto; padding: 25px; box-sizing: border-box; width: 100%; color: #000000;">
+    <h2 style="color: #000000; margin-top: 0; margin-bottom: 15px; font-size: 20px;">✍️ EXPERT STEP-BY-STEP EXAM NUMERICAL COMPASS</h2>
+    <p style="color: #000000; line-height: 1.6; margin-bottom: 15px; font-size: 14px;">
+        Let's break down how to correctly lay out your math for a classic WBSCTE board question to guarantee step-marking points even if you commit a calculation mistake:
+    </p>
 
-            <div style="background: rgba(0,0,0,0.2); padding: 18px; border-radius: 8px; border-left: 4px solid #22c55e;">
-                <strong style="color: #fff; font-size: 14px; display: block; margin-bottom: 8px;">Syllabus Question Model:</strong>
-                <p style="color: #bbb; font-size: 13.5px; margin: 0; font-style: italic; line-height: 1.5;">
-                    "In a Young's Double Slit Experiment, the slits are separated by 0.2 mm and the screen is placed 1.2 meters away. If the wavelength of the light source used is 5000 Å, calculate the distance between consecutive bright fringes."
-                </p>
-                
-                <div style="margin-top: 15px; font-size: 13px; color: #aaa; line-height: 1.6;">
-                    <strong style="color: darkturquoise; display: block; margin-bottom: 5px;">Step 1: Write down the given values with standard units</strong>
-                    • Distance between slits ($d$) = $0.2 \text{ mm} = 0.2 \times 10^{-3} \text{ m}$<br>
-                    • Distance to screen ($D$) = $1.2 \text{ m}$<br>
-                    • Wavelength ($\lambda$) = $5000 \text{ Å} = 5000 \times 10^{-10} \text{ m} = 5 \times 10^{-7} \text{ m}$ <span style="color: #ff9800;">(Crucial step!)</span>
-                    
-                    <strong style="color: darkturquoise; display: block; margin-top: 12px; margin-bottom: 5px;">Step 2: State the primary governing formula</strong>
-                    • Fringe Width formula: $\beta = \frac{\lambda D}{d}$
-                    
-                    <strong style="color: darkturquoise; display: block; margin-top: 12px; margin-bottom: 5px;">Step 3: Substitute and simplify explicitly</strong>
-                    • $\beta = \frac{(5 \times 10^{-7} \text{ m}) \times (1.2 \text{ m})}{0.2 \times 10^{-3} \text{ m}}$<br>
-                    • $\beta = \frac{6 \times 10^{-7}}{2 \times 10^{-4}} = 3 \times 10^{-3} \text{ m}$
-                    
-                    <strong style="color: darkturquoise; display: block; margin-top: 12px; margin-bottom: 5px;">Step 4: Box your final answer with its metric unit</strong>
-                    • <span style="padding: 2px 6px; border: 1px dashed #22c55e; color: #fff; font-weight: bold;">$\beta = 3 \text{ mm}$ or $0.003 \text{ m}$</span>
-                </div>
-            </div>
+    <div style="background: rgba(0,0,0,0.05); padding: 18px; border-radius: 8px; border-left: 4px solid #000000; color: #000000;">
+        <strong style="color: #000000; font-size: 14px; display: block; margin-bottom: 8px;">Syllabus Question Model:</strong>
+        <p style="color: #000000; font-size: 13.5px; margin: 0; font-style: italic; line-height: 1.5;">
+            "In a Young's Double Slit Experiment, the slits are separated by 0.2 mm and the screen is placed 1.2 meters away. If the wavelength of the light source used is 5000 Å, calculate the distance between consecutive bright fringes."
+        </p>
+        
+        <div style="margin-top: 15px; font-size: 13px; color: #000000; line-height: 1.6;">
+            <strong style="color: #000000; display: block; margin-bottom: 5px;">Step 1: Write down the given values with standard units</strong>
+            • Distance between slits ($d$) = $0.2 \text{ mm} = 0.2 \times 10^{-3} \text{ m}$<br>
+            • Distance to screen ($D$) = $1.2 \text{ m}$<br>
+            • Wavelength ($\lambda$) = $5000 \text{ Å} = 5000 \times 10^{-10} \text{ m} = 5 \times 10^{-7} \text{ m}$ <span style="color: #000000; font-weight: bold;">(Crucial step!)</span>
+            
+            <strong style="color: #000000; display: block; margin-top: 12px; margin-bottom: 5px;">Step 2: State the primary governing formula</strong>
+            • Fringe Width formula: $\beta = \frac{\lambda D}{d}$
+            
+            <strong style="color: #000000; display: block; margin-top: 12px; margin-bottom: 5px;">Step 3: Substitute and simplify explicitly</strong>
+            • $\beta = \frac{(5 \times 10^{-7} \text{ m}) \times (1.2 \text{ m})}{0.2 \times 10^{-3} \text{ m}}$<br>
+            • $\beta = \frac{6 \times 10^{-7}}{2 \times 10^{-4}} = 3 \times 10^{-3} \text{ m}$
+            
+            <strong style="color: #000000; display: block; margin-top: 12px; margin-bottom: 5px;">Step 4: Box your final answer with its metric unit</strong>
+            • <span style="padding: 2px 6px; border: 1px dashed #000000; color: #000000; font-weight: bold;">$\beta = 3 \text{ mm}$ or $0.003 \text{ m}$</span>
         </div>
+    </div>
+</div>
 
-        <div class="categories reveal" style="padding: 0; margin: 0; width: 100%;">
-            <a href="index.html" style="text-decoration: none;"><div class="tool-card" style="text-align: center; margin: 0;">BACK</div></a>
-        </div>
+<div class="categories reveal" style="padding: 0; margin: 0; width: 100%;">
+    <a href="index.html" style="text-decoration: none;"><div class="tool-card" style="text-align: center; margin: 0; color: #000000;">BACK</div></a>
+</div>
     </main>
 
     <div class="footer">
