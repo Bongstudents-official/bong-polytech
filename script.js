@@ -82,12 +82,12 @@ counters.forEach((counter) => {
     let count = 0;
 
     const update = () => {
-        if (count < 100) {
-            count += 2;
+        if (count < 1000) {
+            count += 20;
 
             counter.innerText = count + "+";
 
-            setTimeout(update, 20);
+            setTimeout(update, 50);
         }
     };
 
