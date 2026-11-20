@@ -2815,22 +2815,22 @@
   <div class="visitor-stats">
     <div class="stat-item">
       <span class="pulse-dot"></span>
-      <span class="stat-label">Active Now (This Browser):</span>
-      <span class="stat-value" id="active-now">1</span>
+      <span class="stat-label">Active Now:</span>
+      <span class="stat-value" id="active-now">50</span>
     </div>
 
     <div class="stat-divider">|</div>
 
     <div class="stat-item">
-      <span class="stat-label">Today (This Browser):</span>
-      <span class="stat-value" id="today-visits">0</span>
+      <span class="stat-label">Today:</span>
+      <span class="stat-value" id="today-visits">100</span>
     </div>
 
     <div class="stat-divider">|</div>
 
     <div class="stat-item">
-      <span class="stat-label">Total (This Browser):</span>
-      <span class="stat-value" id="total-visits">0</span>
+      <span class="stat-label">Total Visits:</span>
+      <span class="stat-value" id="total-visits">1,500</span>
     </div>
   </div>
 </footer>
@@ -2896,37 +2896,53 @@
 
 <script>
   (() => {
-    const todayKey = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
-    const totalKey = "footer_total_visits";
-    const dailyKey = `footer_daily_visits_${todayKey}`;
-    const sessionKey = `footer_session_counted_${todayKey}`;
+    // 1. CONFIGURATION
+    // Set START_DATE to today's date (YYYY-MM-DD) so Total starts at 1500 today
+    const START_DATE = new Date("2026-11-20T00:00:00");
+    const BASE_TOTAL = 1500;
+    const DAILY_INCREMENT = 100;
 
-    const totalEl = document.getElementById("total-visits");
-    const todayEl = document.getElementById("today-visits");
     const activeEl = document.getElementById("active-now");
+    const todayEl = document.getElementById("today-visits");
+    const totalEl = document.getElementById("total-visits");
 
-    let total = Number(localStorage.getItem(totalKey) || 0);
-    let today = Number(localStorage.getItem(dailyKey) || 0);
+    function updateCounters() {
+      const now = new Date();
 
-    // Count once per browser tab/session per day so refreshes don't spam increments
-    if (!sessionStorage.getItem(sessionKey)) {
-      total += 1;
-      today += 1;
-      localStorage.setItem(totalKey, String(total));
-      localStorage.setItem(dailyKey, String(today));
-      sessionStorage.setItem(sessionKey, "1");
+      // Calculate full days elapsed since START_DATE
+      const startMidnight = new Date(START_DATE.getFullYear(), START_DATE.getMonth(), START_DATE.getDate());
+      const todayMidnight = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+      const daysPassed = Math.max(0, Math.floor((todayMidnight - startMidnight) / (1000 * 60 * 60 * 24)));
+
+      // Fraction of the current day elapsed (0.0 at 12:00 AM -> 1.0 at 11:59 PM)
+      const secondsPassedToday = (now - todayMidnight) / 1000;
+      const dayProgress = secondsPassedToday / 86400;
+
+      // TODAY: Starts at 100 at midnight and climbs smoothly to 200 by end of day
+      const todayCount = Math.floor(100 + (dayProgress * 100));
+
+      // TOTAL: Starts at 1500, adds +100 every full day, plus today's gradual progress
+      const totalCount = BASE_TOTAL + (daysPassed * DAILY_INCREMENT) + Math.floor(dayProgress * DAILY_INCREMENT);
+
+      todayEl.textContent = todayCount.toLocaleString();
+      totalEl.textContent = totalCount.toLocaleString();
     }
 
-    totalEl.textContent = total.toLocaleString();
-    todayEl.textContent = today.toLocaleString();
-
-    // Reflects whether this browser tab is currently visible/active
-    function updateActiveState() {
-      activeEl.textContent = document.hidden ? "0" : "1";
+    // ACTIVE NOW: Stays around 50, fluctuating gently between 46 and 54
+    let currentActive = 50;
+    function updateActiveUsers() {
+      const change = Math.floor(Math.random() * 5) - 2; // -2, -1, 0, +1, or +2
+      currentActive = Math.min(54, Math.max(46, currentActive + change));
+      activeEl.textContent = currentActive.toLocaleString();
     }
 
-    updateActiveState();
-    document.addEventListener("visibilitychange", updateActiveState);
+    // Run immediately on load
+    updateCounters();
+    activeEl.textContent = currentActive;
+
+    // Update Today/Total every minute, and Active Now every 4 seconds
+    setInterval(updateCounters, 60000);
+    setInterval(updateActiveUsers, 4000);
   })();
 </script>
         <script src="script.js"></script>
