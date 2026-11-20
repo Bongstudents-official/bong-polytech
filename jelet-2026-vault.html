@@ -602,41 +602,55 @@
         </div>
 
         <script>
-            function runJeletMatrix() {
-                const c1Right = parseInt(document.getElementById("cat1Correct").value) || 0;
-                const c1Wrong = parseInt(document.getElementById("cat1Wrong").value) || 0;
-                const c2Full = parseInt(document.getElementById("cat2Full").value) || 0;
-                const c2Partial = parseFloat(document.getElementById("cat2Partial").value) || 0;
+    function runJeletMatrix() {
+        const c1Right = parseInt(document.getElementById("cat1Correct").value, 10) || 0;
+        const c1Wrong = parseInt(document.getElementById("cat1Wrong").value, 10) || 0;
+        const c2Full = parseInt(document.getElementById("cat2Full").value, 10) || 0;
+        const c2Partial = parseFloat(document.getElementById("cat2Partial").value) || 0;
 
-                if (c1Right + c1Wrong > 65) {
-                    alert("Category 1 totals cannot exceed the maximum count of 65 questions.");
-                    return;
-                }
-                if (c2Full > 20) {
-                    alert("Category 2 fully correct items cannot exceed 20 questions.");
-                    return;
-                }
+        const displayBox = document.getElementById("matrixDisplay");
+        const outputText = document.getElementById("matrixText");
 
-                const cat1Net = c1Right * 1.0 - c1Wrong * 0.25;
-                const cat2Net = c2Full * 2.0 + c2Partial;
-                const globalNet = cat1Net + cat2Net;
+        if (c1Right < 0 || c1Wrong < 0 || c2Full < 0 || c2Partial < 0) {
+            alert("Entered question counts and partial marks cannot be negative.");
+            return;
+        }
+        if (c1Right + c1Wrong > 80) {
+            alert("Category 1 total attempted questions (Correct + Incorrect) cannot exceed 80.");
+            return;
+        }
+        if (c2Full > 20) {
+            alert("Category 2 fully correct questions cannot exceed 20.");
+            return;
+        }
 
-                let diagnosis = `<strong>Estimated Performance Diagnostics:</strong><br><br>`;
-                diagnosis += `• Category-I Net Score: <strong>${cat1Net.toFixed(2)}</strong> / 65<br>`;
-                diagnosis += `• Category-II Net Score: <strong>${cat2Net.toFixed(2)}</strong> / 35<br>`;
-                diagnosis += `• Projected Gross Cumulative Score: <strong style="color:var(--border-glow); font-size:16px;">${globalNet.toFixed(2)} / 100 Marks</strong><br><br>`;
+        const maxRemainingCat2Marks = (20 - c2Full) * 1.5;
+        if (c2Partial > maxRemainingCat2Marks) {
+            alert(`With ${c2Full} fully correct Category-2 questions, partial marks from remaining questions cannot exceed ${maxRemainingCat2Marks.toFixed(2)}.`);
+            return;
+        }
 
-                if (globalNet >= 50) {
-                    diagnosis += `🎯 <em>Strategic Forecast: Elite tier score! Maintaining an accuracy profile this clean puts you safely on track for top-rank cutoffs at Jadavpur University (JU).</em>`;
-                } else if (globalNet >= 30) {
-                    diagnosis += `💡 <em>Strategic Forecast: Good position. You are safely in line for premium Government Engineering Colleges. Focus on maximizing your Category-2 returns to boost rank velocity.</em>`;
-                } else {
-                    diagnosis += `⚠️ <em>Strategic Forecast: Vulnerable target score. To secure premium tracks, analyze past papers to reduce high Category-1 error penalties.</em>`;
-                }
+        const cat1Net = c1Right * 1.0 - c1Wrong * 0.25;
+        const cat2Net = c2Full * 2.0 + c2Partial;
+        const globalNet = cat1Net + cat2Net;
 
-                document.getElementById("matrixText").innerHTML = diagnosis;
-                document.getElementById("matrixDisplay").style.display = "block";
-            }
-        </script>
+        let diagnosis = `<strong>Estimated Paper-I Performance Diagnostics:</strong><br><br>`;
+        diagnosis += `• Category-I Net Score: <strong>${cat1Net.toFixed(2)}</strong> / 80 Marks<br>`;
+        diagnosis += `• Category-II Net Score: <strong>${cat2Net.toFixed(2)}</strong> / 40 Marks<br>`;
+        diagnosis += `• Projected Gross Cumulative Score: <strong style="color: #38bdf8; font-size: 16px;">${globalNet.toFixed(2)} / 120 Marks</strong><br><br>`;
+
+        if (globalNet >= 60) {
+            diagnosis += `🎯 <em>Strategic Forecast: Elite tier score! Maintaining an accuracy profile this strong puts you in a competitive range for top-rank cutoffs at Jadavpur University (JU) and premier government institutes.</em>`;
+        } else if (globalNet >= 36) {
+            diagnosis += `💡 <em>Strategic Forecast: Solid competitive position for Government Engineering Colleges (KGEC, JGEC, GCECT, GCELT, GCETTS, GCETTB) and top private institutes. Focus on Category-2 partial scoring to boost your GMR.</em>`;
+        } else {
+            diagnosis += `⚠️ <em>Strategic Forecast: Needs improvement for top government seats. Review past papers to reduce Category-1 negative marking (-0.25) and strengthen high-weightage Mathematics (50 marks) topics.</em>`;
+        }
+
+        outputText.innerHTML = diagnosis;
+        displayBox.style.display = "block";
+    }
+</script>
+
     </body>
 </html>
