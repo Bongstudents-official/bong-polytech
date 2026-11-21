@@ -12,14 +12,20 @@
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
     z-index: 1000;
-    font-family: system-ui, -apple-system, sans-serif;
+    font-family:
+        system-ui,
+        -apple-system,
+        sans-serif;
     border: 1px solid #374151;
-    
+
     /* Entrance Animation */
     transform: translateY(100px);
     opacity: 0;
     visibility: hidden;
-    transition: transform 0.5s ease-out, opacity 0.5s ease-out, visibility 0.5s;
+    transition:
+        transform 0.5s ease-out,
+        opacity 0.5s ease-out,
+        visibility 0.5s;
 }
 
 /* Class added by JS to show the banner */
@@ -86,37 +92,37 @@
         right: 10px;
         padding: 15px;
     }
-    
+
     .cookie-buttons {
         flex-direction: column-reverse;
     }
-    
+
     .cookie-btn {
         width: 100%;
     }
 }
 
 /* --- Import Premium Modern Geometric Font --- */
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
 
 /* --- High-End Frosted Glass & Ambient Gradient Variables --- */
 :root {
     /* Deep High-Contrast Font Colors for Perfect Readability over the mesh */
-    --text-main: #0b1329;        /* Deep luxury midnight slate */
-    --text-muted: #334155;       /* Sharp medium slate for reading body text */
-    --accent: #2563eb;           /* Electric Cobalt Blue */
-    --accent-hover: #1d4ed8;     
-    --success: #065f46;          
-    
+    --text-main: #0b1329; /* Deep luxury midnight slate */
+    --text-muted: #334155; /* Sharp medium slate for reading body text */
+    --accent: #2563eb; /* Electric Cobalt Blue */
+    --accent-hover: #1d4ed8;
+    --success: #065f46;
+
     /* Translucent Glass Blueprint */
-    --bg-glass: rgba(255, 255, 255, 0.45); 
+    --bg-glass: rgba(255, 255, 255, 0.45);
     --bg-glass-hover: rgba(255, 255, 255, 0.75);
-    
+
     /* Luxury Blurred Shadows */
     --glass-blur: blur(24px) saturate(190%);
     --shadow-soft: 0 8px 32px 0 rgba(15, 23, 42, 0.03);
     --shadow-lux: 0 30px 60px -15px rgba(15, 23, 42, 0.12), 0 4px 12px rgba(15, 23, 42, 0.03);
-    
+
     /* Global Radius Foundations */
     --radius-md: 22px;
     --radius-lg: 36px;
@@ -129,11 +135,15 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+    font-family:
+        "Plus Jakarta Sans",
+        -apple-system,
+        sans-serif;
     -webkit-font-smoothing: antialiased;
 }
 
-html, body {
+html,
+body {
     scroll-behavior: smooth;
     color: var(--text-main);
     letter-spacing: -0.02em;
@@ -152,9 +162,8 @@ body::before {
     bottom: -50%;
     width: 200%;
     height: 200%;
-    background-image: 
-        radial-gradient(at 0% 0%, rgba(219, 234, 254, 0.6) 0px, transparent 50%), 
-        radial-gradient(at 100% 0%, rgba(243, 232, 255, 0.6) 0px, transparent 50%), 
+    background-image: radial-gradient(at 0% 0%, rgba(219, 234, 254, 0.6) 0px, transparent 50%),
+        radial-gradient(at 100% 0%, rgba(243, 232, 255, 0.6) 0px, transparent 50%),
         radial-gradient(at 100% 100%, rgba(254, 226, 226, 0.4) 0px, transparent 50%),
         radial-gradient(at 0% 100%, rgba(236, 254, 240, 0.4) 0px, transparent 50%),
         radial-gradient(at 50% 50%, rgba(255, 255, 255, 0.8) 0px, transparent 80%);
@@ -166,8 +175,12 @@ body::before {
 
 /* --- Smooth GPU-friendly Rotation Animation --- */
 @keyframes ambientRotate {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 a {
@@ -290,22 +303,22 @@ nav a:hover {
     position: relative;
     z-index: 1;
     overflow: hidden;
-    
+
     /* --- Base State --- */
-    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%); 
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
     border: 1px solid rgba(15, 23, 42, 0.06);
-    box-shadow: 
+    box-shadow:
         0 4px 6px -1px rgba(15, 23, 42, 0.02),
         0 10px 30px -10px rgba(15, 23, 42, 0.04);
-    
+
     will-change: transform, box-shadow;
-    transition: 
+    transition:
         transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
         box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .tool-card::before {
-    content: '';
+    content: "";
     position: absolute;
     inset: 0;
     background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
@@ -318,7 +331,7 @@ nav a:hover {
 .tool-card:hover {
     transform: translateY(-10px) scale(1.02);
     border-color: rgba(37, 235, 216, 0.4);
-    box-shadow: 
+    box-shadow:
         0 12px 24px -10px rgba(37, 99, 235, 0.15),
         0 30px 60px -15px rgba(37, 99, 235, 0.3);
 }
@@ -353,7 +366,8 @@ nav a:hover {
 }
 
 /* --- High-End Buttons --- */
-.btn, .btns {
+.btn,
+.btns {
     padding: 16px 38px;
     border-radius: 14px;
     font-weight: 700;
@@ -420,7 +434,6 @@ nav a:hover {
     transform: scale(1.02);
     box-shadow: var(--shadow-lux);
 }
-
 /* --- Clean Subsections --- */
 .marquee {
     width: 100%;
@@ -431,6 +444,7 @@ nav a:hover {
     white-space: nowrap;
     border-top: 1px solid rgba(255, 255, 255, 0.3);
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    margin-top: 10PX;
 }
 
 .marquee p {
@@ -445,8 +459,12 @@ nav a:hover {
 }
 
 @keyframes marquee-anim {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
 }
 
 .quotes {
@@ -463,14 +481,22 @@ nav a:hover {
 }
 
 /* --- Core Copy & SEO Blocks --- */
-.seo-section, .faq-section, .seo-article, .seo-admission, .sgpa-section {
+.seo-section,
+.faq-section,
+.seo-article,
+.seo-admission,
+.sgpa-section {
     max-width: 860px;
     margin: 0 auto;
-    padding: 50px 24px; 
+    padding: 50px 24px;
     line-height: 1.85;
 }
 
-.seo-article h1, .seo-admission h1, .seo-section h1, .faq-section h2, .sgpa-section h2 {
+.seo-article h1,
+.seo-admission h1,
+.seo-section h1,
+.faq-section h2,
+.sgpa-section h2 {
     font-size: 36px;
     font-weight: 800;
     letter-spacing: -1.2px;
@@ -479,7 +505,10 @@ nav a:hover {
     margin-bottom: 24px;
 }
 
-.seo-article h2, .seo-admission h2, .seo-section h2, .sgpa-section h3 {
+.seo-article h2,
+.seo-admission h2,
+.seo-section h2,
+.sgpa-section h3 {
     font-size: 24px;
     font-weight: 800;
     letter-spacing: -0.5px;
@@ -488,15 +517,24 @@ nav a:hover {
     padding-left: 16px;
     color: var(--text-main);
     border-left: 4px solid var(--accent);
-    transition: padding-left 0.3s ease, color 0.3s ease;
+    transition:
+        padding-left 0.3s ease,
+        color 0.3s ease;
 }
 
-.seo-article h2:hover, .seo-admission h2:hover, .seo-section h2:hover, .sgpa-section h3:hover {
+.seo-article h2:hover,
+.seo-admission h2:hover,
+.seo-section h2:hover,
+.sgpa-section h3:hover {
     padding-left: 22px;
     color: var(--accent);
 }
 
-.seo-section p, .seo-article p, .seo-admission p, .sgpa-section p, .faq-item p {
+.seo-section p,
+.seo-article p,
+.seo-admission p,
+.sgpa-section p,
+.faq-item p {
     font-size: 15.5px;
     font-weight: 500;
     color: var(--text-muted);
@@ -569,7 +607,9 @@ nav a:hover {
 .reveal {
     opacity: 0;
     transform: translateY(30px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    transition:
+        opacity 0.6s ease,
+        transform 0.6s ease;
 }
 
 .reveal.active {
@@ -584,8 +624,12 @@ nav a:hover {
 
 /* --- Entry Animations Keyframes --- */
 @keyframes slideDown {
-    from { transform: translateY(-100%); }
-    to { transform: translateY(0); }
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
 }
 
 @keyframes fadeUpIn {
@@ -623,7 +667,6 @@ nav a:hover {
     color: var(--accent);
 }
 
-
 /* ==========================================================================
    unified advanced mobile system (screens under 768px)
    ========================================================================== */
@@ -632,7 +675,7 @@ nav a:hover {
     nav {
         position: fixed;
         top: 70px;
-        right: -100%; 
+        right: -100%;
         height: calc(100vh - 70px);
         width: 85%;
         max-width: 300px;
@@ -649,9 +692,9 @@ nav a:hover {
         transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         z-index: 999;
     }
-    
-    nav.active { 
-        right: 0; 
+
+    nav.active {
+        right: 0;
         box-shadow: -10px 0 40px rgba(11, 19, 41, 0.12);
     }
 
@@ -664,25 +707,25 @@ nav a:hover {
         color: var(--text-main);
         display: block;
     }
-    
-    .hamburger { 
-        display: block; 
+
+    .hamburger {
+        display: block;
         padding: 10px;
     }
-    
+
     /* --- Fluid Typography Scaling --- */
     .hero {
         padding: 130px 20px 50px;
     }
-    
-    .hero h1 { 
-        font-size: 32px; 
+
+    .hero h1 {
+        font-size: 32px;
         letter-spacing: -0.5px;
         margin-bottom: 16px;
     }
-    
-    .hero p { 
-        font-size: 15.5px; 
+
+    .hero p {
+        font-size: 15.5px;
         line-height: 1.5;
         margin-bottom: 28px;
     }
@@ -695,7 +738,8 @@ nav a:hover {
         margin: 32px auto 0;
     }
 
-    .btn, .btns {
+    .btn,
+    .btns {
         width: 100%;
         text-align: center;
         padding: 14px 24px;
@@ -754,20 +798,31 @@ nav a:hover {
         font-size: 32px;
     }
 
-    .seo-article h1, .seo-admission h1, .seo-section h1, .faq-section h2, .sgpa-section h2 {
+    .seo-article h1,
+    .seo-admission h1,
+    .seo-section h1,
+    .faq-section h2,
+    .sgpa-section h2 {
         font-size: 26px;
     }
 
-    .seo-article h2, .seo-admission h2, .seo-section h2, .sgpa-section h3 {
+    .seo-article h2,
+    .seo-admission h2,
+    .seo-section h2,
+    .sgpa-section h3 {
         font-size: 20px;
     }
 }
 
 /* --- Micro-Phone Overrides (Screens under 400px) --- */
 @media (max-width: 400px) {
-    .hero h1 { font-size: 26px; }
-    .hero p { font-size: 14px; }
-    
+    .hero h1 {
+        font-size: 26px;
+    }
+    .hero p {
+        font-size: 14px;
+    }
+
     .tools {
         padding: 16px 16px 24px;
         gap: 14px;
@@ -779,8 +834,10 @@ nav a:hover {
         border-radius: 16px;
     }
 
-    .tool-card h3 { font-size: 18px; }
-    
+    .tool-card h3 {
+        font-size: 18px;
+    }
+
     .tool-card:hover {
         transform: none; /* Disables motions entirely on ultra-low viewports */
     }
@@ -792,25 +849,27 @@ nav a:hover {
 @media (max-width: 768px) {
     /* --- Add this right here to tame the Categories block --- */
     .categories {
-        padding-top: 20px !important;    /* Crushes giant top empty space gaps */
+        padding-top: 20px !important; /* Crushes giant top empty space gaps */
         padding-bottom: 20px !important; /* Crushes giant bottom empty space gaps */
-        margin-top: 10px !important;     /* Minimizes outer spacing friction */
-        margin-bottom: 10px !important;  
-        height: auto !important;         /* Prevents desktop min-heights from stretching it */
+        margin-top: 10px !important; /* Minimizes outer spacing friction */
+        margin-bottom: 10px !important;
+        height: auto !important; /* Prevents desktop min-heights from stretching it */
     }
 
     /* If your categories section has an inner heading/title stretching things out: */
-    .categories h2, .categories h1 {
+    .categories h2,
+    .categories h1 {
         font-size: 24px !important;
         margin-bottom: 16px !important;
         margin-top: 0 !important;
     }
 
     /* If your categories are wrapped in a layout grid/container that's stacking vertically: */
-    .categories-container, .categories-grid {
+    .categories-container,
+    .categories-grid {
         display: flex !important;
         flex-direction: column;
-        gap: 12px !important;            /* Tightens the space between internal elements */
+        gap: 12px !important; /* Tightens the space between internal elements */
     }
 }
 
@@ -820,7 +879,7 @@ nav a:hover {
         padding-top: 12px !important;
         padding-bottom: 12px !important;
     }
-    
+
     .categories h2 {
         font-size: 20px !important;
     }
