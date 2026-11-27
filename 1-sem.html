@@ -701,5 +701,75 @@
         </div>
         <div></div>
         <script src="script.js"></script>
+        
+        <!-- Google Publisher Tags (GPT) -->
+<script async src="https://doubleclick.net"></script>
+
+<script>
+  window.googletag = window.googletag || { cmd: [] };
+  const adUnitPath = "/23400814113/pdf_download_rewarded";
+
+  let rewardedSlot = null;
+  let rewardedEvent = null;
+  let rewardGranted = false;
+  let pendingDriveUrl = "";
+
+  function loadRewardedAd() {
+    rewardGranted = false;
+    rewardedEvent = null;
+
+    googletag.cmd.push(function() {
+      if (rewardedSlot) {
+        googletag.destroySlots([rewardedSlot]);
+      }
+
+      rewardedSlot = googletag.defineOutOfPageSlot(
+        adUnitPath,
+        googletag.enums.OutOfPageFormat.REWARDED
+      );
+
+      if (rewardedSlot) {
+        rewardedSlot.addService(googletag.pubads());
+        googletag.enableServices();
+        googletag.display(rewardedSlot);
+      }
+    });
+  }
+
+  googletag.cmd.push(function() {
+    googletag.pubads().addEventListener("rewardedSlotReady", function(evt) {
+      rewardedEvent = evt;
+    });
+
+    googletag.pubads().addEventListener("rewardedSlotGranted", function() {
+      rewardGranted = true;
+    });
+
+    googletag.pubads().addEventListener("rewardedSlotClosed", function() {
+      if (rewardGranted && pendingDriveUrl) {
+        window.open(pendingDriveUrl, "_blank", "noopener");
+      }
+      pendingDriveUrl = "";
+      loadRewardedAd();
+    });
+  });
+
+  loadRewardedAd();
+
+  document.addEventListener("DOMContentLoaded", function() {
+    const driveLinks = document.querySelectorAll('a[href*="drive.google.com"]');
+
+    driveLinks.forEach(function(link) {
+      link.addEventListener("click", function(e) {
+        if (rewardedEvent) {
+          e.preventDefault();
+          pendingDriveUrl = link.getAttribute("href");
+          rewardedEvent.makeRewardedVisible();
+        }
+      });
+    });
+  });
+</script>
+
     </body>
 </html>
