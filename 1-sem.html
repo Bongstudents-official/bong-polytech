@@ -879,22 +879,48 @@
                 }
             }
         </script>
-        <!-- Google Publisher Tags (GPT) -->
+       <!-- 1. Load Google Publisher Tags (GPT) -->
 <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
 
 <script>
   window.googletag = window.googletag || { cmd: [] };
-  const adUnitPath = "/23400814113/pdf_download_rewarded";
 
+  const AD_UNIT_PATH = "/23400814113/pdf_download_rewarded";
   let rewardedSlot = null;
-  let rewardedEvent = null;
-  let rewardGranted = false;
-  let pendingDriveUrl = "";
-  let servicesEnabled = false;
+  let rewardedReadyEvent = null;
+  let pendingPdfUrl = "";
+  let servicesStarted = false;
 
-  function loadRewardedAd() {
-    rewardGranted = false;
-    rewardedEvent = null;
+  // Initialize GPT event listeners once
+  googletag.cmd.push(function () {
+    const pubads = googletag.pubads();
+
+    // Fired when a video ad is loaded and ready to show
+    pubads.addEventListener("rewardedSlotReady", function (event) {
+      rewardedReadyEvent = event;
+      console.log("[Rewarded Ad] Ready to show.");
+    });
+
+    // Fired when the user finishes watching the video ad
+    pubads.addEventListener("rewardedSlotGranted", function () {
+      console.log("[Rewarded Ad] Reward granted. Opening PDF...");
+      if (pendingPdfUrl) {
+        window.open(pendingPdfUrl, "_blank", "noopener,noreferrer");
+        pendingPdfUrl = "";
+      }
+    });
+
+    // Fired when the user closes the ad (whether completed or skipped early)
+    pubads.addEventListener("rewardedSlotClosed", function () {
+      console.log("[Rewarded Ad] Closed. Preloading next ad...");
+      pendingPdfUrl = "";
+      preloadRewardedAd();
+    });
+  });
+
+  // Preload a rewarded slot so it is ready before the user clicks
+  function preloadRewardedAd() {
+    rewardedReadyEvent = null;
 
     googletag.cmd.push(function () {
       if (rewardedSlot) {
@@ -903,51 +929,38 @@
       }
 
       rewardedSlot = googletag.defineOutOfPageSlot(
-        adUnitPath,
+        AD_UNIT_PATH,
         googletag.enums.OutOfPageFormat.REWARDED
       );
 
       if (rewardedSlot) {
         rewardedSlot.addService(googletag.pubads());
-        if (!servicesEnabled) {
+        if (!servicesStarted) {
           googletag.enableServices();
-          servicesEnabled = true;
+          servicesStarted = true;
         }
+      } else {
+        console.warn("[Rewarded Ad] Slot returned null (unsupported viewport or page setup).");
       }
     });
   }
 
-  googletag.cmd.push(function () {
-    const pubads = googletag.pubads();
+  // Start preloading as soon as the page loads
+  preloadRewardedAd();
 
-    pubads.addEventListener("rewardedSlotReady", function (evt) {
-      rewardedEvent = evt;
-    });
-
-    pubads.addEventListener("rewardedSlotGranted", function () {
-      rewardGranted = true;
-      if (pendingDriveUrl) {
-        window.open(pendingDriveUrl, "_blank", "noopener,noreferrer");
-        pendingDriveUrl = "";
-      }
-    });
-
-    pubads.addEventListener("rewardedSlotClosed", function () {
-      pendingDriveUrl = "";
-      loadRewardedAd();
-    });
-  });
-
-  loadRewardedAd();
-
+  // Intercept clicks on any Google Drive PDF button/link
   document.addEventListener("click", function (e) {
-    const link = e.target.closest('a[href*="drive.google.com"]');
-    if (!link) return;
+    const btn = e.target.closest('a[href*="drive.google.com"]');
+    if (!btn) return;
 
-    if (rewardedEvent) {
+    // If a rewarded video ad is ready, pause navigation and play the ad
+    if (rewardedReadyEvent) {
       e.preventDefault();
-      pendingDriveUrl = link.getAttribute("href");
-      rewardedEvent.makeRewardedVisible();
+      pendingPdfUrl = btn.href;
+      rewardedReadyEvent.makeRewardedVisible();
+    } else {
+      // Fallback: If no ad filled or ad blocker is active, let the link open normally
+      console.log("[Rewarded Ad] No ad ready, opening PDF directly.");
     }
   });
 </script>
