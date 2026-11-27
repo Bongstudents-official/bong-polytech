@@ -3851,91 +3851,111 @@
 
 <script>
   (function () {
-    const COUNTDOWN_SECONDS = 5;
-    let targetDriveUrl = "";
-    let adSlotRequested = false;
-    let countdownTimer = null;
+    function initDriveAdModal() {
+      const COUNTDOWN_SECONDS = 5;
+      let targetDriveUrl = "";
+      let adSlotRequested = false;
+      let countdownTimer = null;
 
-    const modal = document.getElementById("driveAdModal");
-    const openDriveBtn = document.getElementById("openDriveBtn");
-    const closeAdModalBtn = document.getElementById("closeAdModalBtn");
-    const modalSubjectTitle = document.getElementById("modalSubjectTitle");
+      const modal = document.getElementById("driveAdModal");
+      const openDriveBtn = document.getElementById("openDriveBtn");
+      const closeAdModalBtn = document.getElementById("closeAdModalBtn");
+      const modalSubjectTitle = document.getElementById("modalSubjectTitle");
 
-    function setButtonLockedState(secondsLeft) {
-      openDriveBtn.disabled = true;
-      openDriveBtn.style.background = "#9ca3af";
-      openDriveBtn.style.cursor = "not-allowed";
-      openDriveBtn.textContent = "Please wait (" + secondsLeft + "s)...";
-    }
-
-    function setButtonReadyState() {
-      openDriveBtn.disabled = false;
-      openDriveBtn.style.background = "#0d9488";
-      openDriveBtn.style.cursor = "pointer";
-      openDriveBtn.textContent = "Continue to Google Drive ↗";
-    }
-
-    function startCountdown() {
-      clearInterval(countdownTimer);
-      let remaining = COUNTDOWN_SECONDS;
-      setButtonLockedState(remaining);
-
-      countdownTimer = setInterval(function () {
-        remaining -= 1;
-        if (remaining > 0) {
-          setButtonLockedState(remaining);
-        } else {
-          clearInterval(countdownTimer);
-          countdownTimer = null;
-          setButtonReadyState();
-        }
-      }, 1000);
-    }
-
-    function closeModal() {
-      clearInterval(countdownTimer);
-      countdownTimer = null;
-      modal.style.display = "none";
-      targetDriveUrl = "";
-    }
-
-    document.addEventListener("click", function (e) {
-      const link = e.target.closest('a[href*="drive.google.com"]');
-      if (!link) return;
-
-      e.preventDefault();
-      targetDriveUrl = link.href;
-
-      const titleEl = link.querySelector("span");
-      if (titleEl && titleEl.textContent.trim()) {
-        modalSubjectTitle.textContent = titleEl.textContent.trim();
+      if (!modal || !openDriveBtn || !closeAdModalBtn) {
+        console.error("DriveAdModal elements missing from HTML.");
+        return;
       }
 
-      modal.style.display = "flex";
-      startCountdown();
+      function setButtonLockedState(secondsLeft) {
+        openDriveBtn.disabled = true;
+        openDriveBtn.style.background = "#9ca3af";
+        openDriveBtn.style.cursor = "not-allowed";
+        openDriveBtn.textContent = "Please wait (" + secondsLeft + "s)...";
+      }
 
-      if (!adSlotRequested) {
-        adSlotRequested = true;
-        requestAnimationFrame(function () {
-          try {
-            (window.adsbygoogle = window.adsbygoogle || []).push({});
-          } catch (err) {
-            console.warn("AdSense push error:", err);
+      function setButtonReadyState() {
+        openDriveBtn.disabled = false;
+        openDriveBtn.style.background = "#0d9488";
+        openDriveBtn.style.cursor = "pointer";
+        openDriveBtn.textContent = "Continue to Google Drive ↗";
+      }
+
+      function startCountdown() {
+        clearInterval(countdownTimer);
+        let remaining = COUNTDOWN_SECONDS;
+        setButtonLockedState(remaining);
+
+        countdownTimer = setInterval(function () {
+          remaining -= 1;
+          if (remaining > 0) {
+            setButtonLockedState(remaining);
+          } else {
+            clearInterval(countdownTimer);
+            countdownTimer = null;
+            setButtonReadyState();
           }
-        });
+        }, 1000);
       }
-    });
 
-    openDriveBtn.addEventListener("click", function () {
-      if (openDriveBtn.disabled) return;
-      const url = targetDriveUrl;
-      closeModal();
-      if (url) {
-        window.open(url, "_blank", "noopener,noreferrer");
+      function closeModal() {
+        clearInterval(countdownTimer);
+        countdownTimer = null;
+        modal.style.setProperty("display", "none", "important");
+        targetDriveUrl = "";
       }
-    });
 
-    closeAdModalBtn.addEventListener("click", close
+      document.addEventListener("click", function (e) {
+        const link = e.target.closest('a[href*="drive.google.com"]');
+        if (!link) return;
 
+        e.preventDefault();
+        targetDriveUrl = link.href;
+
+        const titleEl = link.querySelector("span");
+        if (titleEl && titleEl.textContent.trim() && modalSubjectTitle) {
+          modalSubjectTitle.textContent = titleEl.textContent.trim();
+        }
+
+        modal.style.setProperty("display", "flex", "important");
+        startCountdown();
+
+        if (!adSlotRequested) {
+          adSlotRequested = true;
+          requestAnimationFrame(function () {
+            try {
+              (window.adsbygoogle = window.adsbygoogle || []).push({});
+            } catch (err) {
+              console.warn("AdSense push error:", err);
+            }
+          });
+        }
+      }, true);
+
+      openDriveBtn.addEventListener("click", function () {
+        if (openDriveBtn.disabled) return;
+        const url = targetDriveUrl;
+        closeModal();
+        if (url) {
+          window.open(url, "_blank", "noopener,noreferrer");
+        }
+      });
+
+      closeAdModalBtn.addEventListener("click", closeModal);
+
+      modal.addEventListener("click", function (e) {
+        if (e.target === modal) {
+          closeModal();
+        }
+      });
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initDriveAdModal);
+    } else {
+      initDriveAdModal();
+    }
+  })();
+</script>
     </body>
 </html>
