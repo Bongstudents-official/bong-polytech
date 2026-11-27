@@ -3832,17 +3832,18 @@
       <button
         id="openDriveBtn"
         type="button"
+        disabled
         style="
-          background: #0d9488;
+          background: #9ca3af;
           color: #ffffff;
           border: none;
           padding: 10px 20px;
           border-radius: 6px;
           font-size: 14px;
           font-weight: 600;
-          cursor: pointer;
+          cursor: not-allowed;
         ">
-        Continue to Google Drive ↗
+        Please wait (5s)...
       </button>
     </div>
   </div>
@@ -3850,15 +3851,54 @@
 
 <script>
   (function () {
+    const COUNTDOWN_SECONDS = 5;
     let targetDriveUrl = "";
     let adSlotRequested = false;
+    let countdownTimer = null;
 
     const modal = document.getElementById("driveAdModal");
     const openDriveBtn = document.getElementById("openDriveBtn");
     const closeAdModalBtn = document.getElementById("closeAdModalBtn");
     const modalSubjectTitle = document.getElementById("modalSubjectTitle");
 
-    // Intercept clicks on any Google Drive card/link
+    function setButtonLockedState(secondsLeft) {
+      openDriveBtn.disabled = true;
+      openDriveBtn.style.background = "#9ca3af";
+      openDriveBtn.style.cursor = "not-allowed";
+      openDriveBtn.textContent = "Please wait (" + secondsLeft + "s)...";
+    }
+
+    function setButtonReadyState() {
+      openDriveBtn.disabled = false;
+      openDriveBtn.style.background = "#0d9488";
+      openDriveBtn.style.cursor = "pointer";
+      openDriveBtn.textContent = "Continue to Google Drive ↗";
+    }
+
+    function startCountdown() {
+      clearInterval(countdownTimer);
+      let remaining = COUNTDOWN_SECONDS;
+      setButtonLockedState(remaining);
+
+      countdownTimer = setInterval(function () {
+        remaining -= 1;
+        if (remaining > 0) {
+          setButtonLockedState(remaining);
+        } else {
+          clearInterval(countdownTimer);
+          countdownTimer = null;
+          setButtonReadyState();
+        }
+      }, 1000);
+    }
+
+    function closeModal() {
+      clearInterval(countdownTimer);
+      countdownTimer = null;
+      modal.style.display = "none";
+      targetDriveUrl = "";
+    }
+
     document.addEventListener("click", function (e) {
       const link = e.target.closest('a[href*="drive.google.com"]');
       if (!link) return;
@@ -3866,16 +3906,14 @@
       e.preventDefault();
       targetDriveUrl = link.href;
 
-      // Optional: display the clicked card's title inside the modal header
       const titleEl = link.querySelector("span");
       if (titleEl && titleEl.textContent.trim()) {
         modalSubjectTitle.textContent = titleEl.textContent.trim();
       }
 
-      // Show modal first so the <ins> container has a real non-zero width
       modal.style.display = "flex";
+      startCountdown();
 
-      // Request the AdSense unit once after the container is visible
       if (!adSlotRequested) {
         adSlotRequested = true;
         requestAnimationFrame(function () {
@@ -3888,30 +3926,16 @@
       }
     });
 
-    // Open the Google Drive link when user clicks Continue
     openDriveBtn.addEventListener("click", function () {
+      if (openDriveBtn.disabled) return;
       const url = targetDriveUrl;
-      modal.style.display = "none";
-      targetDriveUrl = "";
+      closeModal();
       if (url) {
         window.open(url, "_blank", "noopener,noreferrer");
       }
     });
 
-    // Close modal without opening Drive
-    closeAdModalBtn.addEventListener("click", function () {
-      modal.style.display = "none";
-      targetDriveUrl = "";
-    });
-
-    modal.addEventListener("click", function (e) {
-      if (e.target === modal) {
-        modal.style.display = "none";
-        targetDriveUrl = "";
-      }
-    });
-  })();
-</script>
+    closeAdModalBtn.addEventListener("click", close
 
     </body>
 </html>
